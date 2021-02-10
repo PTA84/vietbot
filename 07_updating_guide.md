@@ -35,8 +35,11 @@ sudo cp /home/pi/vietbot/config.yaml /home/pi/config.yaml
 git clone phanmemkhoinghiep/vietbot_source_code
 
 ```
-2.2.2 Đổi tên thư mục vietbot_source_code thành vietbot
+2.2.2 Đổi tên thư mục vietbot_source_code thành vietbot bằng lệnh
 
+```sh
+mv /home/pi/vietbot_source_code home/pi/vietbot
+```
 2.3. Restore file
 
 Restore 2 file google.json và config.yaml bằng lệnh
