@@ -21,18 +21,16 @@ Sử dụng lần lượt các lệnh sau
 sudo apt-get install supervisor -y
 
 ```
-
 sau khi cài đặt xong supervisor, gõ lệnh sau:
 
 ```sh
-sudo nano /etc/supervisor/conf.d/bot.conf
+sudo nano /etc/supervisor/conf.d/vietbot.conf
 
 ```
-
 Tại cửa sổ nano, gõ các dòng sau
 
 ```sh
-[program:bot]
+[program:vietbot]
 directory=/home/pi/vietbot
 command=/bin/bash -c 'cd /home/pi/vietbot && python3 main_process.py'
 numprocs=1
@@ -46,4 +44,13 @@ Sau đó gõ tiếp các lệnh sau
 ```sh
 sudo supervisorctl update
 ```
-Chờ sau khi có thông báo update, khởi động lại Pi và bot sẽ tự động chạy (Chú ý thời gian chạy của bot sau khi khởi động)
+Chờ sau khi có thông báo update, khởi động lại Pi và bot sẽ tự động chạy (Chú ý thời gian chạy của bot khá lâu sau khi khởi động)
+
+Nếu bot chạy bị lỗi, sẽ tự chạy lại boot
+
+Muốn stop quá trình tự chạy lại bot này, sử dụng các lệnh sau
+
+```sh
+sudo supervisorctl stop vietbot
+```
+
