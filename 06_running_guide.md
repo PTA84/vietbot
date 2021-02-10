@@ -62,11 +62,16 @@ sudo supervisorctl stop vietbot
 1.3. Gỡ vietbot ra khỏi tự động chạy
 
 ```sh
-sudo supervisorctl remove vietbot
+sudo rm -rf /etc/supervisor/conf.d/vietbot.conf 
 ```
-1.4. Khởi động lại
+sau đó
 
-Chờ sau khi có thông báo update, khởi động lại Pi 
+```sh
+sudo supervisorctl update
+```
+Chờ sau khi có thông báo update
+
+1.4. Khởi động lại
 
 ```sh
 sudo reboot
