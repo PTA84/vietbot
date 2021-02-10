@@ -50,6 +50,7 @@ và
 ```sh
 sudo cp /home/pi/config.yaml /home/pi/vietbot/config.yaml
 
+```
 2.4. Chạy lại ứng dụng 
 
 ```sh
