@@ -59,15 +59,13 @@ Bot sẽ tự động chạy (Chú ý thời gian chạy của bot khá lâu sau
 sudo supervisorctl stop vietbot
 ```
 
-1.3. Tắt toàn bộ quá trình tự khởi động và tự chạy lại ứng dụng
+1.3. Gỡ vietbot ra khỏi tự động chạy
 
 ```sh
-sudo rm -rf /etc/supervisor/conf.d/vietbot.conf
+sudo supervisorctl remove vietbot
 ```
-Sau đó gõ tiếp các lệnh sau
-```sh
-sudo supervisorctl update
-```
+1.4. Khởi động lại
+
 Chờ sau khi có thông báo update, khởi động lại Pi 
 
 ```sh
