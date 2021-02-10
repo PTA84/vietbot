@@ -15,6 +15,10 @@ https://github.com/phanmemkhoinghiep/vietbot/blob/main/02_software_enviroment_in
 
 ### STEP2.  Truy nhập vào thư mục Bot
 
+2.1. Đổi tên thư mục vietbot_source_code thành vietbot
+
+2.2. Truy cập vào thư mục vietbot
+
 Sử dụng lệnh sau
 
 ```sh
