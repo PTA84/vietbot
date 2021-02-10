@@ -15,7 +15,7 @@ Nếu phát hiện có file nào vừa cập nhật thì chuyển sang bước 2
 
 2.1. Backup file
 
-Backup 2 file google.json và config.yaml bằng lệnh
+Backup các file google.json, config.yaml và thư mục tts_saved bằng lệnh
 
 ```sh
 sudo cp /home/pi/vietbot/google.json /home/pi/google.json
@@ -25,6 +25,11 @@ và
 
 ```sh
 sudo cp /home/pi/vietbot/config.yaml /home/pi/config.yaml
+
+```
+và
+```sh
+sudo cp /home/pi/vietbot/tts_saved /home/pi/tts_saved
 
 ```
 
@@ -49,7 +54,7 @@ mv /home/pi/vietbot_source_code home/pi/vietbot
 ```
 2.4. Restore file
 
-Restore 2 file google.json và config.yaml bằng lệnh
+Restore 2 file google.json và config.yaml và thư mục tts_saved bằng lệnh
 
 ```sh
 sudo cp /home/pi/google.json /home/pi/vietbot/google.json
@@ -61,7 +66,14 @@ và
 sudo cp /home/pi/config.yaml /home/pi/vietbot/config.yaml
 
 ```
-2.4. Chạy lại ứng dụng 
+và
+
+```sh
+sudo cp /home/pi/tts_saved /home/pi/vietbot/tts_saved
+
+```
+
+2.5. Chạy lại ứng dụng 
 
 ```sh
 sudo supervisorctl restart vietbot
