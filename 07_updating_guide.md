@@ -57,5 +57,7 @@ và
 sudo cp /home/pi/tts_saved /home/pi/vietbot/tts_saved
 ```
 2.5. Chạy lại ứng dụng 
-https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_runing_guide.md
+
+https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
+
 Chờ bot chạy
