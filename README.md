@@ -42,3 +42,7 @@ https://github.com/phanmemkhoinghiep/vietbot/blob/main/05_configuration_guide.md
 #Hướng dẫn chạy
 
 https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
+
+#Hướng dẫn Update
+
+https://github.com/phanmemkhoinghiep/vietbot/blob/main/07_updating_guide.md
