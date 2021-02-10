@@ -19,64 +19,45 @@ Backup các file google.json, config.yaml và thư mục tts_saved bằng lệnh
 
 ```sh
 sudo cp /home/pi/vietbot/google.json /home/pi/google.json
-
 ```
 và
-
 ```sh
 sudo cp /home/pi/vietbot/config.yaml /home/pi/config.yaml
-
 ```
 và
 ```sh
 sudo cp /home/pi/vietbot/tts_saved /home/pi/tts_saved
-
 ```
-
 2.2. Xóa thư mục vietbot bằng lệnh
-
 ```sh
 sudo rm -rf /home/pi/vietbot
-
 ```
-
 2.3. Download file update
 
 2.3.1. Download bằng lệnh git
 ```sh
 git clone https://github.com/phanmemkhoinghiep/vietbot_sourcecode.git
-
 ```
 2.3.2. Đổi tên thư mục vietbot_sourcecode thành vietbot bằng lệnh
-
 ```sh
 mv /home/pi/vietbot_sourcecode home/pi/vietbot
 ```
 2.4. Restore file
 
 Restore 2 file google.json và config.yaml và thư mục tts_saved bằng lệnh
-
 ```sh
 sudo cp /home/pi/google.json /home/pi/vietbot/google.json
-
 ```
 và
-
 ```sh
 sudo cp /home/pi/config.yaml /home/pi/vietbot/config.yaml
-
 ```
 và
-
 ```sh
 sudo cp /home/pi/tts_saved /home/pi/vietbot/tts_saved
-
 ```
-
 2.5. Chạy lại ứng dụng 
-
 ```sh
 sudo supervisorctl restart vietbot
-
 ```
 Chờ bot chạy
