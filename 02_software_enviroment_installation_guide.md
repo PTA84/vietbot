@@ -1,7 +1,7 @@
 ### ĐÂY LÀ HƯỚNG DẪN CÀI ĐẶT PHẦN HỆ ĐIỀU HÀNH, THƯ VIỆN, DRIVER CHO PI ZERO WIRLESS, MODUN 2 MIC HAT, 4 MIC ARRAY HOẶC MIC USB
 
-### STEP0. Cài đặt nhanh
-Các bạn không muốn trải nghiệm quá trình cài đặt, có thể thực hiện theo các bước sau:
+### STEP0. Cài đặt nhanh (Bỏ qua Step1 đến Step5)
+Các bạn không muốn trải nghiệm quá trình cài đặt từ Step1 đến Step5, có thể thực hiện theo các bước sau:
 0.1. Download bộ Image đã cài đặt sẵn tất cả các bước theo một trong hai link sau:
 
 Bản cho thẻ 32G trở lên: https://1drv.ms/u/s!AvDx_rYRQh5Lo9RGY2XsZh78bhHa3g?e=80TKfE
