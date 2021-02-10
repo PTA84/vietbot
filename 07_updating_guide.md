@@ -47,10 +47,10 @@ sudo rm -rf /home/pi/vietbot
 git clone https://github.com/phanmemkhoinghiep/vietbot_sourcecode.git
 
 ```
-2.3.2. Đổi tên thư mục vietbot_source_code thành vietbot bằng lệnh
+2.3.2. Đổi tên thư mục vietbot_sourcecode thành vietbot bằng lệnh
 
 ```sh
-mv /home/pi/vietbot_source_code home/pi/vietbot
+mv /home/pi/vietbot_sourcecode home/pi/vietbot
 ```
 2.4. Restore file
 
