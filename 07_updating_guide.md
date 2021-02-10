@@ -54,5 +54,6 @@ sudo cp /home/pi/config.yaml /home/pi/vietbot/config.yaml
 
 ```sh
 sudo supervisorctl restart vietbot
+
 ```
 Chờ bot chạy
