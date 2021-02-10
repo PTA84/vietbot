@@ -15,6 +15,7 @@ python3 main_process.py
 
 ### STEP2.  Chạy tự động khi khởi động Pi
 
+1.1. Thiết lập tự động chạy bot khi bật nguồn, và tự chạy lại khi lỗi
 Sử dụng lần lượt các lệnh sau
 
 ```sh
@@ -44,13 +45,32 @@ Sau đó gõ tiếp các lệnh sau
 ```sh
 sudo supervisorctl update
 ```
-Chờ sau khi có thông báo update, khởi động lại Pi và bot sẽ tự động chạy (Chú ý thời gian chạy của bot khá lâu sau khi khởi động)
+Chờ sau khi có thông báo update, khởi động lại Pi 
 
-Nếu bot chạy bị lỗi, sẽ tự chạy lại boot
+```sh
+sudo reboot
+```
 
-Muốn stop quá trình tự chạy lại bot này, sử dụng các lệnh sau
+Bot sẽ tự động chạy (Chú ý thời gian chạy của bot khá lâu sau khi khởi động)
+
+1.2. Stop quá trình tự chạy lại bot này, sử dụng các lệnh sau
 
 ```sh
 sudo supervisorctl stop vietbot
 ```
 
+1.3. Tắt toàn bộ quá trình tự khởi động và tự chạy lại ứng dụng
+
+```sh
+sudo rm -rf /etc/supervisor/conf.d/vietbot.conf
+```
+Sau đó gõ tiếp các lệnh sau
+```sh
+sudo supervisorctl update
+```
+Chờ sau khi có thông báo update, khởi động lại Pi 
+
+```sh
+sudo reboot
+```
+Bot sẽ không tự chạy lại nữa
