@@ -28,19 +28,26 @@ sudo cp /home/pi/vietbot/config.yaml /home/pi/config.yaml
 
 ```
 
-2.2. Download file update
+2.2. Xóa thư mục vietbot bằng lệnh
 
-2.2.1. Download bằng lệnh git
 ```sh
-git clone phanmemkhoinghiep/vietbot_source_code
+sudo rm -rf /home/pi/vietbot
 
 ```
-2.2.2 Đổi tên thư mục vietbot_source_code thành vietbot bằng lệnh
+
+2.3. Download file update
+
+2.3.1. Download bằng lệnh git
+```sh
+git clone https://github.com/phanmemkhoinghiep/vietbot_sourcecode.git
+
+```
+2.3.2. Đổi tên thư mục vietbot_source_code thành vietbot bằng lệnh
 
 ```sh
 mv /home/pi/vietbot_source_code home/pi/vietbot
 ```
-2.3. Restore file
+2.4. Restore file
 
 Restore 2 file google.json và config.yaml bằng lệnh
 
