@@ -14,14 +14,25 @@ Có dạng: http://abc.def:8123 (Có thể không có 8123) hoặc không với 
 
 ### STEP3.  Chỉnh sửa trong File config.yaml
 
-3.1. Nhập các giá trị tại 1.1 và 1.2 vào file config
+3.1. Nhập giá trị tại 1.1 hoặc 1.2 vào file config
 
-3.2. Sửa dòng sau trong file config
+```sh
+hass_url: http://X.X.X.X:8123
+```
+
+3.2. Nhập giá trị tại 1.3 vào file config.yaml
+
+```sh
+hass_token: sdsldfjsdlfj
+```
+3.3. Sửa dòng sau trong file config
 ```sh
 use_hass: 1
 ```
-3.3. Save lại
+3.4. Save file config.yaml
 
-### STEP4.  Chỉnh sửa trong File config.yaml
+### STEP4. Chạy lại bot
 
 4.1. Chạy lại bot theo hướng dẫn tại https://github.com/phanmemkhoinghiep/vietbot/blob/main/running_guide.md
+
+4.2. Chờ khi nào có thông báo là: 'Đã kết nối thành công tới trung tâm điều khiển nhà'
