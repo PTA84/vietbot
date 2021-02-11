@@ -66,6 +66,8 @@ Gỡ theo các bước sau
 
 3.4. Tiếp tục dùng tô vít đa năng gỡ bỏ lần lượt các thành phần
 
+![CÁC PHẦN SAU KHI THÁO](https://github.com/phanmemkhoinghiep/vietbot/blob/main/image/H02_Thao.jpg)
+
 ![CÁC PHẦN SAU KHI THÁO](https://github.com/phanmemkhoinghiep/vietbot/blob/main/image/H01_Thao.jpg)
 
 ### STEP4. Hàn dây
