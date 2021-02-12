@@ -46,3 +46,7 @@ https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
 #Hướng dẫn Update
 
 https://github.com/phanmemkhoinghiep/vietbot/blob/main/07_updating_guide.md
+
+#Hướng dẫn cài đặt, Update thêm Hotword
+
+https://github.com/phanmemkhoinghiep/vietbot/blob/main/08_hotword_configuration.guide
