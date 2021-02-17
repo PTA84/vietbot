@@ -141,6 +141,10 @@ python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition g
 python3 -m pip install youtube_dl
 
 ```
+3.6. Cài đặt gói Python liên quan tới Numpy
+```sh
+ python3 -m pip install numpy==1.19.5
+```
 ### STEP4. Config Mig, Speaker, LED
 
 4.1. Cài đặt cho Modun ReSpeaker 2 Mic Hat hoặc ReSpeaker 4-Mic Array for Raspberry Pi (Nếu ko sử dụng thì bỏ qua)
