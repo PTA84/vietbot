@@ -136,6 +136,11 @@ python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy date
 python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition googletrans  
 
 ```
+3.5. Cài đặt gói Python liên quan tới Youtube Skill
+```sh
+python3 -m pip install youtube_dl
+
+```
 ### STEP4. Config Mig, Speaker, LED
 
 4.1. Cài đặt cho Modun ReSpeaker 2 Mic Hat hoặc ReSpeaker 4-Mic Array for Raspberry Pi (Nếu ko sử dụng thì bỏ qua)
