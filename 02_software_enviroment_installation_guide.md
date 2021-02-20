@@ -80,7 +80,7 @@ sudo apt-get install libportaudio-dev libsdl1.2-dev libsdl-image1.2-dev libsdl-m
 ```
 sau đó
 ```sh
-sudo apt-get install git -y
+sudo apt-get install git ffmpeg -y
 ```
 sau đó
 ```sh
@@ -108,10 +108,7 @@ Chạy lần lượt các lệnh sau
 ```sh
 sudo apt-get install python3-pip python3-setuptools python3-psutil python3-bottle python3-requests python3-dev python3-pyaudio python3-numpy python3-pip python3-wheel python3-dev python3-pygame -y
 ```
-sau đó
-```sh
-sudo apt-get install vlc -y
-```
+
 ### STEP3. Cài đặt các gói Python
 
 3.1. Nâng cấp PIP
@@ -128,7 +125,7 @@ python3 -m pip install wheel python-Levenshtein PyAudio pyusb pygame pyalsaaudio
 ```
 3.3. Cài đặt các gói Python liên quan tới các Skill
 ```sh
-python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine python-vlc nltk underthesea pyglet paho-mqtt untangle  
+python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle  
 
 ```
 3.4. Cài đặt các gói Python liên quan tới tổng hợp và xử lý âm thanh
@@ -136,14 +133,14 @@ python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy date
 python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition googletrans  
 
 ```
-3.5. Cài đặt gói Python liên quan tới Youtube Skill
+3.5. Cài đặt gói Python liên quan tới Numpy
+```sh
+ python3 -m pip install numpy==1.19.5
+```
+3.6. Cài đặt gói Python liên quan tới Youtube Offline Skill
 ```sh
 python3 -m pip install youtube_dl
 
-```
-3.6. Cài đặt gói Python liên quan tới Numpy
-```sh
- python3 -m pip install numpy==1.19.5
 ```
 ### STEP4. Config Mig, Speaker, LED
 
