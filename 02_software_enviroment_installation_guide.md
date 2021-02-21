@@ -125,7 +125,7 @@ python3 -m pip install wheel python-Levenshtein PyAudio pyusb pygame pyalsaaudio
 ```
 3.3. Cài đặt các gói Python liên quan tới các Skill
 ```sh
-python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle  
+python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle html5lib  
 
 ```
 3.4. Cài đặt các gói Python liên quan tới tổng hợp và xử lý âm thanh
