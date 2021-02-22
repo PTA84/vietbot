@@ -106,7 +106,7 @@ sudo ldconfig
 
 Chạy lần lượt các lệnh sau
 ```sh
-sudo apt-get install python3-pip python3-setuptools python3-psutil python3-bottle python3-requests python3-dev python3-pyaudio python3-numpy python3-pip python3-wheel python3-dev python3-pygame -y
+sudo apt-get install python3-pip python3-setuptools python3-psutil python3-bottle python3-requests python3-dev python3-pyaudio python3-numpy python3-pip python3-wheel python3-dev python3-pygame python3-bs4 -y
 ```
 
 ### STEP3. Cài đặt các gói Python
@@ -125,7 +125,7 @@ python3 -m pip install wheel python-Levenshtein PyAudio pyusb pygame pyalsaaudio
 ```
 3.3. Cài đặt các gói Python liên quan tới các Skill
 ```sh
-python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle html5lib  
+python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle html5lib BeautifulSoup4  
 
 ```
 3.4. Cài đặt các gói Python liên quan tới tổng hợp và xử lý âm thanh
