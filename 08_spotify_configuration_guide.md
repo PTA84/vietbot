@@ -34,9 +34,11 @@ với xxxx là số port bất kỳ, ko trùng với port nào đang sử dụng
 ```sh
 python3 -m pip install spotipy
 ```
-2.1.2. Download file get_spotify_cache.py từ https://github.com/phanmemkhoinghiep/vietbot_sourcecode vào Desktop (/home/pi/Desktop/)
+2.1.2. Tạo thư mục test (/home/pi/test)
 
-2.1.3. Mở file get_spotify_cache.py, nhập các giá trị 
+2.1.3. Download file get_spotify_cache.py từ https://github.com/phanmemkhoinghiep/vietbot_sourcecode vào thư mục test 
+
+2.1.4. Mở file get_spotify_cache.py, nhập các giá trị 
 
 ```sh
 Client id
@@ -52,7 +54,7 @@ sau đó save lại
 2.2.2. Sử dụng các lệnh sau
 
 ```sh
-cd /home/pi/Desktop/
+cd /home/pi/test/
 ```
 sau đó
 
