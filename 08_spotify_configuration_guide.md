@@ -87,5 +87,19 @@ curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
 
 ### STEP4. Chạy lại Vietbot
 
-4.1. Chạy lại Vietbot theo hướng dẫn: https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
+4.1. Mở file config.yaml, nhập các giá trị 
+
+```sh
+Client id
+Client_secret 
+```
+vào các mục
+```sh
+spotify_client_id
+spotify_client_secret
+
+```
+sau đó save lại
+
+4.2. Chạy lại Vietbot theo hướng dẫn: https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
 
