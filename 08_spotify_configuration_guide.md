@@ -68,11 +68,11 @@ Couldn't read cache at: .cache
 ```
 Sau đó trình duyệt sẽ tự động mở ra Desktop, đăng nhập vào Spotity và làm theo các bước để đăng ký App
 
-Sau khi đăng ký xong, File .cache sẽ được tạo
+Sau khi đăng ký xong, File .cache sẽ được tạo tại thư mục  /home/pi/test/
 
 2.2.3. Copy file .cache
 
-Copy file .cache s vừa tạo về lại thư mục vietbot trên phần cứng loa thông minh
+Copy file .cache s vừa tạo về lại thư mục vietbot trên phần cứng loa thông minh bằng WinSCP (Bật shortcut Ctrl + Alt + H để hiện file ẩn)
 
 ### STEP3. Cài đặt Spotify Client trên Loa thông minh
 
