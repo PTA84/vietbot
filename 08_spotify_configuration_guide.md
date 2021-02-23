@@ -34,7 +34,7 @@ với xxxx là số port bất kỳ, ko trùng với port nào đang sử dụng
 ```sh
 python 3 -m pip install spotipy
 ```
-2.1.2. Download file get_spotify_cache.py từ https://github.com/phanmemkhoinghiep/vietbot_sourcecode vào Desktop
+2.1.2. Download file get_spotify_cache.py từ https://github.com/phanmemkhoinghiep/vietbot_sourcecode vào Desktop (/home/pi/Desktop/)
 
 2.1.3. Mở file get_spotify_cache.py, nhập các giá trị 
 
@@ -69,6 +69,7 @@ Sau đó trình duyệt sẽ tự động mở ra Desktop, đăng nhập vào Sp
 Sau khi đăng ký xong, File .cache sẽ được tạo
 
 2.2.3. Copy file .cache
+
 Copy file .cache s vừa tạo về lại thư mục vietbot trên phần cứng loa thông minh
 
 ### STEP3. Cài đặt Spotify Client trên Loa thông minh
