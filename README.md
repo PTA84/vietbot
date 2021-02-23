@@ -25,6 +25,24 @@ https://github.com/phanmemkhoinghiep/vietbot/blob/main/03_software_install_guide
 
 https://github.com/phanmemkhoinghiep/vietbot/blob/main/04_stt_and_tts_configuration_guide.md
 
+#Hướng dẫn cài đặt, Update thêm Hotword
+
+https://github.com/phanmemkhoinghiep/vietbot/blob/main/05_hotword_configuration.guide
+
+#Hướng dẫn chạy
+
+https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
+
+#Hướng dẫn Update
+
+https://github.com/phanmemkhoinghiep/vietbot/blob/main/07_updating_guide.md
+
+
+#Hướng dẫn Config Spotify
+
+https://github.com/phanmemkhoinghiep/vietbot/blob/main/08_spotify_configuration_guide.md
+
+
 #Hướng dẫn thiết lập nhà thông minh
 
 Nhà thông minh HomeAssistant:
@@ -35,18 +53,5 @@ Nhà thông minh MQTT:
 
 https://github.com/phanmemkhoinghiep/vietbot/blob/main/mqtt_configuration_guide.md
 
-#Hướng dẫn cấu hình 
 
-https://github.com/phanmemkhoinghiep/vietbot/blob/main/05_configuration_guide.md
 
-#Hướng dẫn chạy
-
-https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
-
-#Hướng dẫn Update
-
-https://github.com/phanmemkhoinghiep/vietbot/blob/main/07_updating_guide.md
-
-#Hướng dẫn cài đặt, Update thêm Hotword
-
-https://github.com/phanmemkhoinghiep/vietbot/blob/main/08_hotword_configuration.guide
