@@ -72,7 +72,7 @@ Sau khi đăng ký xong, File .cache sẽ được tạo tại thư mục  /home
 
 2.2.3. Copy file .cache
 
-Copy file .cache s vừa tạo về lại thư mục vietbot trên phần cứng loa thông minh bằng WinSCP (Bật shortcut Ctrl + Alt + H để hiện file ẩn)
+Copy file .cache s vừa tạo về sang phần cứng cài vietbot và trong thư mục vietbot bằng WinSCP (Bật shortcut Ctrl + Alt + H để hiện file ẩn)
 
 ### STEP3. Cài đặt Spotify Client trên Loa thông minh
 
