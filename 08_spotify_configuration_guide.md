@@ -1,5 +1,5 @@
 
-Vietbot hỗ trợ Playback Spotify trực tiếp trên loa hoặc ra lệnh cho các thiết bị khác:
+Vietbot hỗ trợ Playback Spotify trực tiếp trên loa Vietbot hoặc ra lệnh cho các thiết bị Spotipy Player khác:
 
 ### STEP1. Cài đặt Spotify
 
