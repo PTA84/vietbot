@@ -52,7 +52,7 @@ sau đó save lại
 2.2.2. Sử dụng các lệnh sau
 
 ```sh
-cd /home/pi/Desktop
+cd /home/pi/Desktop/
 ```
 sau đó
 
