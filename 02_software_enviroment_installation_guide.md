@@ -66,21 +66,12 @@ sudo apt-get upgrade -y
 ```
 sau đó
 ```sh
-sudo apt-get install libportaudio2 libatlas-base-dev libsdl2-mixer-2.0-0 libpq-dev libpq-dev libssl-dev openssl libffi-dev zlib1g-dev  libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libfreetype6-dev libasound2-dev -y
+sudo apt-get install libportaudio2 libatlas-base-dev libsdl2-mixer-2.0-0 libpq-dev libssl-dev libffi-dev zlib1g-dev libportaudio-dev libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libfreetype6-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev -y
 
 ```
 sau đó
 ```sh
-sudo apt-get install libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev wget  -y
-
-```
-sau đó
-```sh
-sudo apt-get install libportaudio-dev libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsmpeg-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev libfreetype6-dev -y
-```
-sau đó
-```sh
-sudo apt-get install git ffmpeg -y
+sudo apt-get install git wget openssl vlc ffmpeg -y
 ```
 sau đó
 ```sh
@@ -125,7 +116,7 @@ python3 -m pip install wheel python-Levenshtein PyAudio pyusb pygame pyalsaaudio
 ```
 3.3. Cài đặt các gói Python liên quan tới các Skill
 ```sh
-python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle html5lib BeautifulSoup4  
+python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle html5lib BeautifulSoup4 python-vlc  
 
 ```
 3.4. Cài đặt các gói Python liên quan tới tổng hợp và xử lý âm thanh
@@ -186,7 +177,6 @@ Sau đó khởi động lại (Nếu không cài đặt pulseaudio trước đâ
 ```sh
 sudo reboot
 ```
-
 Sau khi khởi động lại vào alxamixer bằng lệnh
 
 ```sh
@@ -194,6 +184,11 @@ alsamixer
 ```
 bấm F6 để chọn sound card seed, sau đó bấm F5, dùng phím lên trên bàn phím để kéo hết các giá trị lên Max, phím trái, phải để chọn các giá trị Stereo tại các mục tương ứng
 
+4.1.2. Cài đặt nút bấm cho các Modun Mic Hat
+
+```sh
+python3 -m pip install rpi.gpio
+```
 4.2. Cài đặt cho Mic USB và Loa 
 
 4.2.1. Thống kê ID của Mic USB và Loa (Chỉ dành cho 1/sử dụng Mic USB Soundcard USB hoặc 2/sử dụng phiên bản Pi có nhiều hơn 1 Sound card hoặc cả 1/ và 2/)
