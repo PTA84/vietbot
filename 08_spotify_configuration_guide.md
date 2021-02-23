@@ -108,7 +108,21 @@ spotify_client_id
 spotify_client_secret
 
 ```
+nhập giá trị
+```sh
+music_source: 2
+ 
+```
+ 
 sau đó save lại
 
 4.2. Chạy lại Vietbot theo hướng dẫn: https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
 
+4.3 Ra lệnh phát nhạc với nội dung bao gồm từ khóa trong request.yaml
+```sh
+request_music:
+- PHÁT BÀI
+- PHÁT NHẠC
+- CHƠI NHẠC
+ 
+```
