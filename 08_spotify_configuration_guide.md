@@ -36,6 +36,15 @@ python 3 -m pip install spotipy
 ```
 2.1.2. Download file get_spotify_cache.py từ https://github.com/phanmemkhoinghiep/vietbot_sourcecode vào Desktop
 
+2.1.3. Mở file get_spotify_cache.py, nhập các giá trị 
+
+```sh
+Client id
+Client_secret 
+Redirect URL
+```
+sau đó save lại
+
 2.2. Lấy Cache
 
 2.2.1. Trên Desktop, nháy đúp và chạy Terminal
