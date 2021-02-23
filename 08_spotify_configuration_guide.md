@@ -32,7 +32,7 @@ với xxxx là số port bất kỳ, ko trùng với port nào đang sử dụng
 2.1.1. Cài đặt gói Python Spotipy 
 
 ```sh
-python 3 -m pip install spotipy
+python3 -m pip install spotipy
 ```
 2.1.2. Download file get_spotify_cache.py từ https://github.com/phanmemkhoinghiep/vietbot_sourcecode vào Desktop (/home/pi/Desktop/)
 
@@ -88,7 +88,13 @@ curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
 
 ### STEP4. Chạy lại Vietbot
 
-4.1. Mở file config.yaml, nhập các giá trị 
+4.1. Cài đặt gói Python Spotipy 
+
+```sh
+python3 -m pip install spotipy
+```
+
+4.2. Mở file config.yaml, nhập các giá trị 
 
 ```sh
 Client id
