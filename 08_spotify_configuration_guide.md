@@ -60,7 +60,7 @@ Redirect URL
 
 2.4.3.3. Click vào Try It
 
-2.4.3.4. Tại cửa sổ bên phải
+2.4.3.4. Tại cửa sổ bên phải tìm đến thiết bị có tên là raspotify
 
 ```sh
 curl -X "GET" "https://api.spotify.com/v1/me/player/devices" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer sfsfdsfa43898493sfhisdffdsd3DJKJK34D"
@@ -71,7 +71,7 @@ curl -X "GET" "https://api.spotify.com/v1/me/player/devices" -H "Accept: applica
       "is_active": false,
       "is_private_session": false,
       "is_restricted": false,
-      "name": "raspotify (bot00)",
+      "name": "raspotify (raspberry)",
       "type": "Speaker",
       "volume_percent": 100
     }
