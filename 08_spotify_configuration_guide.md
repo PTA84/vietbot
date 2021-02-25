@@ -1,22 +1,36 @@
 
 Vietbot hỗ trợ Playback Spotify trực tiếp trên loa Vietbot hoặc ra lệnh cho các thiết bị Spotipy Player khác:
 
-### STEP1. Cài đặt Spotify
+### STEP1. Cài đặt Spotify Client trên Loa thông minh
 
-1.1 Nâng cấp tài khoản Spotify Free thành Premium
-
-1.2. Vào trang Develop của Spotify https://developer.spotify.com/
-
-1.3. Đăng nhập và tạo App theo hướng dẫn: 
-
-1.3.1. Lưu lại các giá trị sau:
+1.1. Cài đặt Curl
 
 ```sh
-Client id
-Client_secret 
+sudo apt-get install apt-transport-https curl -y 
 ```
 
-1.3.2. Tạo giá trị Redirect URL
+1.2. Cài đặt theo script sau
+
+```sh
+curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
+```
+1.3. Reboot lại Pi
+
+```sh
+sudo reboot
+```
+
+### STEP2. Cài đặt và lấy thông tin từ Spotify
+
+2.1 Nâng cấp tài khoản Spotify Free thành Premium
+
+2.2. Vào trang Develop của Spotify https://developer.spotify.com/
+
+2.3. Tạo App theo hướng dẫn 
+
+2.3.1. Tạo App
+
+2.3.2. Tạo giá trị Redirect URL
 Có dạng 
 
 ```sh
@@ -25,20 +39,65 @@ http://localhost:xxxx
 
 với xxxx là số port bất kỳ, ko trùng với port nào đang sử dụng trên Pi cài Raspbian Desktop
 
-### STEP2. Lấy Cache trên Raspbian Desktop
+2.3.3. Lưu lại các giá trị sau:
 
-2.1. Chuẩn bị Pi cài Raspbian Desktop
+```sh
+Client id
+Client_secret 
+Redirect URL
+```
+2.4. Lấy Device ID của Loa thông minh
 
-2.1.1. Cài đặt gói Python Spotipy 
+2.4.1. Vào Console, Player
+
+2.4.2. Chọn Mục  	Get a User's Available Devices
+
+2.4.3. Tại mục Get a User's Available Devices thực hiện các thao tác
+
+2.4.3.1. Click vào GET TOKEN
+
+2.4.3.2. Click vào user-read-playback-state, Request Token
+
+2.4.3.3. Click vào Try It
+
+2.4.3.4. Tại cửa sổ bên phải
+
+```sh
+curl -X "GET" "https://api.spotify.com/v1/me/player/devices" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer sfsfdsfa43898493sfhisdffdsd3DJKJK34D"
+{
+  "devices": [
+    {
+      "id": "sdfdsAD89349dsfd",
+      "is_active": false,
+      "is_private_session": false,
+      "is_restricted": false,
+      "name": "raspotify (bot00)",
+      "type": "Speaker",
+      "volume_percent": 100
+    }
+  ]
+}
+```
+Lưu lại giá trị của id
+
+```sh
+sdfdsAD89349dsfd
+```
+
+### STEP3. Lấy Cache trên Raspbian Desktop
+
+3.1. Chuẩn bị Pi cài Raspbian Desktop
+
+3.1.1. Cài đặt gói Python Spotipy 
 
 ```sh
 python3 -m pip install spotipy
 ```
-2.1.2. Tạo thư mục test (/home/pi/test)
+3.1.2. Tạo thư mục test (/home/pi/test)
 
-2.1.3. Download file get_spotify_cache.py từ https://github.com/phanmemkhoinghiep/vietbot_sourcecode vào thư mục test 
+3.1.3. Download file get_spotify_cache.py từ https://github.com/phanmemkhoinghiep/vietbot_sourcecode vào thư mục test 
 
-2.1.4. Mở file get_spotify_cache.py, nhập các giá trị 
+3.1.4. Mở file get_spotify_cache.py, nhập các giá trị 
 
 ```sh
 Client id
@@ -47,11 +106,11 @@ Redirect URL
 ```
 sau đó save lại
 
-2.2. Lấy Cache
+3.2. Lấy Cache
 
-2.2.1. Trên Desktop, nháy đúp và chạy Terminal
+3.2.1. Trên Desktop, nháy đúp và chạy Terminal
 
-2.2.2. Sử dụng các lệnh sau
+3.2.2. Sử dụng các lệnh sau
 
 ```sh
 cd /home/pi/test/
@@ -70,23 +129,9 @@ Sau đó trình duyệt sẽ tự động mở ra Desktop, đăng nhập vào Sp
 
 Sau khi đăng ký xong, File .cache sẽ được tạo tại thư mục  /home/pi/test/
 
-2.2.3. Copy file .cache
+3.2.3. Copy file .cache
 
 Copy file .cache s vừa tạo về sang phần cứng cài vietbot và trong thư mục vietbot bằng WinSCP (Bật shortcut Ctrl + Alt + H để hiện file ẩn)
-
-### STEP3. Cài đặt Spotify Client trên Loa thông minh
-
-3.1. Cài đặt Curl
-
-```sh
-sudo apt-get install apt-transport-https curl -y 
-```
-
-3.2. Cài đặt theo script sau
-
-```sh
-curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
-```
 
 ### STEP4. Chạy lại Vietbot
 
@@ -95,18 +140,18 @@ curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
 ```sh
 python3 -m pip install spotipy
 ```
-
 4.2. Mở file config.yaml, nhập các giá trị 
 
 ```sh
 Client id
 Client_secret 
+Device ID: 
 ```
 vào các mục
 ```sh
 spotify_client_id
 spotify_client_secret
-
+spotify_device_id: 
 ```
 nhập giá trị
 ```sh
