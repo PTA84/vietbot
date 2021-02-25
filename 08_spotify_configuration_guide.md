@@ -100,9 +100,16 @@ python3 -m pip install spotipy
 
 ```sh
 Client id
-Client_secret 
+Client secret 
 Redirect URL
 ```
+vào các mục
+```sh
+spotify_client_id
+spotify_client_secret
+spotify_redirect_url: 
+```
+
 sau đó save lại
 
 3.2. Lấy Cache
