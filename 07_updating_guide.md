@@ -3,11 +3,11 @@
 
 1.1. Theo dõi bằng git Desktop
 
-Cài đặt Git Desktop trên PC và theo dõi git phanmemkhoinghiep/vietbot_source_code
+Cài đặt Git Desktop trên PC và theo dõi git phanmemkhoinghiep/google_assistant_vietnamese_speaking
 
 Nếu có File cập nhật sẽ chuyển sang bước 2
 
-Truy cập vào git phanmemkhoinghiep/vietbot_source_code 
+Truy cập vào git phanmemkhoinghiep/google_assistant_vietnamese_speaking 
 
 Nếu phát hiện có file nào vừa cập nhật thì chuyển sang bước 2
 
@@ -15,49 +15,39 @@ Nếu phát hiện có file nào vừa cập nhật thì chuyển sang bước 2
 
 2.1. Backup file
 
-Backup các file google.json, config.yaml và thư mục tts_saved bằng lệnh
+Backup file config.yaml, các file hotword.ppn bằng lệnh
 
 ```sh
-sudo cp /home/pi/vietbot/google.json /home/pi/google.json
+sudo cp /home/pi/google_assistant_vietnamese_speaking/src/config.yaml /home/pi/config.yaml
 ```
 và
 ```sh
-sudo cp /home/pi/vietbot/config.yaml /home/pi/config.yaml
+sudo cp /home/pi/google_assistant_vietnamese_speaking/src/*.ppn /home/pi/
 ```
-và
+2.2. Xóa thư mục Google Assistant bằng lệnh
 ```sh
-sudo cp /home/pi/vietbot/tts_saved /home/pi/tts_saved
-```
-2.2. Xóa thư mục vietbot bằng lệnh
-```sh
-sudo rm -rf /home/pi/vietbot
+sudo rm -rf /home/pi/google_assistant_vietnamese_speaking
 ```
 2.3. Download file update
 
 2.3.1. Download bằng lệnh git
 ```sh
-git clone https://github.com/phanmemkhoinghiep/vietbot_sourcecode.git
+git clone https://github.com/phanmemkhoinghiep/google_assistant_vietnamese_speaking.git
 ```
-2.3.2. Đổi tên thư mục vietbot_sourcecode thành vietbot bằng lệnh
-```sh
-mv /home/pi/vietbot_sourcecode home/pi/vietbot
-```
+
 2.4. Restore file
 
-Restore 2 file google.json và config.yaml và thư mục tts_saved bằng lệnh
+Restore file config.yaml và các file hotword .ppn bằng lệnh
 ```sh
-sudo cp /home/pi/google.json /home/pi/vietbot/google.json
+sudo cp /home/pi/config.yaml /home/pi/google_assistant_vietnamese_speaking/src/config.yaml
 ```
 và
 ```sh
-sudo cp /home/pi/config.yaml /home/pi/vietbot/config.yaml
+sudo cp /home/pi/*.ppn /home/pi/google_assistant_vietnamese_speaking/src
 ```
-và
-```sh
-sudo cp /home/pi/tts_saved /home/pi/vietbot/tts_saved
-```
+
 2.5. Chạy lại ứng dụng 
 
-https://github.com/phanmemkhoinghiep/vietbot/blob/main/06_running_guide.md
+https://github.com/phanmemkhoinghiep/google_assistant_vietnamese_speaking/blob/main/05_running_guide.md
 
-Chờ bot chạy
+Chờ Google Assistant chạy lại
