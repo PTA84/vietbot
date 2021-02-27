@@ -1,0 +1,14 @@
+device_1_name: 
+- ĐÈN PHÒNG BẾP
+- ĐÈN THỨ NHÂT
+- ĐÈN PHÒNG BẾP THỨ NHÂT
+topic_device_1: "cmnd/switch.outlet/POWER1"
+payload_device_1_on: "ON"
+payload_device_1_on: "OFF"
+device_2_name:
+- ĐÈN PHÒNG NGỦ
+- ĐÈN THỨ HAI
+- ĐÈN PHÒNG NGỦ THỨ HAI
+topic_device_2: "cmnd/switch.outlet/POWER2"
+payload_device_2_on: "ON"
+payload_device_2_on: "OFF"
