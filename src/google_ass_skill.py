@@ -50,7 +50,7 @@ PLAYING = embedded_assistant_pb2.ScreenOutConfig.PLAYING
 
 
 
-data ='Khoảng cách từ Hà Nội đến Sài Gòn'
+#data ='Khoảng cách từ Hà Nội đến Sài Gòn'
 
 
 class SampleTextAssistant(object):
