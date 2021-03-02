@@ -152,5 +152,5 @@ spotify_client_secret: sfdkasfdhkdsf
 spotify_redirect_url: http://localhost:3979
 spotify_device_id: bdsjkdjfkfksksoksjd
 #Other Answer
-# 1: Google, 2: SimSim
-use_external_answer: 1
+# 1: Google Ass, 2: Google Answer, 3: SimSim
+use_external_answer: 2
