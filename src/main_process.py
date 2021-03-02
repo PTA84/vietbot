@@ -19,61 +19,33 @@ import re
 # os.environ["DISPLAY"] = ":0"
 import sys
 import json
-
 import os
 import yaml
-from termcolor import colored
 # import snowboydecoder
 import signal
-from pygame import mixer
-import queue
 # import vlc
 import datefinder
 global ok
-import gtts
-import glob
 # import speech_recognition as sr
 # import feedparser
-from io import BytesIO
-import urllib.request
-import urllib.parse
-import urllib.request
-import pafy
-import queue
-from forecastiopy import *
-from underthesea import pos_tag
 #import numpy as np
 import re
-import speaking
-
 import pyaudio
-from six.moves import queue
-import mutagen
 from mutagen.mp3 import MP3
 # from underthesea import sent_tokenize as sent
 # import wave
 import gih
 # import numpy as np
 import threading
-import os
-
-import sys
 import struct
-
 import pvporcupine
 import random
-
 from termcolor import colored
-
-import collections
-from ctypes import *
-from contextlib import contextmanager
 #Play Audio lib
 # import pyaudio
 from pygame import mixer
 # from pydub import AudioSegment                
 # from pydub.playback import play
-
 #Read config
 import gih
 import requests
@@ -83,6 +55,7 @@ import stt_gg_free
 import stt_fpt
 import stt_viettel
 #TTS Engine
+import speaking
 from speaking import speak, short_speak
 
 #Other Skill
@@ -112,6 +85,7 @@ import music_offline_skill
 import download_music_skill
 import funny_story_skill
 import spotify_skill
+import google_ass_skill
 re_speaker= gih.get_config('re_speaker')
 mixer.init()
 if re_speaker == 1:
@@ -168,34 +142,31 @@ use_external_answer = gih.get_config('use_external_answer')
     # spotipy=spotify_skill.assign()
 hass_online = False
 if use_hass == 1:
-    print(colored('[BOT]: LINKING - Tiến hành kết nối với trung tâm điều khiển nhà.....', 'yellow'))
+    print(colored('[BOT]: KẾT NỐI - trung tâm điều khiển nhà tại địa chỉ: '+ domain,'yellow'))
     con1 = gih.data_init()
     con_command = gih.data_command_init()
     r=''
     url = domain+ '/api/states'
     headers = {'Authorization': 'Bearer '+ longlivedtoken,'content-type': 'application/json',}
     time.sleep(0.1)
-    print(colored('[BOT]: KẾT NỐI - trung tâm điều khiển nhà tại địa chỉ: '+ domain,'yellow'))
     try:
         r = requests.get(url,headers = headers)
     except:
+        hass_online = False
         mixer.music.load('resources/dong.wav')
         mixer.music.set_volume(volume)                
         mixer.music.play()    
-        hass_online = False
-        print(colored('[BOT]: ERROR - Không kết nối được trung tâm điều khiển nhà tại địa chỉ '+ domain,'red'))
-        short_speak("Không kết nối được với trung tâm điều khiển nhà")    
-        print('')
-        time.sleep(0.5)
-        print(colored('[BOT]: BYPASS - Hoạt động ở chế độ không điều khiển nhà thông minh','red'))
+        print(colored('[BOT LỖI]: Không kết nối trung tâm điều khiển nhà tại địa chỉ '+ domain,'red'))
+        short_speak("Không kết nối được trung tâm điều khiển nhà")    
+        print(colored('[BOT BỎ QUA] Hoạt động ở chế độ không điều khiển nhà thông minh','orange'))
         pass
     if str(r)=='<Response [200]>':
         hass_online = True
         mixer.music.load('resources/ding.wav')
         mixer.music.set_volume(volume)                
         mixer.music.play()    
-        print(colored('[BOT]: SUCCEEDED - Kết nối thành công với trung tâm điều khiển nhà.','green'))
-        short_speak('Kết nối thành công với trung tâm điều khiển nhà')            
+        print(colored('[BOT THÀNH CÔNG] Kết nối trung tâm điều khiển nhà.','green'))
+        short_speak('Kết nối thành công trung tâm điều khiển nhà')            
         r = r.json()
         i = 0
         while i < len(r)-1 :
@@ -243,13 +214,12 @@ if use_hass == 1:
         response_timeout=gih.get_response('response_timeout')        
     else:
         hass_online = False
-        print(colored('[BOT]: ERROR - Không kết nối được trung tâm điều khiển nhà tại địa chỉ '+ domain,'red'))
-        short_speak("Không kết nối được với trung tâm điều khiển nhà")    
-        print('')
-        time.sleep(0.5)
-        print(colored('[BOT]: BYPASS - Hoạt động ở chế độ không điều khiển nhà thông minh','red'))
-        # play_dong()
-        print('')
+        mixer.music.load('resources/dong.wav')
+        mixer.music.set_volume(volume)                
+        mixer.music.play()    
+        print(colored('[BOT LỖI]: Không kết nối trung tâm điều khiển nhà tại địa chỉ '+ domain,'red'))
+        short_speak("Không kết nối được trung tâm điều khiển nhà")    
+        print(colored('[BOT BỎ QUA] Hoạt động ở chế độ không điều khiển nhà thông minh','orange'))
         pass
     #Hass Skill
 
@@ -540,13 +510,18 @@ def process():
         back_to_loop()
         pass                
     else:
-        if use_external_answer == 1:
+        #Skill SIM SIM            
+        if use_external_answer == 1:            
+            google_ass_skill.main(data)            
+            back_to_loop()
+            pass                 
+        if use_external_answer == 2:
         #Skill Google Answer
             google_answer_skill.main(data)
             back_to_loop()
             pass                                                                        
         #Skill SIM SIM            
-        elif use_external_answer == 2:            
+        elif use_external_answer == 3:            
             simsim_skill.main(data)            
             back_to_loop()
             pass              
