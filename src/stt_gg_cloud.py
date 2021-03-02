@@ -158,7 +158,7 @@ def listen_print_loop(responses):
                 # break
                 
         else:
-            print('[HUMAN]:'+ transcript + overwrite_chars)
+            print(colored('[HUMAN]:'+ transcript + overwrite_chars,'blue'))
             data = transcript + overwrite_chars
             # if any(item in transcript.lower() for item in keywords) == True:    
                 # data = 'interrupt'
@@ -203,10 +203,10 @@ def main():
         # listen_print_loop(responses)
         data = listen_print_loop(responses)
         if data is not None: 
-            print(colored('[HUMAN]+CORRECT: '+data.upper(),'green'))
+            print(colored('[HUMAN +CORRECT]: '+data.upper(),'blue'))
         return data
 
-            
+
 
 
 if __name__ == '__main__':

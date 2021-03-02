@@ -9,11 +9,11 @@ from pygame import mixer
 import io
 import os.path
 from os import path
-import time
 import re
-import requests, json, os, time, uuid, urllib, datetime, base64
+import requests, json, os, uuid, urllib, datetime, base64
 # import pydub
 # import mutagen
+from termcolor import colored
 from mutagen.mp3 import MP3
 # from pydub import AudioSegment                
 # from pydub.playback import play
@@ -56,7 +56,7 @@ def speak(text):
 
 # TTS Google
     if tts_engine == 1:
-        print('[BOT] - TTS: Google Free: '+text)
+        print(colored('[BOT-TTS-Google Free]: '+text,'green'))
         # mixer.init(54000, -16, 1, 4096)
         text = str(sentence[i])
         print ('Nội dung: '+text)
@@ -84,7 +84,7 @@ def speak(text):
 
 #TTS Google Cloud    
     elif tts_engine == 2:         
-        print('[BOT] - TTS Google Cloud: '+text)
+        print(colored('[BOT-TTS-Google Cloud]: '+text,'green'))
         import time            
         #HTTP Request
         url = 'https://texttospeech.googleapis.com/v1/text:synthesize?key='+ google_api
@@ -116,12 +116,12 @@ def speak(text):
         # play(sound)                                                           
         audio = MP3(file_name)
         t = float (audio.info.length)
-        print ('Time delay :'+ str(t))
+        # print ('Time delay :'+ str(t))
         time.sleep(round(t)+1)
 #TTS Viettel    
     elif tts_engine == 3:         
         # mixer.init(44100, -16, 1, 1024)
-        print('[BOT] - TTS Viettel: '+text)
+        print(colored('[BOT-TTS-VIETTEL]: '+text,'green'))
         import time            
         #HTTP Request
         url = 'https://viettelgroup.ai/voice/api/tts/v1/rest/syn'
@@ -151,13 +151,13 @@ def speak(text):
         mixer.music.play()                                    
         audio = MP3(uniq_filename)
         t = float (audio.info.length)
-        print ('Time delay :'+ str(t))
+        # print ('Time delay :'+ str(t))
         time.sleep(round(t)+1)
 
 #TTS Zalo    
     elif tts_engine == 4:         
         # mixer.init(44100, -16, 1, 1024)
-        print('[BOT] - TTS Viettel: '+text)
+        print(colored('[BOT-TTS-ZALO]: '+text,'green'))
         file_name='tts_saved/zalo_'+text[:60]+'.mp3'        
         import time
         #HTTP Request
@@ -188,13 +188,13 @@ def speak(text):
         file_name, headers = urlretrieve(url_file)
         audio = MP3(file_name)
         t = float (audio.info.length)
-        print ('Time delay :'+ str(t))
+        # print ('Time delay :'+ str(t))
         time.sleep(round(t)+1)
 
 #TTS FPT    
     elif tts_engine == 5:         
         # mixer.init(44100, -16, 1, 1024)
-        print('[BOT] - TTS FPT:')
+        print(colored('[BOT-TTS-FPT]: '+text,'green'))
         file_name='tts_saved/fpt_'+text[:60]+'.mp3'
         print ('Nội dung: '+text)                
         import time
@@ -227,7 +227,7 @@ def speak(text):
         file_name, headers = urlretrieve(url_file)
         audio = MP3(file_name)
         t = float (audio.info.length)
-        print ('Time delay :'+ str(t))
+        # print ('Time delay :'+ str(t))
         time.sleep(round(t)+1)
         
 
@@ -237,7 +237,7 @@ def short_speak(text):
     if tts_engine == 1:
         import time
         # mixer.init(54000, -16, 1, 4096)
-        print('[BOT] - TTS: Google Free:')
+        print(colored('[BOT-TTS-Google Free]: '+text,'green'))
         print ('Nội dung: '+text)
         tts = gTTS(text,lang = 'vi')
         mp3_fp = io.BytesIO()
@@ -260,13 +260,13 @@ def short_speak(text):
         # play(sound)                            
         audio = MP3(mp3_fp)
         t = float (audio.info.length)
-        print ('Time delay :'+ str(t))
+        # print ('Time delay :'+ str(t))
         time.sleep(round(t)+1)                
 #TTS Google Cloud    
 
     elif tts_engine == 2:         
         import time            
-        print('[BOT] - TTS Google Cloud: '+text)              
+        print(colored('[BOT-TTS-Google Cloud]: '+text,'green'))
         file_name= 'tts_saved/ggcloud_'+text[:60]+'.mp3'
         me = path.exists(file_name)
         if me ==True:
@@ -284,7 +284,7 @@ def short_speak(text):
             # play(sound)                                           
             audio = MP3(file_name)
             t = float (audio.info.length)
-            print ('Time delay :'+str(t))
+            # print ('Time delay :'+str(t))
             time.sleep(t)
         else:                                        
             #HTTP Request
@@ -316,14 +316,14 @@ def short_speak(text):
             # play(sound)                                                           
             audio = MP3(file_name)
             t = float (audio.info.length)
-            print ('Time delay :'+ str(t))
+            # print ('Time delay :'+ str(t))
             time.sleep(round(t)+1)
                 
 #TTS Viettel    
     elif tts_engine == 3:         
         import time
         # mixer.init(44100, -16, 1, 1024)
-        print('[BOT] - TTS Viettel:')
+        print(colored('[BOT-TTS-Viettel]: '+text,'green'))
         file_name='tts_saved/vtcc_'+text[:60]+'.mp3'
         me = path.exists(file_name)
         if me ==True:
@@ -341,7 +341,7 @@ def short_speak(text):
             mixer.music.play()                                        
             audio = MP3(file_name)
             t = float (audio.info.length)
-            print ('Time delay :'+str(t))
+            # print ('Time delay :'+str(t))
             time.sleep(t)
         else:                                  
             print ('Nội dung: '+text)                
@@ -372,13 +372,13 @@ def short_speak(text):
             mixer.music.play()                                        
             audio = MP3(file_name)
             t = float (audio.info.length)
-            print ('Time delay :'+ str(t))
+            # print ('Time delay :'+ str(t))
             time.sleep(round(t)+1)
 
 #TTS Zalo    
     elif tts_engine == 4:         
         # mixer.init(44100, -16, 1, 1024)
-        print('[BOT] - TTS Zalo:')
+        print(colored('[BOT-TTS-ZALO]: '+text,'green'))
         file_name='tts_saved/zalo_'+text[:60]+'.mp3'
         print ('Nội dung: '+text)                
         import time
@@ -410,14 +410,14 @@ def short_speak(text):
         file_name, headers = urlretrieve(url_file)
         audio = MP3(file_name)
         t = float (audio.info.length)
-        print ('Time delay :'+ str(t))
+        # print ('Time delay :'+ str(t))
         time.sleep(round(t)+1)
         
 
 #TTS FPT    
     elif tts_engine == 5:         
         # mixer.init(44100, -16, 1, 1024)
-        print('[BOT] - TTS FPT:')
+        print(colored('[BOT-TTS-FPT]: '+text,'green'))
         file_name='tts_saved/fpt_'+text[:60]+'.mp3'
         print ('Nội dung: '+text)                
         import time
@@ -450,7 +450,7 @@ def short_speak(text):
         file_name, headers = urlretrieve(url_file)
         audio = MP3(file_name)
         t = float (audio.info.length)
-        print ('Time delay :'+ str(t))
+        # print ('Time delay :'+ str(t))
         time.sleep(round(t)+1)
 
 # Speak English

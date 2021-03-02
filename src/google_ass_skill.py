@@ -50,7 +50,7 @@ PLAYING = embedded_assistant_pb2.ScreenOutConfig.PLAYING
 
 
 
-#data ='Khoảng cách từ Hà Nội đến Sài Gòn'
+# data ='Khoảng cách từ Hà Nội đến Sài Gòn'
 
 
 class SampleTextAssistant(object):
@@ -187,7 +187,7 @@ def main(data):
             print('<@assistant>' +str(response_text))
             speak(str(response_text))
         else:
-            print('<@assistant>: Bot không hiểu')
-            speak('Bot không hiểu')            
+            print('<@assistant>: Em không hiểu')
+            speak('Em không hiểu')            
 if __name__ == '__main__':
     main(data)

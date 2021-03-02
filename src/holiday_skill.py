@@ -24,7 +24,7 @@ request_holiday_name= gih.get_request('request_holiday_name')
 response_holiday= gih.get_response('response_holiday')           
 response_choose_lose=gih.get_response('response_choose_lose')
 response_say_nothing=gih.get_response('response_say_nothing')
-#data='CÒN BAO NHIÊU NGÀY NỮA LÀ ĐẾN NGÀY QUỐC KHÁNH'
+data='CÒN BAO NHIÊU NGÀY NỮA LÀ ĐẾN NGÀY QUỐC KHÁNH'
 def main(data):
     print('[BOT]: XỬ LÝ CÂU LỆNH HỎI NGÀY LỄ: '+data)   
     data = data.upper()    

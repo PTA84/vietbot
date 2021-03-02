@@ -1,8 +1,13 @@
 # Cài thêm 
 # pip install bing_tr requests fuzzywuzzy pytest jmespath coloredlogs ratelimit
 from speaking import speak, short_speak
-
 import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+from underthesea import pos_tag
+import googlemaps
+from datetime import datetime
+
+
 from termcolor import colored
 import requests
 from requests import get
@@ -26,42 +31,20 @@ response_choose_lose=gih.get_response('response_choose_lose')
 response_say_nothing=gih.get_response('response_say_nothing')
 your_darksky_api=gih.get_config('api_darksky')
 
+google_api=gih.get_config('google_api')
+gmaps = googlemaps.Client(key=google_api)
 g_ip = 0    # Global Variable of IP Address
 g_lat = latlong[0]   # Global Variable of Latitude
 g_lon = latlong[1]   # Global Variable of Longnitude
 x = datetime.datetime.now()
-data ='THỜI TIẾT NGÀY MAI NHƯ THẾ NÀO'
+data ='TỪ HÀ NỘI ĐI HỒ CHÍ MINH BAO XA'
 def main(data):
-    print('[BOT]: XỬ LÝ CÂU LỆNH THỜI TIẾT: '+data)
-    if any(item in data for item in request_day):
-        if list_day[0] in data:
-            check_last_day()
-        elif list_day[1] in data:
-            check_to_day()            
-        elif list_day[2] in data:
-            check_tomorrow()            
-        elif list_day[3] in data:
-            check_next_day()                                 
-    else:
-        short_speak(random.choice(response_day))     
-        more_data=getText()    
-        if more_data is not None:
-            more_data=more_data.upper()       
-            if any(item in more_data for item in request_day):       
-                if list_day[0] in more_data:
-                    check_last_day()
-                elif list_day[1] in more_data:
-                    check_to_day()            
-                elif list_day[2] in more_data:
-                    check_tomorrow()            
-                elif list_day[3] in more_data:
-                    check_next_day()                                 
-            else:
-                short_speak(random.choice(response_choose_lose))
-                pass
-        else:
-            short_speak(random.choice(response_say_nothing))
-            pass                                              
+    pos_tag(data)
+    print(str(pos_tag))
+    # print('[BOT]: XỬ LÝ CÂU LỆNH ĐO KHOẢNG CÁCH: '+data)
+    
+    # print('Bạn đang ở quốc gia: '+ ip_finder()[0]+' mã số điện thoại là +'+ip_finder()[1]+ ' nói tiếng '+ip_finder()[2]+' thủ đô là '+ip_finder()[3])
+    # print('Bạn đang ở tỉnh thành '+ip_finder()[5]+ ' và khu vực '+ip_finder()[5])
 def getText():
     #time.sleep(1)
 #   Dùng STT Google Free
@@ -104,9 +87,17 @@ def ip_finder():
     if jsn_ip.status_code != 200:
         raise ApiError('GET /tasks/ {}'.format(jsn_ip.status_code))
     else:
-        ip_result = jsn_ip.json()
+        ip_result = jsn_ip.json()        
         g_lat = ip_result['latitude']      # Set the Latitude
         g_lon = ip_result['longitude']     # Set the Longitude
+        location_country=ip_result['country_name']
+        location_calling_code=ip_result['location']['calling_code']
+        location_capital=ip_result['location']['capital']        
+        location_region=ip_result['region_name']        
+        location_city=ip_result['city']
+        location_language=str(ip_result['location']['languages'][0]['native'])
+    return location_country,location_calling_code,location_language,location_capital,location_region,location_city,
+    
 def weather_json(mode,arr):
     global g_ip  # Global Variable of IP Address
     global g_lat # Global Variable of Latitude

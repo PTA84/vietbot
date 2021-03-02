@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 import random
 from speaking import speak
-#data = 'TRUYỆN CƯỜI'
+data = 'TRUYỆN CƯỜI'
 def main(data):
     print('[BOT]: XỬ LÝ CÂU LỆNH ĐỌC TRUYỆN: '+data)
     print('---------')

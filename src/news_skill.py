@@ -30,9 +30,7 @@ def main(data):
         elif request_news_name[2] in data:
             read_news(2,2)    
         elif request_news_name[3] in data:
-            read_news(3,3)
-        elif request_news_name[4] in data:
-            read_news(4,4)
+            read_news(3,3)    
     else:
         short_speak(random.choice(response_news))     
         more_data=getText()    

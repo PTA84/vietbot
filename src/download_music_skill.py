@@ -65,7 +65,7 @@ elif re_speaker == 3:
 request_download_music=gih.get_request('request_download_music')
 mp3_list_files =os.listdir('mp3/')
 compare_percent=gih.get_config('compare_percent')
-# data ='ANH KHÔNG GIỮ' 
+# data ='Anh đừng đi china' 
 
 
 def main(data):
@@ -95,9 +95,9 @@ def download_process(data):
                 song_title=song_title.replace('.mp3','')                
                 song_title=song_title.upper()
                 match_ratio=fuzz.token_sort_ratio(data, song_title)
-                print(data)
-                print(song_title)
-                print(str(match_ratio))
+                # print(data)
+                # print(song_title)
+                # print(str(match_ratio))
                 if match_ratio > compare_percent:                    
                     a=i
                     break
