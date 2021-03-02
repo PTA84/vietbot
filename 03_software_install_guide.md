@@ -4,7 +4,7 @@
 Download Code về Pi theo cách sau:
 Trên console của Pi, sử dụng lệnh sau
 ```sh
-git clone https://github.com/phanmemkhoinghiep/vietbot_sourcecode.git
+git clone https://github.com/phanmemkhoinghiep/vietbot.git
 ```
 
 1.2.3. Khai báo file wpa_supplicant.conf như hướng dẫn tại Step 1.3.2 ở Link:
