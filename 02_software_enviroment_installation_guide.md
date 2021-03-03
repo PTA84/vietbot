@@ -116,12 +116,12 @@ python3 -m pip install wheel python-Levenshtein PyAudio pyusb pygame pyalsaaudio
 ```
 3.3. Cài đặt các gói Python liên quan tới các Skill
 ```sh
-python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle html5lib BeautifulSoup4 python-vlc  
+python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle html5lib BeautifulSoup4 python-vlc spotipy  
 
 ```
 3.4. Cài đặt các gói Python liên quan tới tổng hợp và xử lý âm thanh
 ```sh
-python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition googletrans  
+python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition googletrans 
 
 ```
 3.5. Cài đặt gói Python liên quan tới Numpy
