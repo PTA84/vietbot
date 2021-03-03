@@ -5,7 +5,7 @@
 Sử dụng lệnh sau
 
 ```sh
-cd vietbot
+cd vietbot/src
 ```
 1.2. Chạy boot bằng lệnh 
 
