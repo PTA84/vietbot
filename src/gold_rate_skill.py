@@ -5,7 +5,6 @@ import random
 import gih
 import re
 from termcolor import colored
-import main_process
 import untangle
 import requests
 import xml.dom.minidom as minidom
