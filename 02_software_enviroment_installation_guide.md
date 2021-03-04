@@ -20,7 +20,7 @@ https://www.fshare.vn/file/CN1W82DELLT6
 
 0.1.6. Username và password đăng nhập ở trên
 
-0.2.9. Sau đó chuyển sang Guide 03
+0.1.7. Sau đó chuyển sang Guide 03
 
 0.2. Download bộ Image đã cài đặt sẵn, sau khi download, cần chạy Step 2.1, 3.2 và 3.3
 
