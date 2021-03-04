@@ -510,9 +510,9 @@ def process():
         back_to_loop()
         pass                
     else:
-        #Skill SIM SIM            
+        #Skill Google Ass           
         if use_external_answer == 1:            
-            google_ass_skill.main(data)            
+            google_ass_skill.google_ass_skill_main(data)            
             back_to_loop()
             pass                 
         if use_external_answer == 2:
