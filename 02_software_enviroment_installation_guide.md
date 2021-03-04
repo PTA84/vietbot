@@ -202,7 +202,7 @@ sudo reboot
 ```
 Sau khi khởi động lại, đăng nhập lại vào console
 
-sau đó tạo một file asound.conf tại thư mục /home/pi như sau
+sau đó tạo một file rỗng asound.conf tại thư mục /home/pi như sau
 
 ```sh
 sudo nano /home/pi/.asoundrc
