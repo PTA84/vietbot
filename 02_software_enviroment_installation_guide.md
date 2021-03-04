@@ -1,21 +1,54 @@
 ### ĐÂY LÀ HƯỚNG DẪN CÀI ĐẶT PHẦN HỆ ĐIỀU HÀNH, THƯ VIỆN, DRIVER CHO PI ZERO WIRLESS, MODUN 2 MIC HAT, 4 MIC ARRAY HOẶC MIC USB
 
 ### STEP0. Cài đặt nhanh (Bỏ qua Step1 đến Step5)
-Các bạn không muốn trải nghiệm quá trình cài đặt từ Step1 đến Step5, có thể thực hiện theo các bước sau:
+Các bạn không muốn trải nghiệm quá trình cài đặt từ Step1 đến Step5, có thể thực hiện theo các bước sau
+
 0.1. Download bộ Image đã cài đặt sẵn tất cả các bước theo một trong hai link sau:
 
-Bản cho thẻ 32G trở lên: https://1drv.ms/u/s!AvDx_rYRQh5Lo9RGY2XsZh78bhHa3g?e=80TKfE
-Username/password:pi/raspberry
-Bản cho thẻ 16G: https://drive.google.com/file/d/1rzgcjCXfHPUGC1QYjw8HVeKIu37dPPD0/view?usp=sharing
-Username/password:pi/210324
+0.1.1. Bản cho thẻ 16G: Một trong 2 Link sau:
+```sh
+https://1drv.ms/u/s!AvDx_rYRQh5Lo_AmY5TORDA1GnloSw?e=sTSE2u
+https://www.fshare.vn/file/CN1W82DELLT6
+```
+0.1.2. Sử dụng Win32Img để ghi vào thẻ SD 32GB
 
-0.2. Sử dụng Win32Img để ghi vào thẻ SD 32GB
+0.1.3. Khai báo file wpa_supplicant.conf như hướng dẫn tại Bước 1.3.
 
-0.3. Khai báo file wpa_supplicant.conf như hướng dẫn tại
+0.1.4. Cắm thẻ nhớ vào Pi Zero W và boot lên
 
-https://github.com/phanmemkhoinghiep/vietbot/blob/main/software_enviroment_installation_guide.md
+0.1.5. Sử dụng SSH để truy cập từ xa vào Console
 
-0.4. Cắm thẻ nhớ vào Pi Zero W và boot lên
+0.1.6. Username và password đăng nhập ở trên
+
+0.2.9. Sau đó chuyển sang Guide 03
+
+0.2. Download bộ Image đã cài đặt sẵn, sau khi download, cần chạy Step 2.2, 2.3, 3.2 và 3.3
+
+0.2.1.Bản cho thẻ 16G: Link sau:
+
+```sh
+https://drive.google.com/file/d/1rzgcjCXfHPUGC1QYjw8HVeKIu37dPPD0/view?usp=sharing Username/password:pi/210324
+```
+0.2.2. Bản cho thẻ 32G trong link sau:
+
+```sh
+https://1drv.ms/u/s!AvDx_rYRQh5Lo9RGY2XsZh78bhHa3g?e=80TKfE Username/password:pi/raspberry 
+
+```
+0.2.3. Sử dụng Win32Img để ghi vào thẻ SD 32GB
+
+0.2.4. Khai báo file wpa_supplicant.conf như hướng dẫn tại Bước 1.3.
+
+0.2.5. Cắm thẻ nhớ vào Pi Zero W và boot lên
+
+0.2.6. Sử dụng SSH để truy cập từ xa vào Console
+
+0.2.7. Username và password đăng nhập ở trên
+
+0.2.8 tiếp tục chạy Step 3.2 và 3.3
+
+0.2.9. Sau đó chuyển sang Guide 03
+
 
 ### STEP1. Cài đặt hệ điều hành Raspbian
 
@@ -110,15 +143,23 @@ python3 -m pip install --upgrade pip
 
 ```
 3.2. Cài đặt các gói Python cơ bản
+
 ```sh
-python3 -m pip install wheel python-Levenshtein PyAudio pyusb pygame pyalsaaudio pyyaml pydub 
+python3 -m pip install python-Levenshtein PyAudio pygame pyalsaaudio pyyaml pyusb pyalsaaudio pyyaml pydub pyglet
 
 ```
+
 3.3. Cài đặt các gói Python liên quan tới các Skill
 ```sh
-python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea pyglet paho-mqtt untangle html5lib BeautifulSoup4 python-vlc spotipy pathlib2
+python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea  paho-mqtt untangle html5lib BeautifulSoup4 python-vlc spotipy pathlib2 urllib3 sounddevice click tenacity futures setuptools wheel spidev
 
 ```
+sau đó
+
+```sh
+python3 -m pip install --upgrade google-assistant-library==1.0.1  --upgrade google-assistant-grpc --upgrade google-assistant-sdk[samples]==0.5.1 --upgrade google-auth-oauthlib[tool]
+```
+
 3.4. Cài đặt các gói Python liên quan tới tổng hợp và xử lý âm thanh
 ```sh
 python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition googletrans google-cloud-texttospeech
