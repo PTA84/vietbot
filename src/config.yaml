@@ -6,8 +6,6 @@ stt_timeout: 6000
 google_application_credentials: google.json
 stt_viettel_url: wss://vtcc.ai/voice/api/asr/v1/ws/decode_online
 #TTS
-google_api: AIzaSyDnn90kud3VyTPnwsn5Lu-LYqKRNVU6BCY
-
 #Playsound
 #0: Pygame.mixer, 1: Pydub
 
