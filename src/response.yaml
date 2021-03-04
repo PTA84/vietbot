@@ -42,6 +42,9 @@ response_random_number:
 - SỐ NGẪU NHIÊN LÀ
 - SỐ BẤT KỲ LÀ
 - SỐ TỰ CHỌN LÀ
+response_no_answer:
+- KHÔNG TRẢ LỜI ĐƯỢC ANH
+- EM KHÔNG TRẢ LỜI NHÉ
 response_music:    
 - ANH CHỌN NGUỒN NÀO
 - CHỌN NGUỒN NÀO ANH
@@ -117,7 +120,6 @@ response_wikipedia_thing:
 - ANH MUỐN BIẾT GÌ?
 
 response_ask_wishes:
-- CHÚC AI VẬY
 - CẦN CHÚC NGƯỜI NÀO
 - CHÚC NGƯỜI NÀO NHỈ
 response_new_year:
