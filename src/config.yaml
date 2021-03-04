@@ -16,6 +16,7 @@ tts_engine: 2
 #vi-VN-Wavenet-A,vi-VN-Wavenet-B,vi-VN-Wavenet-C,vi-VN-Wavenet-D
 tts_google_voice_name: vi-VN-Wavenet-A
 tts_google_speed: 1
+tts_google_pitch: 0
 # Tham số cho TTS Viettel
 viettel_token: SythBY7N8AUnddbzfUk15aBx45uFDAebU7twsjBFqq-jxLrWpxlyXxzdWRNwYE8N
 # 'nu_mien_bac_01': 'hn-quynhanh', 'nu_mien_bac_02': 'trinhthiviettrinh', 'nam_mien_bac_01': 'hn-thanhtung', 'nam_mien_bac_02': 'phamtienquan', 'nu_mien_trung_01': 'hue-maingoc', 'nam_mien_trung_01': 'hue-baoquoc', 'nu_mien_nam_01': 'hcm-diemmy', 'nu_mien_nam_02': 'lethiyen', 'nu_mien_nam_03': 'nguyenthithuyduyen', 'nu_mien_nam_04': 'hcm-diemmy2', 'nam_mien_nam_01': 'hcm-minhquan'}
