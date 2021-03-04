@@ -121,7 +121,7 @@ python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy date
 ```
 3.4. Cài đặt các gói Python liên quan tới tổng hợp và xử lý âm thanh
 ```sh
-python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition googletrans 
+python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition googletrans google-cloud-texttospeech
 
 ```
 3.5. Cài đặt gói Python liên quan tới Numpy
