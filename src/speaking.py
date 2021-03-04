@@ -42,6 +42,9 @@ elif re_speaker == 3:
 tts_engine =gih.get_config('tts_engine')    
 volume = gih.get_config('volume')
 google_api=gih.get_config('google_api')
+tts_google_voice_name = gih.get_config('tts_google_voice_name')
+tts_google_speed = gih.get_config('tts_google_speed')
+tts_google_pitch = gih.get_config('tts_google_pitch')
 viettel_token = gih.get_config('viettel_token')
 tts_viettel_voice_name = gih.get_config('tts_viettel_voice_name')
 tts_viettel_speed = gih.get_config('tts_viettel_speed')
@@ -91,7 +94,7 @@ def speak(text):
         #Header Parameters
         headers = {'Content-type': 'application/json'}
         # Body Parameters
-        data = { "audioConfig": { "audioEncoding": "MP3", "pitch": 0, "speakingRate": 1 },  "input": { "text": text }, "voice": { "languageCode": 'vi-VN', "name": 'vi-VN-Wavenet-A' }}
+        data = { "audioConfig": { "audioEncoding": "MP3", "pitch": tts_google_pitch, "speakingRate": tts_google_speed },  "input": { "text": text }, "voice": { "languageCode": 'vi-VN', "name": tts_google_voice_name }}
         #Get respounse from Server  
         response = requests.post(url, data = json.dumps(data), headers = headers)
         # Cut audio string from response
@@ -292,7 +295,7 @@ def short_speak(text):
             #Header Parameters
             headers = {'Content-type': 'application/json'}
             # Body Parameters
-            data = { "audioConfig": { "audioEncoding": "MP3", "pitch": 0, "speakingRate": 1 },  "input": { "text": text }, "voice": { "languageCode": 'vi-VN', "name": 'vi-VN-Wavenet-A' }}
+            data = { "audioConfig": { "audioEncoding": "MP3", "pitch": tts_google_pitch, "speakingRate": tts_google_speed },  "input": { "text": text }, "voice": { "languageCode": 'vi-VN', "name": tts_google_voice_name }}
             #Get respounse from Server  
             response = requests.post(url, data = json.dumps(data), headers = headers)
             # Cut audio string from response
