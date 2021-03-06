@@ -10,7 +10,7 @@ cd vietbot/src
 1.2. Chạy boot bằng lệnh 
 
 ```sh
-python3 main_process.py
+python3 start.py
 ```
 
 ### STEP2.  Chạy tự động khi khởi động Pi
@@ -33,7 +33,7 @@ Tại cửa sổ nano, gõ các dòng sau
 ```sh
 [program:vietbot]
 directory=/home/pi/vietbot
-command=/bin/bash -c 'cd /home/pi/vietbot && python3 main_process.py'
+command=/bin/bash -c 'cd /home/pi/vietbot && python3 start.py'
 numprocs=1
 autostart=true
 autorestart=true
