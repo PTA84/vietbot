@@ -134,8 +134,14 @@ sudo make install
 sau đó
 ```sh
 sudo ldconfig
+
 ```
-2.3. Cài đặt các thư viện cho Python
+2.3. Khởi động lại
+```sh
+sudo reboot
+
+```
+2.4. Cài đặt các thư viện cho Python
 
 Chạy lần lượt các lệnh sau
 ```sh
