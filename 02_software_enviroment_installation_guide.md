@@ -106,7 +106,13 @@ sau đó
 ```sh
 sudo apt-get install git wget openssl vlc ffmpeg -y
 ```
+Fix lỗi libportaudio
+
+```sh
+sudo apt-get remove libportaudio2
+```
 sau đó
+
 ```sh
 git clone -b alsapatch https://github.com/gglockner/portaudio
 ```
