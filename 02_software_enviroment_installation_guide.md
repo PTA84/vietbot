@@ -104,7 +104,7 @@ sudo apt-get install libportaudio2 libatlas-base-dev libsdl2-mixer-2.0-0 libpq-d
 ```
 sau đó
 ```sh
-sudo apt-get install git wget openssl vlc ffmpeg -y
+sudo apt-get install git wget openssl vlc ffmpeg flac -y
 ```
 2.2. Fix lỗi libportaudio
 
