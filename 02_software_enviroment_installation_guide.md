@@ -106,7 +106,7 @@ sau đó
 ```sh
 sudo apt-get install git wget openssl vlc ffmpeg -y
 ```
-Fix lỗi libportaudio
+2.2. Fix lỗi libportaudio
 
 ```sh
 sudo apt-get remove libportaudio2
@@ -132,7 +132,7 @@ sau đó
 ```sh
 sudo ldconfig
 ```
-2.2. Cài đặt các thư viện cho Python
+2.3. Cài đặt các thư viện cho Python
 
 Chạy lần lượt các lệnh sau
 ```sh
