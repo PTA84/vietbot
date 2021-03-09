@@ -112,7 +112,7 @@ sudo apt-get install git wget openssl vlc ffmpeg flac -y
 2.2. Fix lỗi libportaudio
 
 ```sh
-sudo apt-get remove libportaudio2
+sudo apt-get remove libportaudio2 -y
 ```
 sau đó
 
