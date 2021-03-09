@@ -223,8 +223,11 @@ sau đó tạo một file rỗng asound.conf tại thư mục /home/pi như sau
 ```sh
 sudo nano /home/pi/.asoundrc
 ```
+Gõ space bar sau đó gõ backspace
+
 Bấm lần lượt Ctrl + X, sau đó Y rồi Enter
-gỡ bỏ pulseaudio bằng lệnh (Nếu không cài đặt pulseaudio trước đây thì bỏ qua bước này(
+
+Gỡ bỏ pulseaudio bằng lệnh (Nếu không cài đặt pulseaudio trước đây thì bỏ qua bước này)
 
 ```sh
 sudo apt-get purge pulseaudio -y
