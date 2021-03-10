@@ -234,6 +234,10 @@ sau đó
 ```sh
 sudo apt-get purge pulseaudio -y
 ```
+sau đó
+```sh
+python3 -m pip install PyAudio
+```
 Sau đó khởi động lại
 
 ```sh
@@ -316,11 +320,54 @@ Chạy lệnh sau
 ```sh
 sudo cp /home/pi/.asoundrc /etc/asound.conf
 ```
-4.2.5. Reboot lại Pi
+4.2.6. Reboot lại Pi
 Chạy lệnh sau
 ```sh
 sudo reboot
 ```
+4.2.7. Fix lỗi libportaudio
+
+sau đó
+
+```sh
+git clone -b alsapatch https://github.com/gglockner/portaudio
+```
+sau đó
+```sh
+cd portaudio
+```
+sau đó
+```sh
+./configure && make
+```
+sau đó
+```sh
+sudo make install
+```
+sau đó
+```sh
+sudo ldconfig
+
+```
+4.2.8. Gỡ Libportaudio mặc định đã cài và gỡ bỏ Pulseaudio
+
+```sh
+sudo apt-get remove libportaudio2 -y
+```
+sau đó
+```sh
+sudo apt-get purge pulseaudio -y
+```
+sau đó
+```sh
+python3 -m pip install PyAudio
+```
+Sau đó khởi động lại
+
+```sh
+sudo reboot
+```
+
 4.3. Cài đặt điều khiển Led cho Modun ReSpeaker Mic Array v2.0 hoặc ReSpeaker USB Mic Array (Nếu không dùng thì bỏ qua)
 
 4.3.1. Đưa Account đang dùng (Ví dụ pi) vào group root
