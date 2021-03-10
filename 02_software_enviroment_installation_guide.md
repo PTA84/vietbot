@@ -157,7 +157,7 @@ python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition g
 ```
 3.5. Cài đặt gói Python liên quan tới Numpy
 ```sh
- python3 -m pip install numpy==1.19.5
+ python3 -m pip install numpy
 ```
 3.6. Cài đặt gói Python liên quan tới Youtube Offline Skill
 ```sh
