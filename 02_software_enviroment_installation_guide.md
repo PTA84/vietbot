@@ -109,39 +109,13 @@ sudo apt-get install libportaudio2 libatlas-base-dev libsdl2-mixer-2.0-0 libpq-d
 ```sh
 sudo apt-get install git wget openssl vlc ffmpeg flac -y
 ```
-2.2. Fix lỗi libportaudio
 
-```sh
-sudo apt-get remove libportaudio2 -y
-```
-sau đó
-
-```sh
-git clone -b alsapatch https://github.com/gglockner/portaudio
-```
-sau đó
-```sh
-cd portaudio
-```
-sau đó
-```sh
-./configure && make
-```
-sau đó
-```sh
-sudo make install
-```
-sau đó
-```sh
-sudo ldconfig
-
-```
-2.3. Khởi động lại
+2.2. Khởi động lại
 ```sh
 sudo reboot
 
 ```
-2.4. Cài đặt các thư viện cho Python
+2.3. Cài đặt các thư viện cho Python
 
 Chạy lần lượt các lệnh sau
 ```sh
@@ -194,7 +168,7 @@ python3 -m pip install youtube_dl
 
 4.1. Cài đặt cho Modun ReSpeaker 2 Mic Hat hoặc ReSpeaker 4-Mic Array for Raspberry Pi (Nếu ko sử dụng thì bỏ qua)
 
-4.1.1. Cắm Modun 2 Mic Hat hoặc ReSpeaker 4-Mic Array vào Pi Zero
+4.1.1. Cài đặt Drive cho Modun
 
 Chạy lần lượt các lệnh sau
 ```sh
@@ -227,8 +201,36 @@ Gõ space bar sau đó gõ backspace
 
 Bấm lần lượt Ctrl + X, sau đó Y rồi Enter
 
-Gỡ bỏ pulseaudio bằng lệnh (Nếu không cài đặt pulseaudio trước đây thì bỏ qua bước này)
+4.1.2. Fix lỗi libportaudio
 
+sau đó
+
+```sh
+git clone -b alsapatch https://github.com/gglockner/portaudio
+```
+sau đó
+```sh
+cd portaudio
+```
+sau đó
+```sh
+./configure && make
+```
+sau đó
+```sh
+sudo make install
+```
+sau đó
+```sh
+sudo ldconfig
+
+```
+4.1.3. Gỡ Libportaudio mặc định đã cài và gỡ bỏ Pulseaudio
+
+```sh
+sudo apt-get remove libportaudio2 -y
+```
+sau đó
 ```sh
 sudo apt-get purge pulseaudio -y
 ```
