@@ -6,10 +6,12 @@ Các bạn không muốn trải nghiệm quá trình cài đặt từ Step1 đ�
 0.1. Download bộ Image đã cài đặt sẵn tất cả các bước theo link sau:
 ```sh
 https://www.fshare.vn/file/A7S8F7D2TR52
+
 ```
 hoặc
 ```sh
 https://drive.google.com/file/d/1kvquheNqf9zwObHwCFxWP_HtK-hPQh48/view?usp=sharing
+
 ```
 0.2. Sử dụng Win32Img để ghi vào thẻ SD 32GB
 
