@@ -202,15 +202,12 @@ sau đó
 sudo ldconfig
 
 ```
-4.1.3. Gỡ Libportaudio mặc định đã cài và gỡ bỏ Pulseaudio
+4.1.3. Gỡ Libportaudio mặc định đã cài
 
 ```sh
 sudo apt-get remove libportaudio2 -y
 ```
-sau đó
-```sh
-sudo apt-get purge pulseaudio -y
-```
+
 sau đó
 ```sh
 python3 -m pip install PyAudio
@@ -250,6 +247,11 @@ Lưu lại thông tin về card_id và device_id ở mỗi kết quả lệnh
 4.2.2. Khai báo cho cả Mic USB (Nếu ko sử dụng Mic USB thì bỏ qua phần này)
 
 Chạy lệnh sau 
+```sh
+sudo apt-get install pulseaudio -y
+```
+sau đó 
+
 ```sh
 sudo nano /home/pi/.asoundrc
 ```
