@@ -117,8 +117,7 @@ python3 -m pip install python-Levenshtein PyAudio pygame pyalsaaudio pyyaml pyus
 
 3.3. Cài đặt các gói Python liên quan tới các Skill
 ```sh
-python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea  paho-mqtt untangle html5lib BeautifulSoup4 python-vlc spotipy pathlib2 urllib3 sounddevice click tenacity futures setuptools wheel spidev 
-websocket-client speedtest-cli
+python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea  paho-mqtt untangle html5lib BeautifulSoup4 python-vlc spotipy pathlib2 urllib3 sounddevice click tenacity futures setuptools wheel spidev websocket-client speedtest-cli numpy youtube_dl
 
 ```
 sau đó
@@ -132,15 +131,7 @@ python3 -m pip install --upgrade google-assistant-library==1.0.1  --upgrade goog
 python3 -m pip install google-cloud google-cloud-speech gTTS SpeechRecognition googletrans google-cloud-texttospeech
 
 ```
-3.5. Cài đặt gói Python liên quan tới Numpy
-```sh
- python3 -m pip install numpy
-```
-3.6. Cài đặt gói Python liên quan tới Youtube Offline Skill
-```sh
-python3 -m pip install youtube_dl
 
-```
 ### STEP4. Config Mig, Speaker, LED
 
 4.1. Cài đặt cho Modun ReSpeaker 2 Mic Hat hoặc ReSpeaker 4-Mic Array for Raspberry Pi (Nếu ko sử dụng thì bỏ qua)
@@ -229,7 +220,7 @@ bấm F6 để chọn sound card seed, sau đó bấm F5, dùng phím lên trên
 ```sh
 python3 -m pip install rpi.gpio
 ```
-4.2. Cài đặt cho Mic USB và Loa 
+4.2. Cài đặt cho Mic USB 
 
 4.2.1. Thống kê ID của Mic USB và Loa (Chỉ dành cho 1/sử dụng Mic USB Soundcard USB hoặc 2/sử dụng phiên bản Pi có nhiều hơn 1 Sound card hoặc cả 1/ và 2/)
 
@@ -244,7 +235,7 @@ aplay -l
 ```
 Lưu lại thông tin về card_id và device_id ở mỗi kết quả lệnh
 
-4.2.2. Khai báo cho cả Mic USB (Nếu ko sử dụng Mic USB thì bỏ qua phần này)
+4.2.2. Khai báo cho Mic USB (Nếu ko sử dụng Mic USB thì bỏ qua phần này)
 
 Chạy lệnh sau 
 ```sh
@@ -255,34 +246,19 @@ sau đó
 ```sh
 sudo nano /home/pi/.asoundrc
 ```
-Cửa sổ nano hiện lên, paste dòng sau, thay thế <card_id> và <device_id> bằng kết quả đã lưu:
+Cửa sổ nano hiện lên, paste dòng sau, thay thế <card_id> và <device_id> bằng kết quả đã lưu ví dụ 0:0 hoặc 1:0 hoặc 1:1:
 
 ```sh
 pcm.!default {
   type asym
   capture.pcm "mic"  
+  playback.pcm "speaker"  
 }
 pcm.mic {
   type plug
   slave {
     pcm "hw:<card_id>,<device_id>"
   }
-}
-```
-Bấm lần lượt Ctrl + X, sau đó Y rồi Enter
-
-4.2.3. Khai báo cho loa (Nếu ko sử dụng phiên bản Pi có nhiều hơn 1 Sound card thì bỏ qua phần này)
-Chạy lệnh sau 
-
-```sh
-sudo nano /home/pi/.asoundrc
-```
-Cửa sổ nano hiện lên, paste dòng sau, thay thế <card_id> và <device_id> bằng kết quả đã lưu:
-
-```sh
-pcm.!default {
-  type asym
-  playback.pcm "speaker"
 }
 pcm.speaker {
   type plug
@@ -293,13 +269,13 @@ pcm.speaker {
 ```
 Bấm lần lượt Ctrl + X, sau đó Y rồi Enter
 
-4.2.4. Copy file thiết lập cho mọi account (Nếu chỉ dùng Account Pi thì bỏ qua bước này)
+4.2.3. Copy file thiết lập cho mọi account (Nếu chỉ dùng Account Pi thì bỏ qua bước này)
 
 Chạy lệnh sau
 ```sh
 sudo cp /home/pi/.asoundrc /etc/asound.conf
 ```
-4.2.6. Reboot lại Pi
+4.2.4. Reboot lại Pi
 Chạy lệnh sau
 ```sh
 sudo reboot
