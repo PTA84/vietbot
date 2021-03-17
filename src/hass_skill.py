@@ -1,6 +1,5 @@
 import os
 import yaml
-import gih
 import chsv    
 #from speaking import #short_speak
 from termcolor import colored
@@ -14,7 +13,6 @@ import time
 import sqlite3 as lite
 # from pydub import AudioSegment                
 # from pydub.playback import play
-from pygame import mixer
 #STT Engine
 import stt_gg_cloud
 import stt_gg_free
@@ -154,7 +152,6 @@ def find_hass_friendly_name(data):
     if len(object)==0:                     
         #short_speak('Không tìm thấy thiết bị trong trung tâm điều khiển nhà')        
         #short_speak("Vui lòng nói lại tên thiết bị")
-        play_ding()
         more_data=stt_engine.main()
         print('[BOT] -TÌM LẠI TÊN THIẾT BỊ')
         print('')
@@ -849,15 +846,3 @@ def check_state(domain_ex=[],entity_id_ex=[]):
         pass
     return r,qq
     
-def play_ding():
-    mixer.music.load('resources/ding.wav')
-    mixer.music.set_volume(event_volume)                
-    mixer.music.play()    
-    # sound = AudioSegment.from_mp3('resources/ding.wav')
-    # play(sound)                                
-def play_dong():
-    mixer.music.load('resources/dong.wav')
-    mixer.music.set_volume(event_volume)                
-    mixer.music.play()    
-    # sound = AudioSegment.from_mp3('resources/dong.wav')
-    # play(sound)         
