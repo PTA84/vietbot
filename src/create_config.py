@@ -98,7 +98,7 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': 'AIzaSyDX3dgfdgPxhw6_k16b3c',
+    'token': 'AIzaSyDX37sfsdfsxhw6_k16b3c',
     'token_file': 'google.json',    
     'name': 'tts_gg_cloud',    
     'voice_name': 'vi-VN-Wavenet-A',
@@ -107,7 +107,7 @@ data['tts_engine'].append({
     'is_active': True    
 })
 data['tts_engine'].append({
-    'token': 'SythBY7N8AgdfdgfdgdxlyXxzdWRNwYE8N',
+    'token': 'SythBY7N8AUnddbzfUsdfsdfWpxlyXxzdWRNwYE8N',
     'token_file': '',    
     'name': 'tts_viettel',    
     'voice_name': 'hcm-diemmy2',
@@ -116,7 +116,7 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': '8sJJ39odgfdgfdmBXC2fRGU',
+    'token': '8sJJ39o7qsfxsfsdfkmBXC2fRGU',
     'token_file': '',    
     'name': 'tts_zalo',
     'voice_name': '1',    
@@ -125,7 +125,7 @@ data['tts_engine'].append({
     'is_active': False    
 })    
 data['tts_engine'].append({
-    'token': '7591A4dgdfgdfXNkyEqEC',
+    'token': '7591A4mrewrwesfds8PXNkyEqEC',
     'name': 'tts_fpt',
     'voice_name': 'linhsan',
     'speed': 1.0,
@@ -135,10 +135,11 @@ data['tts_engine'].append({
 data['hass_skill'] = []
 data['hass_skill'].append({
     'name':'hass_skill',
-    'url':'http://192.168.1.1:8123',
-    'long_token': 'sfsdfsf',
-    'is_active': False        
+    'url':'http://192.168.1.127:8123',
+    'long_token': 'eyJ0eXAiOiJKV1QiLCJhbssdfdsfOWIzZjY5NWZiNTkzMSIsImlsdfdsfNzA3fQ.QSNK0ptkagGwVCL-Nd092E7FQYLNXjeVJstqnl5Ub14',
+    'is_active': True        
 })
+
 
 data['google_ass_skill'] = []
 data['google_ass_skill'].append({
@@ -570,10 +571,10 @@ data['speedtest_skill'].append({
 })
 data['spotify_skill'] = []
 data['spotify_skill'].append({
-    'client_id': '8fcfa8dfgdfgb62a9d0260',
-    'client_secret': '5b1aedgdgfdefe1b195',
+    'client_id': '8fcfa835ba264d5sfsdf9d0260',
+    'client_secret': '5b1ae349sfsdfa60efe1b195',
     'redirect_url': 'http://localhost:3979',
-    'device_id': '2244d6abdgdgfb22ac71571c',
+    'device_id': '2244d6ab3ec1sdfsdff7b5cb22ac71571c',
     'is_active': False        
 })
 data['mqtt_skill'] = []
