@@ -98,7 +98,7 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': 'AIzaSyDX37eTZHQALu9y7-smS6hPxhw6_k16b3c',
+    'token': 'AIzaSyDX3dgfdgPxhw6_k16b3c',
     'token_file': 'google.json',    
     'name': 'tts_gg_cloud',    
     'voice_name': 'vi-VN-Wavenet-A',
@@ -107,7 +107,7 @@ data['tts_engine'].append({
     'is_active': True    
 })
 data['tts_engine'].append({
-    'token': 'SythBY7N8AUnddbzfUk15aBx45uFDAebU7twsjBFqq-jxLrWpxlyXxzdWRNwYE8N',
+    'token': 'SythBY7N8AgdfdgfdgdxlyXxzdWRNwYE8N',
     'token_file': '',    
     'name': 'tts_viettel',    
     'voice_name': 'hcm-diemmy2',
@@ -116,7 +116,7 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': '8sJJ39o7qhfS00FoRUUSIlkmBXC2fRGU',
+    'token': '8sJJ39odgfdgfdmBXC2fRGU',
     'token_file': '',    
     'name': 'tts_zalo',
     'voice_name': '1',    
@@ -125,7 +125,7 @@ data['tts_engine'].append({
     'is_active': False    
 })    
 data['tts_engine'].append({
-    'token': '7591A4mt9hBzp8kGIHxAG98PXNkyEqEC',
+    'token': '7591A4dgdfgdfXNkyEqEC',
     'name': 'tts_fpt',
     'voice_name': 'linhsan',
     'speed': 1.0,
@@ -570,10 +570,10 @@ data['speedtest_skill'].append({
 })
 data['spotify_skill'] = []
 data['spotify_skill'].append({
-    'client_id': '8fcfa835ba264d599df082b62a9d0260',
-    'client_secret': '5b1ae349720d4f12be696a60efe1b195',
+    'client_id': '8fcfa8dfgdfgb62a9d0260',
+    'client_secret': '5b1aedgdgfdefe1b195',
     'redirect_url': 'http://localhost:3979',
-    'device_id': '2244d6ab3ec18cf2cdb18c12f7b5cb22ac71571c',
+    'device_id': '2244d6abdgdgfb22ac71571c',
     'is_active': False        
 })
 data['mqtt_skill'] = []
