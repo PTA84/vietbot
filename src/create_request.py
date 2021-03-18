@@ -74,10 +74,6 @@ data['on'].append({
 })
 data['off'] = []
 data['off'].append({
-    'content': '',
-    'is_active': True
-})
-data['off'].append({
     'content': 'đóng đi',
     'is_active': True
 })
@@ -298,8 +294,6 @@ data['schedule'].append({
     '2': 'đặt lịch',
     '3': 'hẹn giờ'    
 })
-
-
 data['at_now'] = []
 data['at_now'].append({
     '1': 'now',
@@ -452,28 +446,56 @@ data['lottery'].append({
 })  
 data['music'] = []
 data['music'].append({
-    '1': 'bài hát',
-    '2': 'bản nhạc',
-    '3': 'bài nhạc'
+    'content': 'bài hát',
+    'is_active': True    
 })
+data['music'].append({
+    'content': 'bản nhạc',
+    'is_active': True    
+})
+data['music'].append({
+    'content': 'bài nhạc',
+    'is_active': True    
+})  
 data['download'] = []
 data['download'].append({
-    '1': 'load xuống',
-    '2': 'download',
-    '3': 'tải xuống'
-})
+    'content': 'load xuống',
+    'is_active': True    
+})  
+data['download'].append({
+    'content': 'download',
+    'is_active': True    
+})  
+data['download'].append({
+    'content': 'tải xuống',
+    'is_active': True    
+})      
 data['online'] = []
 data['online'].append({
-    '1': 'trực tuyến',
-    '2': 'trên mạng',
-    '3': 'online'    
+    'content': 'trực tuyến',
+    'is_active': True    
 })
+data['online'].append({
+    'content': 'trên mạng',
+    'is_active': True    
+})
+data['online'].append({
+    'content': 'online',
+    'is_active': True    
+})    
 data['offline'] = []
 data['offline'].append({
-    '1': 'cục bộ',
-    '2': 'tại chỗ',
-    '3': 'offline'    
-})
+    'content': 'offline',
+    'is_active': True    
+})    
+data['offline'].append({
+    'content': 'cục bộ',
+    'is_active': True    
+})    
+data['offline'].append({
+    'content': 'tại chỗ',
+    'is_active': True    
+})    
 data['spotify'] = []
 data['spotify'].append({
     '1': 'spotify',
@@ -567,6 +589,14 @@ data['how'].append({
     '3': 'thế nào',    
 })
 data['wishes'] = []
+data['online'].append({
+    'wishes': 'lời chúc',
+    'is_active': True    
+})
+data['online'].append({
+    'wishes': 'chúc mừng',
+    'is_active': True    
+})
 data['wishes'].append({
     '1': 'chúc tết',
     '2': 'chúc năm mới',
