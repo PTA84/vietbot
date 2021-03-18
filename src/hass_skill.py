@@ -1,6 +1,5 @@
 import os
 import yaml
-import gih
 import chsv    
 #from speaking import #short_speak
 from termcolor import colored

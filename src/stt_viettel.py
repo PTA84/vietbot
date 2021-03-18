@@ -38,7 +38,7 @@ import json
 from termcolor import colored
 
 # from mutagen.mp3 import MP3
-import gih
+# import gih
 from urllib.request import urlretrieve
 logging.basicConfig(
     level=logging.DEBUG, format="%(levelname)s: [%(asctime)s] - %(processName)s - %(message)s")
@@ -48,10 +48,16 @@ logger = logging.getLogger(__name__)
 # Audio recording parameters
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms
-STREAMING_LIMIT = gih.get_config('stt_timeout')
+
 CHANNELS = 1
-volume = gih.get_config('volume')
-viettel_token=gih.get_config('viettel_token')
+STREAMING_LIMIT=None
+token=''
+with open('config.json') as config_json:
+    config_data = json.load(config_json)
+for p in config_data['stt_engine']:
+    if p['name'] == 'stt_viettel':
+        STREAMING_LIMIT=p['time_out']
+        token=p['token']
 def get_current_time():
     return int(round(time.time() * 1000))
 
@@ -60,10 +66,8 @@ class AsrStreamingClient(object):
     def __init__(self, asr_streaming_url, token, rate, channel):
         content_type = "audio/x-raw,+layout=(string)interleaved,+rate=(int){},+format=(string)S16LE,+channels=(int){}" \
             .format(rate, channel)
-        hc_uid = "8ed3ac06-a17b-4aea-b654-e4591ebc5a0e"
-        hc_token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIyYTNhZWZkODIxYzc0ZDk3YTk3ZDVkNTY4MDMyZTczNCIsImlhdCI6MTYwODExNjUzNSwiZXhwIjoxOTIzNDc2NTM1fQ.a7BTdZVydhvtzMoKeqDlKswli0SmEVPOwiiEG72GTJw"
         # dest_uri = "{}?content-type={}&token={}&hc_uid={}&hc_token={}".format(asr_streaming_url, content_type, token)
-        dest_uri = "{}?content-type={}&token={}&hc_uid={}&hc_token={}".format(asr_streaming_url, content_type, token, hc_uid, hc_token)
+        dest_uri = "{}?content-type={}&token={}&hc_uid={}&hc_token={}".format(asr_streaming_url, content_type, token)
         logger.debug("Generated websocket uri: " + dest_uri)
 
         def on_open():
