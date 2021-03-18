@@ -14,11 +14,6 @@ import sqlite3 as lite
 # from pydub import AudioSegment                
 # from pydub.playback import play
 from pygame import mixer
-#STT Engine
-import stt_gg_cloud
-import stt_gg_free
-import stt_fpt
-import stt_viettel
 import importlib
 with open('config.json') as config_json:
     config_data = json.load(config_json)
