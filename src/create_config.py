@@ -3,12 +3,12 @@ import json
 data = {}
 data['mic'] = []
 data['mic'].append({
-    'type': 'ReSpeaker 2-Mics Pi HAT',
-    'is_active': True        
+    'type': 'ReSpeaker 2/4-Mics Pi HAT',
+    'is_active': False        
 })
 data['mic'].append({
     'type': 'ReSpeaker Mic Array v2.0',
-    'is_active': False        
+    'is_active': True        
 })
 data['mic'].append({
     'type': 'ReSpeaker Core v2.0',
@@ -98,25 +98,25 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': 'sdjflsjflsfjlsdjflsdf',
+    'token': 'AIzaSyDX37eTZHQALu9y7-smS6hPxhw6_k16b3c',
     'token_file': 'google.json',    
     'name': 'tts_gg_cloud',    
     'voice_name': 'vi-VN-Wavenet-A',
     'speed': 1.0,
     'pitch': 0,
-    'is_active': False    
+    'is_active': True    
 })
 data['tts_engine'].append({
-    'token': 'sjflsfjlsjfdlsdljfsldjf',
+    'token': 'SythBY7N8AUnddbzfUk15aBx45uFDAebU7twsjBFqq-jxLrWpxlyXxzdWRNwYE8N',
     'token_file': '',    
     'name': 'tts_viettel',    
     'voice_name': 'hcm-diemmy2',
     'speed': 1.0,
     'pitch': '',
-    'is_active': True    
+    'is_active': False    
 })
 data['tts_engine'].append({
-    'token': 'ljfdlsfdjlsdljf',
+    'token': '8sJJ39o7qhfS00FoRUUSIlkmBXC2fRGU',
     'token_file': '',    
     'name': 'tts_zalo',
     'voice_name': '1',    
@@ -125,7 +125,7 @@ data['tts_engine'].append({
     'is_active': False    
 })    
 data['tts_engine'].append({
-    'token': 'ljsfldsjfldsljf',
+    'token': '7591A4mt9hBzp8kGIHxAG98PXNkyEqEC',
     'name': 'tts_fpt',
     'voice_name': 'linhsan',
     'speed': 1.0,
@@ -207,6 +207,27 @@ data['noted_day_skill'].append({
 })
 data['noted_day_skill_data'] = []
 data['noted_day_skill_data'].append({
+    'name': 'sinh nhật châu anh',
+    'day': 3,
+    'month': 10,
+    'type': 'calendar',    
+    'is_active': True  
+})
+data['noted_day_skill_data'].append({
+    'name': 'sinh nhật quang minh',
+    'day': 11,
+    'month': 12,
+    'type': 'calendar',    
+    'is_active': True   
+})
+data['noted_day_skill_data'].append({
+    'name': 'sinh nhật mẹ nga',
+    'day': 8,
+    'month': 2,
+    'type': 'calendar',  
+    'is_active': True 
+})  
+data['noted_day_skill_data'].append({
     'name': 'tết dương lịch',
     'day': 1,
     'month': 1,
@@ -214,20 +235,19 @@ data['noted_day_skill_data'].append({
     'is_active': True  
 }) 
 data['noted_day_skill_data'].append({
-    'name': 'tết âm lịch',
-    'day': '1',
-    'month': '1',
-    'type': 'lunar_calendar',  
-    'is_active': True
-})
-data['noted_day_skill_data'].append({
     'name': 'quốc tế lao động',
     'day': 1,
     'month': 5,
     'type': 'calendar',  
     'is_active': True
 })   
-
+data['noted_day_skill_data'].append({
+    'name': 'tết âm lịch',
+    'day': '1',
+    'month': '1',
+    'type': 'lunar_calendar',  
+    'is_active': True
+})
 
 data['lottery_skill'] = []
 data['lottery_skill'].append({
@@ -438,10 +458,20 @@ data['foreign_currency_skill_data'].append({
     'is_active': True    
 })
 data['foreign_currency_skill_data'].append({
+    'name': 'đôla',
+    'code': 'USD',      
+    'is_active': True    
+})
+data['foreign_currency_skill_data'].append({
     'name': 'ơ rô',
     'code': 'EUR',    
     'is_active': True    
 })    
+data['foreign_currency_skill_data'].append({
+    'name': 'ơrô',
+    'code': 'EUR',    
+    'is_active': True    
+}) 
 data['foreign_currency_skill_data'].append({
     'name': 'bảng anh',
     'code': 'GBP',        
@@ -540,10 +570,10 @@ data['speedtest_skill'].append({
 })
 data['spotify_skill'] = []
 data['spotify_skill'].append({
-    'client_id': 'ljflsdljfsdljf',
-    'client_secret': 'sljdflsdjfldsljf',
+    'client_id': '8fcfa835ba264d599df082b62a9d0260',
+    'client_secret': '5b1ae349720d4f12be696a60efe1b195',
     'redirect_url': 'http://localhost:3979',
-    'device_id': 'ljldsfjlsdljfsdljf',
+    'device_id': '2244d6ab3ec18cf2cdb18c12f7b5cb22ac71571c',
     'is_active': False        
 })
 data['mqtt_skill'] = []

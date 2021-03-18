@@ -9,32 +9,17 @@ from mutagen.mp3 import MP3
 mixer.init()
 with open('config.json') as config_json:
     config_data = json.load(config_json)
-
-for p in config_data['mic']:
-    # print('Loại Mic: ' + p['type'])
-    if p['is_active'] ==True and p['type'] == 'ReSpeaker 2-Mics Pi HAT':    
-        import pixels
-        pixels.pixels.off()
-    elif p['is_active']==True and p['type'] == 'ReSpeaker Mic Array v2.0':
-        import usb_pixel_ring_v2 as led_control
-        led_control.find().off()
-    elif p['is_active']==True and p['type'] == 'ReSpeaker Core v2.0':
-        from pixel_ring import pixel_ring
-        pixel_ring.off()
-    else:
-        pass        
 token=''
 speak_volume=1.0
 voice_name=''
 speed=1.0
 pitch=0
-
 for p in config_data['tts_engine']:
     if p['name'] == 'tts_gg_cloud':        
         token = p['token']
         voice_name = p['voice_name']
         speed = p['speed']
-        pitch = p['pitch']
+
 for p in config_data['volume']:
     if p['type'] == 'speak':
         speak_volume= p['value']
@@ -59,16 +44,6 @@ def speak(text):
     audio_file= open(file_name, 'wb')
     audio_file.write(audio_byte)
     audio_file.close()
-    for p in config_data['mic']:
-        # print('Loại Mic: ' + p['type'])
-        if p['is_active']==True and p['type'] == 'ReSpeaker 2-Mics Pi HAT':    
-            pixels.pixels.speak()
-        elif p['is_active']==True and p['type'] == 'ReSpeaker Mic Array v2.0':
-            led_control.find().speak()
-        elif p['is_active']==True and p['type'] == 'ReSpeaker Core v2.0':
-            pixel_ring.speak()
-        else:
-            pass        
     mixer.music.load(file_name)
     mixer.music.set_volume(speak_volume)            
     mixer.music.play()                                    
@@ -76,16 +51,7 @@ def speak(text):
     t = float (audio.info.length)
     # print ('Time delay :'+ str(t))
     time.sleep(round(t)+1)
-    for p in config_data['mic']:
-        # print('Loại Mic: ' + p['type'])
-        if p['is_active']==True and p['type'] == 'ReSpeaker 2-Mics Pi HAT':    
-            pixels.pixels.off()
-        elif p['is_active']==True and p['type'] == 'ReSpeaker Mic Array v2.0':
-            led_control.find().off()
-        elif p['is_active']==True and p['type'] == 'ReSpeaker Core v2.0':
-            pixel_ring.off()
-        else:
-            pass        
+
 def short_speak(text):
     import time
     # mixer.init(44100, -16, 1, 1024)
@@ -93,16 +59,6 @@ def short_speak(text):
     file_name='tts_saved/ggcloud_'+text[:60]+'.mp3'
     me = path.exists(file_name)
     if me ==True:
-        for p in config_data['mic']:
-            # print('Loại Mic: ' + p['type'])
-            if p['is_active']==True and p['type'] == 'ReSpeaker 2-Mics Pi HAT':
-                pixels.pixels.speak()
-            elif p['is_active']==True and p['type'] == 'ReSpeaker Mic Array v2.0':
-                led_control.find().speak()
-            elif p['is_active']==True and p['type'] == 'ReSpeaker Core v2.0':
-                pixel_ring.speak()
-            else:
-                pass
         mixer.music.load(file_name)
         mixer.music.set_volume(speak_volume)            
         mixer.music.play()                                        
@@ -110,16 +66,6 @@ def short_speak(text):
         t = float (audio.info.length)
         # print ('Time delay :'+str(t))
         time.sleep(round(t)+1)
-        for p in config_data['mic']:
-            # print('Loại Mic: ' + p['type'])
-            if p['is_active']==True and p['type'] == 'ReSpeaker 2-Mics Pi HAT':    
-                pixels.pixels.off()
-            elif p['is_active']==True and p['type'] == 'ReSpeaker Mic Array v2.0':
-                led_control.find().off()
-            elif p['is_active']==True and p['type'] == 'ReSpeaker Core v2.0':
-                pixel_ring.off()
-            else:
-                pass                
     else:                                  
         import time            
         #HTTP Request
@@ -138,16 +84,6 @@ def short_speak(text):
         audio_file= open(file_name, 'wb')
         audio_file.write(audio_byte)
         audio_file.close()
-        for p in config_data['mic']:
-            # print('Loại Mic: ' + p['type'])
-            if p['is_active']==True and p['type'] == 'ReSpeaker 2-Mics Pi HAT':    
-                pixels.pixels.speak()
-            elif p['is_active']==True and p['type'] == 'ReSpeaker Mic Array v2.0':
-                led_control.find().speak()
-            elif p['is_active']==True and p['type'] == 'ReSpeaker Core v2.0':
-                pixel_ring.speak()
-            else:
-                pass        
         mixer.music.load(file_name)
         mixer.music.set_volume(speak_volume)            
         mixer.music.play()                                        
@@ -155,13 +91,3 @@ def short_speak(text):
         t = float (audio.info.length)
         # print ('Time delay :'+ str(t))
         time.sleep(round(t)+1)
-        for p in config_data['mic']:
-            # print('Loại Mic: ' + p['type'])
-            if p['is_active']==True and p['type'] == 'ReSpeaker 2-Mics Pi HAT':    
-                pixels.pixels.off()
-            elif p['is_active']==True and p['type'] == 'ReSpeaker Mic Array v2.0':
-                led_control.find().off()
-            elif p['is_active']==True and p['type'] == 'ReSpeaker Core v2.0':
-                pixel_ring.off()
-            else:
-                pass        

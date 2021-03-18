@@ -5,20 +5,6 @@ from urllib.request import urlretrieve
 import vlc
 with open('config.json') as config_json:
     config_data = json.load(config_json)
-
-for p in config_data['mic']:
-    # print('Loại Mic: ' + p['type'])
-    if p['type'] == 'ReSpeaker 2-Mics Pi HAT':
-        import pixels
-        pixels.pixels.off()
-    elif p['type'] == 'ReSpeaker Mic Array v2.0':
-        import usb_pixel_ring_v2 as led_control
-        led_control.find().off()
-    elif p['type'] == 'ReSpeaker Core v2.0':
-        from pixel_ring import pixel_ring
-        pixel_ring.off()
-    else:
-        pass        
 token=''
 speak_volume=1.0
 voice_name=''
@@ -52,30 +38,11 @@ def speak(text):
     url_file = response.json()['data']['url']
     p = vlc.MediaPlayer(url_file)
     p.play()
-    for p in config_data['mic']:
-        # print('Loại Mic: ' + p['type'])
-        if p['type'] == 'ReSpeaker 2-Mics Pi HAT':
-            pixels.pixels.speak()
-        elif p['type'] == 'ReSpeaker Mic Array v2.0':
-            led_control.find().speak()
-        elif p['type'] == 'ReSpeaker Core v2.0':
-            pixel_ring.speak()
-        else:
-            pass                                                            
     file_name, headers = urlretrieve(url_file)
     audio = MP3(file_name)
     t = float (audio.info.length)
     # print ('Time delay :'+ str(t))
     time.sleep(round(t)+1)
-    for p in config_data['mic']:    
-        if p['type'] == 'ReSpeaker 2-Mics Pi HAT':
-            pixels.pixels.off()
-        elif p['type'] == 'ReSpeaker Mic Array v2.0':
-            led_control.find().off()
-        elif p['type'] == 'ReSpeaker Core v2.0':
-            pixel_ring.off()
-        else:
-            pass                                            
 def short_speak(text):
 
     # mixer.init(44100, -16, 1, 1024)
@@ -95,27 +62,8 @@ def short_speak(text):
     url_file = response.json()['data']['url']
     p = vlc.MediaPlayer(url_file)
     p.play()
-    for p in config_data['mic']:
-        # print('Loại Mic: ' + p['type'])
-        if p['type'] == 'ReSpeaker 2-Mics Pi HAT':
-            pixels.pixels.speak()
-        elif p['type'] == 'ReSpeaker Mic Array v2.0':
-            led_control.find().speak()
-        elif p['type'] == 'ReSpeaker Core v2.0':
-            pixel_ring.speak()
-        else:
-            pass                                                            
     file_name, headers = urlretrieve(url_file)
     audio = MP3(file_name)
     t = float (audio.info.length)
     # print ('Time delay :'+ str(t))
     time.sleep(round(t)+1)
-    for p in config_data['mic']:    
-        if p['type'] == 'ReSpeaker 2-Mics Pi HAT':
-            pixels.pixels.off()
-        elif p['type'] == 'ReSpeaker Mic Array v2.0':
-            led_control.find().off()
-        elif p['type'] == 'ReSpeaker Core v2.0':
-            pixel_ring.off()
-        else:
-            pass                                                
