@@ -1,17 +1,34 @@
 
 ### STEP1. Download code về Pi 
 
+
 Download Code về Pi theo cách sau:
+1.1. Truy cập vào Git
 Trên console của Pi, sử dụng lệnh sau
+
+```sh
+cd ~ 
+
+```
+1.2. Kết nối vào Git vietbot bằng lệnh sau:
+
 ```sh
 git clone https://github.com/phanmemkhoinghiep/vietbot.git
+Cloning into 'vietbot'...
 ```
+1.3. Nhập username và password cho github
 
-1.2.3. Khai báo file wpa_supplicant.conf như hướng dẫn tại Step 1.3.2 ở Link:
-
-https://github.com/phanmemkhoinghiep/vietbot/blob/main/02_software_enviroment_installation_guide.md
-
-1.2.4. Cắm thẻ nhớ vào Pi Zero W và boot lên
+```sh
+Username for 'https://github.com': your_username
+Password for 'your_password': 
+remote: Enumerating objects: 80, done.
+remote: Counting objects: 100% (80/80), done.
+remote: Compressing objects: 100% (80/80), done.
+remote: Total 1597 (delta 37), reused 0 (delta 0), pack-reused 1517
+Receiving objects: 100% (1597/1597), 74.75 MiB | 819.00 KiB/s, done.
+Resolving deltas: 100% (766/766), done.
+Checking out files: 100% (102/102), done.
+```
 
 ### STEP2.  Truy nhập vào thư mục Bot
 
