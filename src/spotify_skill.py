@@ -12,22 +12,22 @@ from termcolor import colored
 with open('config.json') as config_json:
     config_data = json.load(config_json)
 
-spotify_client_id =''
-spotify_client_secret =''
-spotify_redirect_url=''
-spotify_scope="user-library-read,user-read-playback-state,user-modify-playback-state"
+client_id =''
+sclient_secret =''
+redirect_url=''
+scope="user-library-read,user-read-playback-state,user-modify-playback-state"
 
 for p in config_data['spotify_skill']:
     if p['is_active'] == True:
-        spotify_client_id =p['spotify_client_id']
-        spotify_client_secret = p['spotify_client_secret']
-        spotify_redirect_url=p['spotify_redirect_ur']
+        client_id =p['client_id']
+        client_secret = p['client_secret']
+        redirect_url=p['redirect_ur']
 
 def main(data):
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify_client_id,
-                                                   client_secret=spotify_client_secret,
-                                                   redirect_uri=spotify_redirect_url,
-                                                   scope=spotify_scope))
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
+                                                   client_secret=client_secret,
+                                                   redirect_uri=redirect_url,
+                                                   scope=scope))
 
     results = sp.search(q=data, type='track',limit=1,market='VN')
     uri_link =''
