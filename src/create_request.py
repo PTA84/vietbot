@@ -56,17 +56,166 @@ data['on'].append({
     'content': 'mở',
     'is_active': True
 })
-data['play'] = []
-data['play'].append({
-    'content': 'chơi',
+data['download_music'] = []
+data['download_music'].append({
+    'content': 'download bài',
     'is_active': True
 })
-data['play'].append({
-    'content': 'hát',
+data['download_music'].append({
+    'content': 'download nhạc',
     'is_active': True
 })
-data['play'].append({
-    'content': 'phát',
+data['download_music'].append({
+    'content': 'download bài hát',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'download bài nhạc',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'download bản nhạc',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải bài',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải nhạc',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải bài hát',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải bài nhạc',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải bản nhạc',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải xuống bài',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải xuống nhạc',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải xuống bài hát',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải xuống bài nhạc',
+    'is_active': True
+})
+data['download_music'].append({
+    'content': 'tải xuống bản nhạc',
+    'is_active': True
+})    
+data['play_music'] = []
+data['play_music'].append({
+    'content': 'phát bài',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'phát bài hát',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'phát nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'phát bài nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'phát bản nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'play bài',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'play bài hát',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'play nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'play bài nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'play bản nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'chơi bài',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'chơi bài hát',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'chơi nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'chơi bài nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'chơi bản nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'bật bài',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'bật bài hát',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'bật nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'bật bài nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'bật bản nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'hát bài',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'hát bài hát',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'hát nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'hát bài nhạc',
+    'is_active': True
+})
+data['play_music'].append({
+    'content': 'hát bản nhạc',
     'is_active': True
 })
 data['enable'] = []
@@ -500,7 +649,15 @@ data['online'].append({
 data['online'].append({
     'content': 'online',
     'is_active': True    
-})    
+})
+data['online'].append({
+    'content': 'qua mạng',
+    'is_active': True    
+})  
+data['online'].append({
+    'content': 'internet',
+    'is_active': True    
+})     
 data['offline'] = []
 data['offline'].append({
     'content': 'offline',
@@ -512,6 +669,10 @@ data['offline'].append({
 })    
 data['offline'].append({
     'content': 'tại chỗ',
+    'is_active': True    
+})
+data['offline'].append({
+    'content': 'local',
     'is_active': True    
 })    
 data['spotify'] = []
