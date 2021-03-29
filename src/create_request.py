@@ -49,47 +49,54 @@ data['single'].append({
 })
 data['on'] = []
 data['on'].append({
-    'content': 'mở lên',
+    'content': 'bật',
     'is_active': True
 })
 data['on'].append({
-    'content': 'bật lên',
+    'content': 'mở',
     'is_active': True
 })
-data['on'].append({
-    'content': 'nối lên',
+data['play'] = []
+data['play'].append({
+    'content': 'chơi',
     'is_active': True
 })
-data['on'].append({
+data['play'].append({
+    'content': 'hát',
+    'is_active': True
+})
+data['play'].append({
+    'content': 'phát',
+    'is_active': True
+})
+data['enable'] = []
+data['enable'].append({
     'content': 'kích hoạt',
     'is_active': True
 })
-data['on'].append({
+data['enable'].append({
     'content': 'thực hiện',
     'is_active': True
 })
-data['on'].append({
+data['enable'].append({
     'content': 'thi hành',
     'is_active': True
 })
 data['off'] = []
 data['off'].append({
-    'content': 'đóng đi',
+    'content': 'tắt',
     'is_active': True
 })
 data['off'].append({
-    'content': 'tắt đi',
+    'content': 'ngắt',
     'is_active': True
 })
-data['off'].append({
-    'content': 'ngắt đi',
-    'is_active': True
-})
-data['off'].append({
+data['disable'] = []
+data['disable'].append({
     'content': 'vô hiệu',
     'is_active': True
 })
-data['off'].append({
+data['disable'].append({
     'content': 'hủy bỏ',
     'is_active': True
 })
@@ -195,11 +202,31 @@ data['light_incrase'].append({
     '2': 'sáng thêm',
     '3': 'sáng đi'    
 })
-data['volume_incrase'] = []
-data['volume_incrase'].append({
-    '1': 'to lên',
-    '2': 'to thêm',
-    '3': 'tăng âm lượng'    
+data['incrase_volume'] = []
+data['incrase_volume'].append({
+    'content': 'to lên',
+    'is_active': True
+})
+data['incrase_volume'].append({
+    'content': 'to thêm',
+    'is_active': True
+})
+data['incrase_volume'].append({
+    'content': 'tăng âm lượng',
+    'is_active': True
+})
+data['decrase_volume'] = []
+data['decrase_volume'].append({
+    'content': 'bé xuống',
+    'is_active': True
+})
+data['decrase_volume'].append({
+    'content': 'bé đi',
+    'is_active': True
+})
+data['decrase_volume'].append({
+    'content': 'giảm âm lượng',
+    'is_active': True
 })
 data['temperature_incrase'] = []
 data['temperature_incrase'].append({
@@ -223,12 +250,7 @@ data['light_decrase'].append({
     '1': 'tối xuống',
     '2': 'tối đi'
 })
-data['volume_decrase'] = []
-data['volume_decrase'].append({
-    '1': 'bé xuống',
-    '2': 'bé đi',
-    '3': 'giảm âm lượng'    
-})
+
 data['temperature_decrase'] = []
 data['temperature_decrase'].append({
     '1': 'lạnh xuống',
@@ -450,13 +472,9 @@ data['music'].append({
     'is_active': True    
 })
 data['music'].append({
-    'content': 'bản nhạc',
+    'content': 'nhạc',
     'is_active': True    
 })
-data['music'].append({
-    'content': 'bài nhạc',
-    'is_active': True    
-})  
 data['download'] = []
 data['download'].append({
     'content': 'load xuống',
@@ -498,14 +516,25 @@ data['offline'].append({
 })    
 data['spotify'] = []
 data['spotify'].append({
-    '1': 'spotify',
-    '2': 'spot tify'
+    'content': 'spotify',
+    'is_active': True    
+})
+data['spotify'].append({
+    'content': 'spoti fy',
+    'is_active': True    
 })
 data['youtube'] = []
 data['youtube'].append({
-    '1': 'youtube',
-    '2': 'your tube',
-    '3': 'iu tube'    
+    'content': 'youtube',
+    'is_active': True    
+})
+data['youtube'].append({
+    'content': 'your tube',
+    'is_active': True    
+})
+data['youtube'].append({
+    'content': 'iu tube',
+    'is_active': True    
 })
 data['input'] = []
 data['input'].append({
@@ -519,35 +548,46 @@ data['select'].append({
     '2': 'chọn mục',
     '3': 'lựa mục'    
 })
-data['play'] = []
-data['play'].append({
-    '1': 'phát',
-})
 data['pause'] = []
 data['pause'].append({
-    '1': 'tạm dừng',
-    '2': 'tạm treo'    
+    'content': 'tạm dừng',
+    'is_active': True
 })
 data['continue'] = []
 data['continue'].append({
-    '1': 'tiếp tục'
+    'content': 'tiếp tục',
+    'is_active': True
 })
 data['reply'] = []
 data['reply'].append({
-    '1': 'phát lại',
-    '2': 'chơi lại',
-    '3': 'bật lại'
+    'content': 'phát lại',
+    'is_active': True
+})
+data['reply'].append({
+    'content': 'bật lại',
+    'is_active': True
 })
 data['next'] = []
-data['next'].append({
-    '1': 'kế tiếp',
-    '2': 'tiếp theo'    
+data['reply'].append({
+    'content': 'kế tiếp',
+    'is_active': True
+})
+data['reply'].append({
+    'content': 'tiếp theo',
+    'is_active': True
 })
 data['exit'] = []
 data['exit'].append({
-    '1': 'exit',
-    '2': 'thoát',
-    '3': 'stop'
+    'content': 'exit',
+    'is_active': True
+})
+data['exit'].append({
+    'content': 'thoát',
+    'is_active': True
+})
+data['exit'].append({
+    'content': 'stop',
+    'is_active': True
 })
 data['when'] = []
 data['when'].append({
@@ -589,11 +629,11 @@ data['how'].append({
     '3': 'thế nào',    
 })
 data['wishes'] = []
-data['online'].append({
+data['wishes'].append({
     'wishes': 'lời chúc',
     'is_active': True    
 })
-data['online'].append({
+data['wishes'].append({
     'wishes': 'chúc mừng',
     'is_active': True    
 })

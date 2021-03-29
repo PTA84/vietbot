@@ -22,8 +22,6 @@ data['wait'].append({
     'content': 'Xin chờ giây lát',    
     'is_active': True
 })
-
-
 data['response'] = []
 data['response'].append({
     '1': 'ok nhé',    
@@ -105,6 +103,15 @@ data['no_gold_rate_location'].append({
 })  
 data['no_gold_rate_location'].append({
     'content': 'chọn một khư vực sau',    
+    'is_active': True
+})
+data['no_song_name'] = []
+data['no_song_name'].append({
+    'content': 'đọc tên bài hát hoặc tên bản nhạc',    
+    'is_active': True
+})
+data['no_song_name'].append({
+    'content': 'cần đọc tên bài hát hoặc bản nhạc',    
     'is_active': True
 })
 data['no_input_day'] = []

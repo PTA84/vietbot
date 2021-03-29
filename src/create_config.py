@@ -4,14 +4,26 @@ data = {}
 data['mic'] = []
 data['mic'].append({
     'type': 'ReSpeaker 2/4-Mics Pi HAT',
+    'led_off_mode': '',
+    'led_off_color': '',
+    'led_think_mode': '',    
+    'led_thing_color': '',            
     'is_active': False        
 })
 data['mic'].append({
     'type': 'ReSpeaker Mic Array v2.0',
+    'led_off_mode': 2,
+    'led_off_color': 0xFFFF99,
+    'led_wakeup_mode': 2,
+    'led_wakeup_color': 0x33FFFF,    
     'is_active': True        
 })
 data['mic'].append({
     'type': 'ReSpeaker Core v2.0',
+    'led_off_mode': '',
+    'led_off_color': '',
+    'led_think_mode': '',    
+    'led_thing_color': '',            
     'is_active': False        
 })
 data['volume'] = []
@@ -20,11 +32,11 @@ data['volume'].append({
     'type': 'event'    
 })
 data['volume'].append({
-    'value': 1.0,
+    'value': 0.25,
     'type': 'speak'    
 })
 data['volume'].append({
-    'value': 1.0,
+    'value': 0.25,
     'type': 'playback'    
 })
 data['hotword'] = []
@@ -98,7 +110,7 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': 'AIzaSyDX37sfsdfsxhw6_k16b3c',
+    'token': 'AIz34324fsdfsdfsfsdfxhw6_k16b3c',
     'token_file': 'google.json',    
     'name': 'tts_gg_cloud',    
     'voice_name': 'vi-VN-Wavenet-A',
@@ -107,7 +119,7 @@ data['tts_engine'].append({
     'is_active': True    
 })
 data['tts_engine'].append({
-    'token': 'SythBY7N8AUnddbzfUsdfsdfWpxlyXxzdWRNwYE8N',
+    'token': 'SythBY7N8AUnssdfsdf345345dWRNwYE8N',
     'token_file': '',    
     'name': 'tts_viettel',    
     'voice_name': 'hcm-diemmy2',
@@ -116,7 +128,7 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': '8sJJ39o7qsfxsfsdfkmBXC2fRGU',
+    'token': '8sJJ39ogdfgd35345XC2fRGU',
     'token_file': '',    
     'name': 'tts_zalo',
     'voice_name': '1',    
@@ -125,7 +137,7 @@ data['tts_engine'].append({
     'is_active': False    
 })    
 data['tts_engine'].append({
-    'token': '7591A4mrewrwesfds8PXNkyEqEC',
+    'token': '7591A4mt9hBzp8kGIHxAG98PXNkyEqEC',
     'name': 'tts_fpt',
     'voice_name': 'linhsan',
     'speed': 1.0,
@@ -136,8 +148,8 @@ data['hass_skill'] = []
 data['hass_skill'].append({
     'name':'hass_skill',
     'url':'http://192.168.1.127:8123',
-    'long_token': 'eyJ0eXAiOiJKV1QiLCJhbssdfdsfOWIzZjY5NWZiNTkzMSIsImlsdfdsfNzA3fQ.QSNK0ptkagGwVCL-Nd092E7FQYLNXjeVJstqnl5Ub14',
-    'is_active': True        
+    'long_token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMjI0YTIzMjU2ZDE0NGI5YTY2OWIzZjY5NWZiNTkzMSIsImlhdCI6MTYxNjA3MjcwNywiZXhwIjoxOTMxNDMyNzA3fQ.QSNK0ptkagGwVCL-Nd092E7FQYLNXjeVJstqnl5Ub14',
+    'is_active': False        
 })
 
 
@@ -571,10 +583,10 @@ data['speedtest_skill'].append({
 })
 data['spotify_skill'] = []
 data['spotify_skill'].append({
-    'client_id': '8fcfa835ba264d5sfsdf9d0260',
-    'client_secret': '5b1ae349sfsdfa60efe1b195',
+    'client_id': '8fcfa835dfsdf3434a9d0260',
+    'client_secret': '5b1arưerwerwefe1b195',
     'redirect_url': 'http://localhost:3979',
-    'device_id': '2244d6ab3ec1sdfsdff7b5cb22ac71571c',
+    'device_id': '2244d6adgfdgetertac71571c',
     'is_active': False        
 })
 data['mqtt_skill'] = []
@@ -591,29 +603,41 @@ data['camera_skill'].append({
     'is_active': False
 })
 
-data[''] = []
+data['compare_percent'] = []
+data['compare_percent'].append({
+    'type':'music_compare',                
+    'value': 60
+})
+
 data['download_music_skill'] = []
 data['download_music_skill'].append({
     'name':'download_music_skill',                
-    'compare_percent': 20,
-    'is_active': False
+    'is_active': True
 })
-data['music_offline_skill'] = []
-data['music_offline_skill'].append({
-    'name':'music_offline_skill',
-    'compare_percent': 20,    
-    'is_active': False
+data['offline_music_skill'] = []
+data['offline_music_skill'].append({
+    'name':'offline_music_skill',
+    'is_active': True
+})
+data['zingmp3_skill'] = []
+data['zingmp3_skill'].append({
+    'name':'zingmp3_skill',                
+    'is_active': True
 })
 data['youtube_skill'] = []
 data['youtube_skill'].append({
     'name':'youtube_skill',                
-    'compare_percent': 20,
+    'is_active': False
+})
+data['spotify_skill'] = []
+data['spotify_skill'].append({
+    'name':'spotify_skill',                
     'is_active': False
 })
 data['wishes_skill'] = []
 data['wishes_skill'].append({
     'name':'wishes_skill',                
-    'is_active': False
+    'is_active': True
 })
 
     
