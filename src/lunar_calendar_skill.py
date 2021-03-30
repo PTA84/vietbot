@@ -110,6 +110,7 @@ def kiemtra_amlich(a,ngay,yy,mm,dd):
         thang_am = list_thang[thang_am]
         ngay_am =str(lunar_date[0])
         result= a+' âm lịch là ' + ngay_am +' '+ thang_am + ' năm ' + str(can[vitri_can])+' ' + str(chi[vitri_chi])+ ' ' + str(nam_am)
+        return result       
     else:
         result=str(a)+'  âm lịch là ' + str(ngay_am)+' ' + str(thang_am) + ' năm ' + str(can[vitri_can])+' ' + str(chi[vitri_chi])+ ' ' + str(nam_am)
         return result       
