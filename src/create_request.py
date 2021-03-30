@@ -126,15 +126,7 @@ data['play_music'].append({
     'is_active': True
 })
 data['play_music'].append({
-    'content': 'phát bài hát',
-    'is_active': True
-})
-data['play_music'].append({
     'content': 'phát nhạc',
-    'is_active': True
-})
-data['play_music'].append({
-    'content': 'phát bài nhạc',
     'is_active': True
 })
 data['play_music'].append({
@@ -146,15 +138,7 @@ data['play_music'].append({
     'is_active': True
 })
 data['play_music'].append({
-    'content': 'play bài hát',
-    'is_active': True
-})
-data['play_music'].append({
     'content': 'play nhạc',
-    'is_active': True
-})
-data['play_music'].append({
-    'content': 'play bài nhạc',
     'is_active': True
 })
 data['play_music'].append({
@@ -166,15 +150,7 @@ data['play_music'].append({
     'is_active': True
 })
 data['play_music'].append({
-    'content': 'chơi bài hát',
-    'is_active': True
-})
-data['play_music'].append({
     'content': 'chơi nhạc',
-    'is_active': True
-})
-data['play_music'].append({
-    'content': 'chơi bài nhạc',
     'is_active': True
 })
 data['play_music'].append({
@@ -186,15 +162,7 @@ data['play_music'].append({
     'is_active': True
 })
 data['play_music'].append({
-    'content': 'bật bài hát',
-    'is_active': True
-})
-data['play_music'].append({
     'content': 'bật nhạc',
-    'is_active': True
-})
-data['play_music'].append({
-    'content': 'bật bài nhạc',
     'is_active': True
 })
 data['play_music'].append({
@@ -206,15 +174,7 @@ data['play_music'].append({
     'is_active': True
 })
 data['play_music'].append({
-    'content': 'hát bài hát',
-    'is_active': True
-})
-data['play_music'].append({
     'content': 'hát nhạc',
-    'is_active': True
-})
-data['play_music'].append({
-    'content': 'hát bài nhạc',
     'is_active': True
 })
 data['play_music'].append({
