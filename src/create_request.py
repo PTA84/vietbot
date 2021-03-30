@@ -116,7 +116,10 @@ data['download_music'].append({
 data['download_music'].append({
     'content': 'tải xuống bản nhạc',
     'is_active': True
-})    
+})
+
+
+    
 data['play_music'] = []
 data['play_music'].append({
     'content': 'phát bài',
@@ -218,6 +221,7 @@ data['play_music'].append({
     'content': 'hát bản nhạc',
     'is_active': True
 })
+
 data['enable'] = []
 data['enable'].append({
     'content': 'kích hoạt',
