@@ -3,7 +3,7 @@
 ### STEP0. Cài đặt nhanh (Bỏ qua Step1 đến Step5)
 Các bạn không muốn trải nghiệm quá trình cài đặt từ Step1 đến Step5, có thể thực hiện theo các bước sau
 
-0.1.1. Download bộ Image cho Raspberry Pi đã cài đặt sẵn cho 2 Mic Hat
+0.1.1. Download bộ Image cho Raspberry Pi đã cài đặt sẵn cho Respeaker 2 Mic Hat
 ```sh
 https://www.fshare.vn/file/A7S8F7D2TR52
 
