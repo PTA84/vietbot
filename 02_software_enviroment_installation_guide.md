@@ -8,7 +8,7 @@ Các bạn không muốn trải nghiệm quá trình cài đặt từ Step1 đ�
 https://www.fshare.vn/file/A7S8F7D2TR52
 
 ```
-0.1.2.Download bộ Image cho Raspberry Pi đã cài đặt sẵn cho Respeaker USB Mic
+0.1.2. Download bộ Image cho Raspberry Pi đã cài đặt sẵn cho Respeaker USB Mic
 ```sh
 https://www.fshare.vn/file/IUIPRGNNZRJ5
 
