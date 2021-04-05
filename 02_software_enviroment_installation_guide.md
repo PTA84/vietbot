@@ -23,10 +23,6 @@ https://www.fshare.vn/file/IUIPRGNNZRJ5
 
 0.6. Username và password đăng nhập theo mặc định của raspbian (pi/raspberry)
 
-0.7.1. Nếu dùng 2 MIC HAT chuyển sang Guide 03
-
-0.7.2. Nếu sử dụng MIC USB cần cài bước 4.2
-
 ### STEP1. Cài đặt hệ điều hành Raspbian
 
 1.1. Download Raspberry Pi OS
@@ -220,7 +216,7 @@ bấm F6 để chọn sound card seed, sau đó bấm F5, dùng phím lên trên
 ```sh
 python3 -m pip install rpi.gpio
 ```
-4.2. Cài đặt cho Mic USB 
+4.2. Cài đặt cho Mic USB
 
 4.2.1. Thống kê ID của Mic USB và Loa (Chỉ dành cho 1/sử dụng Mic USB Soundcard USB hoặc 2/sử dụng phiên bản Pi có nhiều hơn 1 Sound card hoặc cả 1/ và 2/)
 
