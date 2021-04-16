@@ -113,7 +113,7 @@ python3 -m pip install python-Levenshtein PyAudio pygame pyalsaaudio pyyaml pyus
 
 3.3. Cài đặt các gói Python liên quan tới các Skill
 ```sh
-python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea  paho-mqtt untangle html5lib BeautifulSoup4 python-vlc spotipy pathlib2 urllib3 sounddevice click tenacity futures setuptools wheel spidev websocket-client speedtest-cli numpy youtube_dl
+python3 -m pip install pixel-ring apa102 spidev ffmpeg termcolor fuzzywuzzy datefinder feedparser pafy youtube-dl forecastiopy mutagen playsound wget enums wikipedia pvporcupine nltk underthesea  paho-mqtt untangle html5lib BeautifulSoup4 python-vlc spotipy pathlib2 urllib3 sounddevice click tenacity futures setuptools wheel spidev websocket-client speedtest-cli numpy youtube_dl google-trans-new
 
 ```
 sau đó
