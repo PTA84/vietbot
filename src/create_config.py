@@ -87,15 +87,15 @@ data['stt_engine'].append({
     'name': 'stt_gg_free',
     'token': '',
     'token_file': '',    
-    'time_out': '',
-    'is_active': False    
+    'time_out': 6000,
+    'is_active': True    
 })
 data['stt_engine'].append({
     'name': 'stt_gg_cloud',
     'token': '',
     'token_file': 'google.json',    
     'time_out': 6000,
-    'is_active': True    
+    'is_active': False    
 })
 data['stt_engine'].append({
     'name': 'stt_gg_ass',
