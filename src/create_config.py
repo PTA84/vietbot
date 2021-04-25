@@ -40,7 +40,8 @@ data['mic'].append({
     'led_off_color': '',
     'led_think_mode': '',    
     'led_thing_color': '',            
-    'is_active': False        
+    'is_active': False    
+})    
 data['volume'] = []
 data['volume'].append({
     'value': 15,
