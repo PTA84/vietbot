@@ -3,7 +3,23 @@ import json
 data = {}
 data['mic'] = []
 data['mic'].append({
-    'type': 'ReSpeaker 2/4-Mics Pi HAT',
+    'type': 'None Respeaker Mic',
+    'led_off_mode': '',
+    'led_off_color': '',
+    'led_think_mode': '',    
+    'led_thing_color': '',            
+    'is_active': False            
+})
+data['mic'].append({
+    'type': 'ReSpeaker 2-Mics Pi HAT',
+    'led_off_mode': '',
+    'led_off_color': '',
+    'led_think_mode': '',    
+    'led_thing_color': '',            
+    'is_active': False        
+})
+data['mic'].append({
+    'type': 'ReSpeaker 4-Mics Pi HAT',
     'led_off_mode': '',
     'led_off_color': '',
     'led_think_mode': '',    
@@ -25,7 +41,6 @@ data['mic'].append({
     'led_think_mode': '',    
     'led_thing_color': '',            
     'is_active': False        
-})
 data['volume'] = []
 data['volume'].append({
     'value': 15,
