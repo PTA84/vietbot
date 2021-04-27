@@ -41,6 +41,7 @@ Delayed: 5(s)
 Trong trường hợp thành công, Vietbot sẽ trả về nội dung 'Playback OK', không thành công sẽ trả về nội dung 'Playback not OK' trên Client
 
 Ví dụ với Home Assistant
+
 Khai báo trong configuration.yaml
 ```sh
 rest_command:
@@ -49,10 +50,6 @@ rest_command:
     method: POST
     payload: '{"data":"{{ data }}"}'
     content_type: 'application/json; charset=utf-8'
-```
-Khai báo trong automation.yaml
-
-```sh
 automation:
   alias: test
   description: ''
