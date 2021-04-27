@@ -66,3 +66,70 @@ automation:
         data: Đã tắt đèn rồi nhé anh 
   mode: single
 ```
+
+### STEP4. Chạy tự động
+4.1. Khai báo chạy tự động
+4.1.1. Cài đặt supervisor
+Sử dụng lần lượt các lệnh sau
+
+```sh
+sudo apt-get install supervisor -y
+
+```
+4.1.2. Khai báo chạy tự động
+
+```sh
+sudo nano /etc/supervisor/conf.d/tts_autoboot.conf
+
+```
+Sau đó tại cửa sổ nano gõ lệnh sau
+
+```sh
+[program:tts_autoboot]
+directory=/home/pi/vietbot/src
+command=/bin/bash -c 'cd /home/pi/vietbot/src && export FLASK_APP=speaker_skill.py && python3 -m flask run --host=X.X.X.X'
+numprocs=1
+autostart=true
+autorestart=true
+user=pi
+```
+Bấm Ctrl + X, Y, Enter
+
+4.1.3. Update lại supervisor bằng lệnh sau
+
+```sh
+sudo supervisorctl update
+```
+4.1.4. Sau khi có thông báo update, khởi động lại Pi 
+
+```sh
+sudo reboot
+```
+Tính năng loa thông báo sẽ tự động chạy
+
+4.2. Stop quá trình tự khởi động
+
+4.2.1 Stop quá trình tự chạy lại bot này, sử dụng các lệnh sau
+
+```sh
+sudo supervisorctl stop tts_autoboot
+```
+
+4.2.3. Gỡ vietbot ra khỏi tự động chạy
+
+```sh
+sudo rm -rf /etc/supervisor/conf.d/tts_autoboot.conf 
+```
+sau đó
+
+```sh
+sudo supervisorctl update
+```
+Chờ sau khi có thông báo update
+
+4.2.4. Khởi động lại
+
+```sh
+sudo reboot
+```
+Bot sẽ không tự chạy lại nữa
