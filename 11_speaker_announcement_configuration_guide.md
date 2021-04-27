@@ -66,6 +66,6 @@ automation:
   action:
     - service: rest_command.vietbot_tts
       data:
-        data: cộng hòa xã hội chủ nghĩa việt nam 
+        data: Đã tắt đèn rồi nhé anh 
   mode: single
 ```
