@@ -39,3 +39,33 @@ Delayed: 5(s)
 192.168.1.106 - - [27/Apr/2021 10:16:04] "POST /webhook HTTP/1.1" 200 -
 ```
 Trong trường hợp thành công, Vietbot sẽ trả về nội dung 'Playback OK', không thành công sẽ trả về nội dung 'Playback not OK' trên Client
+
+Ví dụ với Home Assistant
+Khai báo trong configuration.yaml
+```sh
+rest_command:
+  vietbot_tts:
+    url: http://192.168.1.109:5000/webhook
+    method: POST
+    payload: '{"data":"{{ data }}"}'
+    content_type: 'application/json; charset=utf-8'
+```
+Khai báo trong automation.yaml
+
+```sh
+automation:
+	alias: test
+	description: ''
+	trigger:
+		- platform: device
+			type: turned_off
+			device_id: cc94e4e74c8e7bcf0a9f2649637d3734
+			entity_id: switch.0x588e81fffede3767_switch_l2
+			domain: switch
+	condition: []
+	action:
+		- service: rest_command.vietbot_tts
+			data:
+				data: cộng hòa xã hội chủ nghĩa việt nam 
+	mode: single
+```
