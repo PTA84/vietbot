@@ -54,18 +54,18 @@ Khai báo trong automation.yaml
 
 ```sh
 automation:
-	alias: test
-	description: ''
-	trigger:
-		- platform: device
-			type: turned_off
-			device_id: cc94e4e74c8e7bcf0a9f2649637d3734
-			entity_id: switch.0x588e81fffede3767_switch_l2
-			domain: switch
-	condition: []
-	action:
-		- service: rest_command.vietbot_tts
-			data:
-				data: cộng hòa xã hội chủ nghĩa việt nam 
-	mode: single
+  alias: test
+  description: ''
+  trigger:
+    - platform: device
+      type: turned_off
+      device_id: cc94e4e74c8e7bcf0a9f2649637d3734
+      entity_id: switch.0x588e81fffede3767_switch_l2
+      domain: switch
+  condition: []
+  action:
+    - service: rest_command.vietbot_tts
+      data:
+        data: cộng hòa xã hội chủ nghĩa việt nam 
+  mode: single
 ```
