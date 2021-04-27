@@ -33,5 +33,9 @@ Là Webhook Server đã chạy thành công
 
 Tại nguồn truyền, sử dụng tính năng webhook, phát bản tin với định dạng json là {"data":"Nội dung cần phát"} vào địa chỉ là http://192.168.1.109:5000/webhook
 
-Trong trường hợp thành công, Vietbot sẽ trả về nội dung 'Playback OK', không thành công sẽ trả về nội dung 'Playback not OK'
-
+```sh
+[BOT-TTS-GOOGLE-CLOUD]: Cộng hòa xã hội chủ nghĩa Việt Nam. Độc lập tự do hạnh phúc
+Delayed: 5(s)
+192.168.1.106 - - [27/Apr/2021 10:16:04] "POST /webhook HTTP/1.1" 200 -
+```
+Trong trường hợp thành công, Vietbot sẽ trả về nội dung 'Playback OK', không thành công sẽ trả về nội dung 'Playback not OK' trên Client
