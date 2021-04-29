@@ -11,6 +11,7 @@ import json
 import sys
 import time
 import sqlite3 as lite
+import tts
 # from pydub import AudioSegment                
 # from pydub.playback import play
 from pygame import mixer
@@ -146,22 +147,22 @@ def find_hass_friendly_name(data):
         object[m] = object[m].define()
         m += 1
     if len(object)==0:                     
-        #short_speak('Không tìm thấy thiết bị trong trung tâm điều khiển nhà')        
-        #short_speak("Vui lòng nói lại tên thiết bị")
-        play_ding()
-        more_data=stt_engine.main()
-        print('[BOT] -TÌM LẠI TÊN THIẾT BỊ')
-        print('')
-        friendly_name = chsv.check_fr(data)
-        ex,ey = chsv.export_e_d(friendly_name)
-        domain_ex = ex
-        entity_id_ex = ey
-        n = 0
-        object = [define(domain_ex,entity_id_ex,domain,longlivedtoken) for x in range(len(domain_ex))]
-        while n < len(domain_ex): 
-            object[n] = define(domain_ex[n],entity_id_ex[n],domain,longlivedtoken)
-            object[n] = object[n].define()
-            n += 1
+        tts.tts_vietnamese(True,'Không tìm thấy thiết bị trong trung tâm điều khiển nhà')        
+        #tts.tts_vietnamese(False,"Vui lòng nói lại tên thiết bị")
+        # play_ding()
+        # more_data=stt_engine.main()
+        # print('[BOT] -TÌM LẠI TÊN THIẾT BỊ')
+        # print('')
+        # friendly_name = chsv.check_fr(data)
+        # ex,ey = chsv.export_e_d(friendly_name)
+        # domain_ex = ex
+        # entity_id_ex = ey
+        # n = 0
+        # object = [define(domain_ex,entity_id_ex,domain,longlivedtoken) for x in range(len(domain_ex))]
+        # while n < len(domain_ex): 
+            # object[n] = define(domain_ex[n],entity_id_ex[n],domain,longlivedtoken)
+            # object[n] = object[n].define()
+            # n += 1
             
     return object
    
@@ -186,20 +187,20 @@ def on_off_all_1(device,name,action):
         print('')
         if str(r)=='<Response [200]>':
             print('[BOT]: Bật tất cả '+name+' thành công')
-            #short_speak('Bật tất cả '+name+' thành công')
+            tts.tts_vietnamese(False,'Bật tất cả '+name+' thành công')
         else:
             print('[BOT]: Bật tất cả '+name+' không thành công')
-            #short_speak('Bật tất cả '+name+' không thành công')                                            
+            tts.tts_vietnamese(False,'Bật tất cả '+name+' không thành công')                                            
     elif action =='off':
         url = domain+'/api/services/'+device+'/turn_off'
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         print('')
         if str(r)=='<Response [200]>':
             print('[BOT]: Tắt tất cả '+name+' thành công')
-            #short_speak('Tắt tất cả '+name+' thành công')
+            tts.tts_vietnamese(False,'Tắt tất cả '+name+' thành công')
         else:
             print('[BOT]: Tắt tất cả '+name+' không thành công')
-            #short_speak('Tắt tất cả '+name+' không thành công')                                            
+            tts.tts_vietnamese(False,'Tắt tất cả '+name+' không thành công')                                            
 
 def on_off_all_2(name,action):
     headers = {'Authorization': 'Bearer '+ longlivedtoken,'content-type': 'application/json',}
@@ -210,20 +211,20 @@ def on_off_all_2(name,action):
         print('')
         if str(r)=='<Response [200]>':
             print('[BOT]: Mở tất cả '+name+' thành công')
-            #short_speak('Mở tất cả '+name+' thành công')
+            tts.tts_vietnamese(False,'Mở tất cả '+name+' thành công')
         else:
             print('[BOT]: Mở tất cả '+name+' không thành công')
-            #short_speak('Mở tất cả '+name+' không thành công')                                            
+            tts.tts_vietnamese(False,'Mở tất cả '+name+' không thành công')                                            
     elif action =='off':
         url = domain+'/api/services/cover/close_cover'        
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         print('')
         if str(r)=='<Response [200]>':
             print('[BOT]: Đóng tất cả '+name+' thành công')
-            #short_speak('Đóng tất cả '+name+' thành công')
+            tts.tts_vietnamese(False,'Đóng tất cả '+name+' thành công')
         else:
             print('[BOT]: Đóng tất cả '+name+' không thành công')
-            #short_speak('Đóng tất cả '+name+' không thành công')                                            
+            tts.tts_vietnamese(False,'Đóng tất cả '+name+' không thành công')                                            
 
 
 def trangthai(data):
@@ -245,9 +246,9 @@ def trangthai(data):
         enti =  object[k][2]
         print(enti)
         t,tt = check_state(doma,enti)
-        #short_speak(object[k][0]+ ' đang '+ t)
+        tts.tts_vietnamese(False,object[k][0]+ ' đang '+ t)
         k+=1  
-
+        
 def thietlap(friendly_name_hass,sta,data):
     q = 0
     try:
@@ -267,7 +268,7 @@ def thietlap(friendly_name_hass,sta,data):
                     try:
                         res=friendly_name_hass[q].set_option(tt[x])
                         if res == 1:
-                            #short_speak(' thiết lập thành công ')
+                            tts.tts_vietnamese(True,' thiết lập thành công ')
                             break
                     except:
                         pass
@@ -291,7 +292,7 @@ def thietlap(friendly_name_hass,sta,data):
                 
                 res=friendly_name_hass[qq].set_temperature(degree)
                 if res ==1:
-                    #short_speak('Thiết lập máy lạnh sang '+ str(degree)+ ' độ')
+                    tts.tts_vietnamese(False,'Thiết lập máy lạnh sang '+ str(degree)+ ' độ')
                     break
             qq+=1
 
@@ -319,10 +320,10 @@ def hen_gio(data):
             qa = 0
             while qa<3:
                 qa+=1
-                #short_speak('tác vụ cần làm là gì')
+                tts.tts_vietnamese(True,'tác vụ cần làm là gì')
                 more_data=stt_engine.main()
                 if 'HỦY' in more_data.upper():
-                    #short_speak('thoát chế độ hẹn giờ')
+                    tts.tts_vietnamese(True,'thoát chế độ hẹn giờ')
                     continuego=0
                     break
                 else:
@@ -340,10 +341,10 @@ def hen_gio(data):
             qb = 0
             while qb<3:
                 qb+=1
-                #short_speak('cung cấp thời điểm thực hiện')
+                tts.tts_vietnamese(True,'cung cấp thời điểm thực hiện')
                 more_data1=stt_engine.main()
                 if 'HỦY' in more_data1.upper():
-                    #short_speak('thoát khỏi chế độ hẹn giờ')
+                    tts.tts_vietnamese(True,'thoát khỏi chế độ hẹn giờ')
                     continue_go = 0                                
                     break
 
@@ -389,14 +390,14 @@ def hen_gio(data):
     if len(friendly_name) !=0 and int(second_delta_final) >1:
         seconds=int(second_delta_final)
         print('[BOT]: OK')
-        #short_speak('đã đặt hẹn giờ' )
+        tts.tts_vietnamese(True,'đã đặt hẹn giờ' )
         if 'HẸN GIỜ' in data:
             data=data.replace("HẸN GIỜ","")
             
         t1 = Timer(seconds,has_xuly,[data])
         t1.start()
     else:
-        #short_speak('xin thử lại sau')
+        tts.tts_vietnamese(True,'xin thử lại sau')
         print('dsfsdf')
 
 
@@ -414,12 +415,12 @@ class switch():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã bật mở công tắc thành công')
-            #short_speak('Đã bật mở công tắc thành công')                
+            tts.tts_vietnamese(True,'Đã bật mở công tắc thành công')                
             r=1
             return r                
         else:
             print('[BOT]: bật mở công tắc không thành công')
-            #short_speak('bật mở công tắc không thành công')                                
+            tts.tts_vietnamese(True,'bật mở công tắc không thành công')                                
             r=0
             return r                                
     def turn_off(self):
@@ -429,12 +430,12 @@ class switch():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã tắt ngắt công tắc thành công')
-            #short_speak('Đã tắt ngắt công tắc thành công')                
+            tts.tts_vietnamese(True,'Đã tắt ngắt công tắc thành công')                
             r=1
             return r                
         else:
             print('[BOT]: tắt ngắt công tắc không thành công')
-            #short_speak('tắt ngắt công tắc không thành công')                                
+            tts.tts_vietnamese(True,'tắt ngắt công tắc không thành công')                                
             r=0
             return r                                
     def domain_extract(self):
@@ -455,12 +456,12 @@ class light():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã bật mở đèn thành công')
-            #short_speak('Đã bật mở đèn thành công')                
+            tts.tts_vietnamese(True,'Đã bật mở đèn thành công')                
             r=1
             return r                
         else:
             print('[BOT]: bật mở đèn không thành công')
-            #short_speak('bật mở đèn không thành công')                                
+            tts.tts_vietnamese(True,'bật mở đèn không thành công')                                
             r=0
             return r                                
             
@@ -471,12 +472,12 @@ class light():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã tắt ngắt đèn thành công')
-            #short_speak('Đã tắt ngắt đèn thành công')                
+            tts.tts_vietnamese(True,'Đã tắt ngắt đèn thành công')                
             r=1
             return r                
         else:
             print('[BOT]: tắt ngắt đèn không thành công')
-            #short_speak('tắt ngắt đèn không thành công')                                
+            tts.tts_vietnamese(True,'tắt ngắt đèn không thành công')                                
             r=0
             return r                                            
     def domain_extract(self):
@@ -497,12 +498,12 @@ class fan():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã bật mở quạt thành công')
-            #short_speak('Đã bật mở quạt thành công')                
+            tts.tts_vietnamese(True,'Đã bật mở quạt thành công')                
             r=1
             return r                
         else:
             print('[BOT]: bật mở quạt không thành công')
-            #short_speak('bật mở quạt không thành công')                                
+            tts.tts_vietnamese(True,'bật mở quạt không thành công')                                
             r=0
             return r                                
             
@@ -513,12 +514,12 @@ class fan():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã tắt ngắt quạt thành công')
-            #short_speak('Đã tắt ngắt quạt thành công')                
+            tts.tts_vietnamese(True,'Đã tắt ngắt quạt thành công')                
             r=1
             return r                
         else:
             print('[BOT]: tắt ngắt quạt không thành công')
-            #short_speak('tắt ngắt quạt không thành công')                                
+            tts.tts_vietnamese(True,'tắt ngắt quạt không thành công')                                
             r=0
             return r                                
             
@@ -540,12 +541,12 @@ class cover():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã mở thành công')
-            #short_speak('Đã mở thành công')                
+            tts.tts_vietnamese(True,'Đã mở thành công')                
             r=1
             return r                
         else:
             print('[BOT]: Mở không thành công')
-            #short_speak('Mở không thành công')                                
+            tts.tts_vietnamese(True,'Mở không thành công')                                
             r=0
             return r                                
     def turn_off(self):
@@ -556,12 +557,12 @@ class cover():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã đóng thành công')
-            #short_speak('Đã đóng thành công')                
+            tts.tts_vietnamese(True,'Đã đóng thành công')                
             r=1
             return r                
         else:
             print('[BOT]: Đóng không thành công')
-            #short_speak('Đóng không thành công')                                
+            tts.tts_vietnamese(True,'Đóng không thành công')                                
             r=0
             return r                                
 
@@ -581,12 +582,12 @@ class media_player():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã bật mở đài phát thành công')
-            #short_speak('Đã bật mở đài phát thành công')                
+            tts.tts_vietnamese(True,'Đã bật mở đài phát thành công')                
             r=1
             return r                
         else:
             print('[BOT]: bật mở đài phát không thành công')
-            #short_speak('bật mở đài phát không thành công')                                
+            tts.tts_vietnamese(True,'bật mở đài phát không thành công')                                
             r=0
             return r                                
     def turn_off(self):
@@ -596,12 +597,12 @@ class media_player():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã tắt ngắt đài phát thành công')
-            #short_speak('Đã tắt ngắt đài phát thành công')                
+            tts.tts_vietnamese(True,'Đã tắt ngắt đài phát thành công')                
             r=1
             return r                
         else:
             print('[BOT]: tắt ngắt đài phát không thành công')
-            #short_speak('tắt ngắt đài phát không thành công')                                
+            tts.tts_vietnamese(True,'tắt ngắt đài phát không thành công')                                
             r=0
             return r                                
     def media_play(self):
@@ -611,12 +612,12 @@ class media_player():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã phát thành công')
-            #short_speak('Đã phát thành công')                
+            tts.tts_vietnamese(True,'Đã phát thành công')                
             r=1
             return r                
         else:
             print('[BOT]: Phát không thành công')
-            #short_speak('Phát không thành công')                                
+            tts.tts_vietnamese(True,'Phát không thành công')                                
             r=0
             return r                                
     def media_pause(self):
@@ -626,12 +627,12 @@ class media_player():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã dừng thành công')
-            ##short_speak('Đã dừng thành công')                
+            tts.tts_vietnamese(True,'Đã dừng thành công')                
             r=1
             return r                
         else:
             print('[BOT]: Dừng không thành công')
-            ##short_speak('Dừng không thành công')                                
+            tts.tts_vietnamese(True,'Dừng không thành công')                                
             r=0
             return r                                
     def domain_extract(self):
@@ -654,7 +655,7 @@ class script():
             return r                
         else:
             print('[BOT]: Chạy kịch bản không thành công')
-            ##short_speak('Chạy kịch bản không thành công')                                
+            tts.tts_vietnamese(True,'Chạy kịch bản không thành công')                                
             r=0
             return r                                
     def domain_extract(self):
@@ -673,12 +674,12 @@ class automation():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã kích hoạt tự động hóa thành công')
-            ##short_speak('Đã kích hoạt tự động hóa thành công')                
+            tts.tts_vietnamese(True,'Đã kích hoạt tự động hóa thành công')                
             r=1
             return r                
         else:
             print('[BOT]: Kích hoạt tự động hóa không thành công')
-            ##short_speak('Kích hoạt tự động hóa không thành công')                                
+            tts.tts_vietnamese(True,'Kích hoạt tự động hóa không thành công')                                
             r=0
             return r                                
     def turn_off(self):
@@ -688,12 +689,12 @@ class automation():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã vô hiệu tự động hóa thành công')
-            ##short_speak('Đã vô hiệu tự động hóa thành công')                
+            tts.tts_vietnamese(True,'Đã vô hiệu tự động hóa thành công')                
             r=1
             return r                
         else:
             print('[BOT]: Vô hiệu tự động hóa không thành công')
-            ##short_speak('Vô hiệu tự động hóa không thành công')                                
+            tts.tts_vietnamese(True,'Vô hiệu tự động hóa không thành công')                                
             r=0
             return r                                
     def domain_extract(self):
@@ -713,12 +714,12 @@ class scene():
         print('')
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã bật mở ngữ ảnh thành công')
-            ##short_speak('Đã bật mở ngữ ảnh thành công')                
+            tts.tts_vietnamese(True,'Đã bật mở ngữ ảnh thành công')                
             r=1
             return r                
         else:
             print('[BOT]: bật mở ngữ ảnh không thành công')
-            ##short_speak('bật mở ngữ ảnh không thành công')                                
+            tts.tts_vietnamese(True,'bật mở ngữ ảnh không thành công')                                
             r=0
             return r                                
     def domain_extract(self):
@@ -738,12 +739,12 @@ class input_select():
         r = requests.post(url, data=json.dumps(payload), headers=headers)
         if str(r)=='<Response [200]>':
             print('[BOT]: Đã nhập thành công')
-            ##short_speak('Đã nhập thành công')                
+            tts.tts_vietnamese(True,'Đã nhập thành công')                
             r=1
             return r                
         else:
             print('[BOT]: Nhập không thành công')
-            ##short_speak('Nhập không thành công')                                
+            tts.tts_vietnamese(True,'Nhập không thành công')                                
             r=0
             return r                                
     def domain_extract(self):
