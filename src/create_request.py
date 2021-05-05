@@ -597,21 +597,37 @@ data['movement'].append({
     '3': 'phải',    
     '4': 'trái',
 })
-
-data['noted_name'] = []
-data['noted_name'].append({
+data['noted_name_what'] = []
+data['noted_name_what'].append({
+    'content': 'ngày nào',    
+    'is_active': True
+})
+data['noted_name_what'].append({
+    'content': 'ngày mấy',    
+    'is_active': True
+})
+data['noted_name_what'].append({
+    'content': 'hôm nào',    
+    'is_active': True
+})
+data['noted_name_what'].append({
+    'content': 'ngày hôm nào',    
+    'is_active': True
+})
+data['noted_name_distance'] = []
+data['noted_name_distance'].append({
     'content': 'bao ngày',    
     'is_active': True
 })
-data['noted_name'].append({
+data['noted_name_distance'].append({
     'content': 'nhiêu ngày',    
     'is_active': True
 })
-data['noted_name'].append({
+data['noted_name_distance'].append({
     'content': 'bao lâu',    
     'is_active': True
 })
-data['noted_name'].append({
+data['noted_name_distance'].append({
     'content': 'nhiêu lâu',    
     'is_active': True
 })
@@ -839,5 +855,17 @@ data['person_type'].append({
     '13': 'cháu',
     '14': 'cháu nhỏ'
 })
+
+data['speaker'] = []
+data['speaker'].append({
+    'content': 'loa thông báo',
+    'is_active': True    
+})
+data['speaker'] = []
+data['speaker'].append({
+    'content': 'smart speaker',
+    'is_active': True    
+})
+
 with open('request.json', 'w') as outfile:
     json.dump(data, outfile)
