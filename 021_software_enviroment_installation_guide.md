@@ -7,6 +7,10 @@
 ```sh
 https://www.fshare.vn/file/A7S8F7D2TR52
 ```
+hoặc
+```sh
+https://drive.google.com/file/d/1kvquheNqf9zwObHwCFxWP_HtK-hPQh48/view?usp=sharing
+```
 
 1.2. Download bộ Image cho Raspberry Pi đã cài đặt sẵn cho Respeaker USB Mic
 ```sh
