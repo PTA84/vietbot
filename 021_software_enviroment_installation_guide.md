@@ -35,7 +35,7 @@ network={
     psk="testingPassword"
 }
 ```
-3.4. Save 
+3.4. Save lại nội dung File
 
 ### STEP4. Truy cập
 
