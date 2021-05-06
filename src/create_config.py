@@ -255,23 +255,23 @@ data['noted_day_skill'].append({
 })
 data['noted_day_skill_data'] = []
 data['noted_day_skill_data'].append({
-    'name': 'sinh nhật châu anh',
-    'day': 3,
-    'month': 10,
+    'name': 'sinh nhật con gái',
+    'day': 2,
+    'month': 2,
     'type': 'calendar',    
     'is_active': True  
 })
 data['noted_day_skill_data'].append({
-    'name': 'sinh nhật quang minh',
-    'day': 11,
-    'month': 12,
+    'name': 'sinh nhật con trai',
+    'day': 3,
+    'month': 3,
     'type': 'calendar',    
     'is_active': True   
 })
 data['noted_day_skill_data'].append({
-    'name': 'sinh nhật mẹ nga',
-    'day': 8,
-    'month': 2,
+    'name': 'sinh nhật mẹ',
+    'day': 4,
+    'month': 4,
     'type': 'calendar',  
     'is_active': True 
 })  
