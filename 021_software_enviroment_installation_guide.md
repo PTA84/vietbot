@@ -1,7 +1,6 @@
 ### ĐÂY LÀ HƯỚNG DẪN CÀI ĐẶT PHẦN HỆ ĐIỀU HÀNH, THƯ VIỆN, DRIVER CHO PI ZERO WIRLESS, MODUN 2 MIC HAT, 4 MIC ARRAY HOẶC MIC USB
 
-### STEP0. Cài đặt nhanh (Bỏ qua Step1 đến Step5)
-Các bạn không muốn trải nghiệm quá trình cài đặt từ Step1 đến Step5, có thể thực hiện theo các bước sau
+### STEP0. Cài đặt nhanh bằng File Image đã được cài đặt sẵn
 
 0.1.1. Download bộ Image cho Raspberry Pi đã cài đặt sẵn cho Respeaker 2 Mic Hat
 ```sh
