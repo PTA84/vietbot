@@ -10,7 +10,7 @@ https://www.fshare.vn/file/A7S8F7D2TR52
 ```
 0.1.2. Download bộ Image cho Raspberry Pi đã cài đặt sẵn cho Respeaker USB Mic
 ```sh
-https://www.fshare.vn/file/IUIPRGNNZRJ5
+https://www.fshare.vn/file/P32O1QFLF3X3
 
 ```
 0.2. Sử dụng Win32Img để ghi vào thẻ SD 32GB
