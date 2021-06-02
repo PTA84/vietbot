@@ -33,10 +33,7 @@ for p in config_data['stt_engine']:
             os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ggcre        
 access_url =''
 long_token =''
-for p in config_data['hass_skill']:
-    if p['is_active'] == True:        
-        access_url=p['url']
-        long_token=p['long_token']
+
 
 from fuzzywuzzy import fuzz    
 
@@ -46,6 +43,10 @@ def check_hass():
     r=''
     headers = {'Authorization': 'Bearer '+ long_token,'content-type': 'application/json',}
     time.sleep(0.1)
+    for p in config_data['hass_skill']:
+        if p['is_active'] == True:        
+            access_url=p['url']
+            long_token=p['long_token']
     try:
         r = requests.get(access_url+ '/api/states',headers = headers)
         if str(r)=='<Response [200]>':
@@ -57,6 +58,10 @@ def check_hass():
 
 def get_device(data,device_type):
     import requests
+    for p in config_data['hass_skill']:
+        if p['is_active'] == True:        
+            access_url=p['url']
+            long_token=p['long_token']
     name_list =[]
     entity_id=[]
     friendlyName=[]
@@ -110,9 +115,12 @@ def get_device(data,device_type):
 
    
 def on_off_all(device,name,action):
+    for p in config_data['hass_skill']:
+        if p['is_active'] == True:        
+            access_url=p['url']
+            long_token=p['long_token']
     headers = {'Authorization': 'Bearer '+ long_token,'content-type': 'application/json',}
     payload = {'entity_id': 'all'}        
-    access_url='https://gateway-'+hc_uid+'.vccsmart.vn/core'
     if device=='curtain':
         if action == 'on':
             access_url = access_url+'/api/services/cover/open_cover'        
@@ -155,6 +163,10 @@ def on_off_all(device,name,action):
                 tts.tts_vietnamese(False,'Tắt tất cả '+name+' không thành công')                                            
 
 def on_off(data,action,device_type1,device_type2):
+    for p in config_data['hass_skill']:
+        if p['is_active'] == True:        
+            access_url=p['url']
+            long_token=p['long_token']
     access_url = access_url+'/api/services/'+domain+'/'+action+'_cover'
     headers = {'Authorization': 'Bearer '+ long_token,'content-type': 'application/json',}
     if device_type1 =='cover':        
@@ -277,6 +289,10 @@ def on_off(data,action,device_type1,device_type2):
 
 
 def check_state(data,state_type,device_type1,device_type2):
+    for p in config_data['hass_skill']:
+        if p['is_active'] == True:        
+            access_url=p['url']
+            long_token=p['long_token']
     access_url='https://gateway-'+hc_uid+'.vccsmart.vn/core'        
     headers = {'Authorization': 'Bearer '+ long_token,'content-type': 'application/json',}
     try:    
