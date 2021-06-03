@@ -234,23 +234,27 @@ def on_off(data,action,device_type):
 
 def check_state(data,device_type):
     try:    
-        result_device=get_device(data,device_type)
+        result_device=get_device(data,device_type)        
         entity_id = result_device[0]
         domain=result_device[1]
         friendlyName=result_device[2]
         state=result_device[3]
-        if state == 'off':
-            state = 'tắt'
-        elif state == 'on':
-            state= 'bật'
-        elif state == 'open':
-            state= 'mở'
-        elif state == 'close':
-            state= 'đóng'
+        # print(state)
+        if str(state) == 'off':
+            print('[BOT]: Trạng thái của '+friendlyName+ ' đang tắt')
+            tts.tts_vietnamese(False,'Trạng thái của '+friendlyName+ ' đang tắt')
+        elif str(state) == 'on':
+            print('[BOT]: Trạng thái của '+friendlyName+ 'đang bật')
+            tts.tts_vietnamese(False,'Trạng thái của '+friendlyName+ ' đang bật')
+        elif str(state) == 'open':
+            print('[BOT]: Trạng thái của '+friendlyName+ 'đang mở')
+            tts.tts_vietnamese(False,'Trạng thái của '+friendlyName+ ' đang mở')
+        elif str(state) == 'close':
+            print('[BOT]: Trạng thái của '+friendlyName+ 'đang đóng')
+            tts.tts_vietnamese(False,'Trạng thái của '+friendlyName+ ' đang đóng')
         else:
-            pass
-        print('[BOT]: Trạng thái của '+friendlyName+ ' là '+ r)
-        tts.tts_vietnamese(False,'Trạng thái của ' +friendlyName+ ' là '+ r)
+            print('[BOT]: Trạng thái của '+friendlyName+ ' là '+ str(state))
+            tts.tts_vietnamese(False,'Trạng thái của ' +friendlyName+ ' là '+ str(state))
     except:
         print('[BOT]: Không tìm thấy trạng thái thiết bị có tên là '+data)
         tts.tts_vietnamese(False,'Không tìm thấy trạng thái thiết bị có tên là '+data)
