@@ -34,11 +34,14 @@ for p in config_data['stt_engine']:
 access_url =''
 long_token =''
 
-
 from fuzzywuzzy import fuzz    
 
 def check_hass():
     import requests
+    for p in config_data['hass_skill']:
+        if p['is_active'] == True:        
+            access_url=p['url']
+            long_token=p['long_token']
     print(colored('[BOT]: KẾT NỐI - HomeAssistant tại địa chỉ: '+ access_url,'yellow'))
     r=''
     headers = {'Authorization': 'Bearer '+ long_token,'content-type': 'application/json',}
@@ -79,25 +82,25 @@ def get_device(data,device_type):
             # print(str(dict_result))
             for i in range (len(dict_result)):        
                 if dict_result[i]['entity_id'].split('.')[0] ==device_type:
-                    entity_id.append(dict_result[i]['entity_id'].split('.')[1])                       
+                    entity_id.append(dict_result[i]['entity_id'])                       
                     domain.append(dict_result[i]['entity_id'].split('.')[0])
                     try:
-                        friendlyName.append(dict_result[i]['attributes']['friendly_name'].strip())
+                        friendlyName.append(dict_result[i]['attributes']['friendly_name'].strip().lower())
                         state.append(dict_result[i]['state'])
                     except:
                         friendlyName.append('')                
                         state.append('')   
             try:
                 for i in range (len(friendlyName)):
-                    match_ratio=fuzz.token_sort_ratio(data, friendlyName[i])
+                    match_ratio=fuzz.ratio(data, friendlyName[i])
                     compare_result.append(match_ratio)
                 # print(str(compare_result))
                 # print(str(friendlyName))
                 index=compare_result.index(max(compare_result))
-                print(index)
-                print(friendlyName[index])
+                # print(index)
+                print('Tìm thấy thiết bị phù hợp là '+friendlyName[index])
                 # print('Tìm thấy tên thiết bị phù hợp là '+friendlyName[index]+'giá trị so sánh là:'+index )
-                return entity_id[index], friendlyName[index], state[index]
+                return entity_id[index], domain[index],friendlyName[index], state[index]
                 # else:
                     # print('Không tìm thấy thiết bị phù hợp với tên ' +data)
             except:
@@ -112,7 +115,6 @@ def get_device(data,device_type):
         print('[BOT]: Không tạo được kết nối được tới HomeAssistant')
         tts.tts_vietnamese(True,'Không tạo được kết nối tới HomeAssistant')
         return None
-
    
 def on_off_all(device,name,action):
     for p in config_data['hass_skill']:
@@ -162,19 +164,19 @@ def on_off_all(device,name,action):
                 print('[BOT]: Tắt tất cả '+name+' không thành công')
                 tts.tts_vietnamese(False,'Tắt tất cả '+name+' không thành công')                                            
 
-def on_off(data,action,device_type1,device_type2):
+def on_off(data,action,device_type):
     for p in config_data['hass_skill']:
         if p['is_active'] == True:        
             access_url=p['url']
             long_token=p['long_token']
-    access_url = access_url+'/api/services/'+domain+'/'+action+'_cover'
     headers = {'Authorization': 'Bearer '+ long_token,'content-type': 'application/json',}
-    if device_type1 =='cover':        
+    if device_type =='cover':        
         try:
             result_device=get_device(data,'cover')         
             entity_id = result_device[0]
-            friendlyName=result_device[1]
-            state=result_device[2]
+            domain=result_device[1]
+            friendlyName=result_device[2]
+            state=result_device[3]
             if state=='open' and action =='open':
                 print('[BOT]: Rèm '+friendlyName+' đã mở sẵn')
                 tts.tts_vietnamese(False,'Rèm '+friendlyName+' đã mở sẵn')                                
@@ -190,7 +192,7 @@ def on_off(data,action,device_type1,device_type2):
                         print('[BOT]: Đã mở rèm '+friendlyName+' thành công')
                         tts.tts_vietnamese(False,'Đã mở rèm '+friendlyName+' thành công')                
                     elif action =='close':
-                        print('[BOT]: Đã đóng đối tượng '+friendlyName+' thành công')
+                        print('[BOT]: Đã đóng rèm'+friendlyName+' thành công')
                         tts.tts_vietnamese(False,'Đã đóng rèm '+friendlyName+' thành công')                
                 else:
                     print('[BOT]: Không có phản hồi từ rèm '+friendlyName)
@@ -198,105 +200,45 @@ def on_off(data,action,device_type1,device_type2):
         except:
             print('[BOT]: Không tìm thấy rèm có tên là '+data)
             tts.tts_vietnamese(False,'Không tìm thấy rèm có tên là '+data)
-    elif device_type1 =='light': 
-        try:
-            result_device=get_device(data,'light')        
-            entity_id = result_device[0]
-            friendlyName=result_device[1]
-            state=result_device[2]
-            if state=='on' and action =='on':
-                print('[BOT]: Đèn '+friendlyName+' đã mở sẵn')
-                tts.tts_vietnamese(False,'Đèn '+friendlyName+' đã mở sẵn')                                
-            elif state =='off' and action =='off':
-                print('[BOT]: Đèn '+friendlyName+' đã tắt sẵn')
-                tts.tts_vietnamese(False,'Rèm '+friendlyName+' đã đóng sẵn')                                            
-            else:
-                access_url = access_url+'/api/services/light/turn_'+action
-                payload = {'entity_id': entity_id}
-                r = requests.post(access_url, data=json.dumps(payload), headers=headers)
-                if str(r)=='<Response [200]>':
-                    if action =='on':
-                        print('[BOT]: Đã bật mở đèn '+friendlyName+' thành công')
-                        tts.tts_vietnamese(False,'Đã bật mở đèn '+friendlyName+' thành công')                
-                    elif action =='off':
-                        print('[BOT]: Đã tắt ngắt đèn '+friendlyName+' thành công')
-                        tts.tts_vietnamese(False,'Đã tắt ngắt đèn '+friendlyName+' thành công')                
-                else:
-                    print('[BOT]: Không có phản hồi từ đèn '+friendlyName)
-                    tts.tts_vietnamese(False,'Không có phản hồi từ đèn '+friendlyName)                                            
-        except:
-            print('[BOT]: Không tìm thấy đèn có tên là '+data)
-            tts.tts_vietnamese(False,'Không tìm thấy đèn có tên là '+data)
-            tts.tts_vietnamese(False,'Tìm các công tắc có tên là '+data)
-            try: 
-                result_device=get_device(data,'switch')                                    
-                entity_id = result_device[0]
-                friendlyName=result_device[1]
-                state=result_device[2]
-                if state=='on' and action =='on':
-                    print('[BOT]: Công tắc '+friendlyName+' đã mở sẵn')
-                    tts.tts_vietnamese(False,'Công tắc '+friendlyName+' đã mở sẵn')                                
-                elif state =='off' and action =='off':
-                    print('[BOT]: Công tắc '+friendlyName+' đã tắt sẵn')
-                    tts.tts_vietnamese(False,'Rèm '+friendlyName+' đã đóng sẵn')                                            
-                else:
-                    access_url = access_url+'/api/services/switch/turn_'+action
-                    payload = {'entity_id': entity_id}
-                    r = requests.post(access_url, data=json.dumps(payload), headers=headers)
-                    if str(r)=='<Response [200]>':
-                        if action =='on':
-                            print('[BOT]: Đã bật mở công tắc '+friendlyName+' thành công')
-                            tts.tts_vietnamese(False,'Đã bật mở công tắc '+friendlyName+' thành công')                
-                        elif action =='off':
-                            print('[BOT]: Đã tắt ngắt công tắc '+friendlyName+' thành công')
-                            tts.tts_vietnamese(False,'Đã tắt ngắt công tắc '+friendlyName+' thành công')                
-                    else:
-                        print('[BOT]: Không có phản hồi từ công tắc '+friendlyName)
-                        tts.tts_vietnamese(False,'Không có phản hồi từ công tắc '+friendlyName)                                
-            except:
-                print('[BOT]: Không tìm thấy công tắc có tên là '+data)
-                tts.tts_vietnamese(False,'Không tìm thấy công tắc có tên là '+data)
     else: 
         try:
-            result_device=get_device(data,device_type1)        
+            result_device=get_device(data,device_type)        
             entity_id = result_device[0]
-            friendlyName=result_device[1]
-            state=result_device[2]
+            domain=result_device[1]
+            friendlyName=result_device[2]
+            state=result_device[3]
             if state=='on' and action =='on':
-                print('[BOT]: '+device_type2 +' ' +friendlyName+' đã mở sẵn')
-                tts.tts_vietnamese(False,device_type2 +' ' +friendlyName+' đã mở sẵn')                                
+                print('[BOT]: '+friendlyName+' đã bật mở sẵn')
+                tts.tts_vietnamese(False,friendlyName+' đã bật mở sẵn')                                
             elif state =='off' and action =='off':
-                print('[BOT]: '+device_type2 +' ' +friendlyName+' đã đóng sẵn')
-                tts.tts_vietnamese(False,device_type2 +' ' +friendlyName+' đã đóng sẵn')                                
+                print('[BOT]: '+friendlyName+' đã tắt ngắt sẵn')
+                tts.tts_vietnamese(False,friendlyName+' đã tắt ngắt sẵn')                                
             else:
                 access_url = access_url+'/api/services/'+domain+'/turn_'+action
-                headers = {'Authorization': 'Bearer '+ long_token,'content-type': 'application/json',}
                 payload = {'entity_id': entity_id}
                 r = requests.post(access_url, data=json.dumps(payload), headers=headers)
                 if str(r)=='<Response [200]>':
                     if action =='on':
-                        print('[BOT]: Đã bật mở '+device_type2+' '+friendlyName+' thành công')
-                        tts.tts_vietnamese(False,'Đã bật mở '+device_type2+' '+friendlyName+' thành công')
+                        print('[BOT]: Đã bật mở '+friendlyName+' thành công')
+                        tts.tts_vietnamese(False,'Đã bật mở '+friendlyName+' thành công')
                     elif action =='off':
-                        print('[BOT]: Đã tắt ngắt '+device_type2+' '+friendlyName+' thành công')
-                        tts.tts_vietnamese(False,'Đã tắt ngắt '+device_type2+' '+friendlyName+' thành công')
+                        print('[BOT]: Đã tắt ngắt '+friendlyName+' thành công')
+                        tts.tts_vietnamese(False,'Đã tắt ngắt '+friendlyName+' thành công')
                 else:
-                    print('[BOT]: Không có phản hồi từ '+device_type2+' '+friendlyName)
-                    tts.tts_vietnamese(False,'Không có phản hồi từ '+device_type2+' '+friendlyName)
+                    print('[BOT]: Không có phản hồi từ '+friendlyName)
+                    tts.tts_vietnamese(False,'Không có phản hồi từ '+friendlyName)
         except:
-            print('[BOT]: Không tìm thấy '+device_type2+ 'có tên là '+data)
-            tts.tts_vietnamese(False,'Không tìm thấy '+device_type2+ 'có tên là '+data)
+            print('[BOT]: Không thực hiện được với thiết bị có tên là '+data)
+            tts.tts_vietnamese(False,'Không thực hiện được với thiết bị có tên là '+data)
 
 
-def check_state(data,state_type,device_type1,device_type2):
+def check_state(data,state_type,device_type):
     for p in config_data['hass_skill']:
         if p['is_active'] == True:        
             access_url=p['url']
             long_token=p['long_token']
-    access_url='https://gateway-'+hc_uid+'.vccsmart.vn/core'        
-    headers = {'Authorization': 'Bearer '+ long_token,'content-type': 'application/json',}
     try:    
-        result_device=get_device(data,device_type1)
+        result_device=get_device(data,device_type)
         entity_id = result_device[0]
         friendlyName=result_device[1]
         state=result_device[2]
@@ -310,11 +252,11 @@ def check_state(data,state_type,device_type1,device_type2):
             state= 'đóng'
         else:
             pass
-        print('[BOT]: Trạng thái của '+device_type2+' '+friendlyName+ ' là '+ r)
-        tts.tts_vietnamese(False,'Trạng thái của '+device_type2+' '+friendlyName+ ' là '+ r)
+        print('[BOT]: Trạng thái của '+friendlyName+ ' là '+ r)
+        tts.tts_vietnamese(False,'Trạng thái của ' +friendlyName+ ' là '+ r)
     except:
-        print('[BOT]: Không tìm thấy '+device_type2+ 'có tên là '+data)
-        tts.tts_vietnamese(False,'Không tìm thấy '+device_type2+ 'có tên là '+data)
+        print('[BOT]: Không tìm thấy trạng thái thiết bị có tên là '+data)
+        tts.tts_vietnamese(False,'Không tìm thấy trạng thái thiết bị có tên là '+data)
 
 
 def play_ding():
@@ -330,6 +272,6 @@ def play_dong():
     # sound = AudioSegment.from_mp3('resources/dong.wav')
     # play(sound)         
 
-# if __name__ == '__main__':
-    # print(check_hc())
-    # print(get_device('Quạt karofi - Quay','script'))
+if __name__ == '__main__':
+    print(check_hass())
+    print(get_device('công tắc phòng khách','light-switch'))
