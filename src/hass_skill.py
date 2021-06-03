@@ -232,7 +232,7 @@ def on_off(data,action,device_type):
             tts.tts_vietnamese(False,'Không thực hiện được với thiết bị có tên là '+data)
 
 
-def check_state(data,state_type,device_type):
+def check_state(data,device_type):
     for p in config_data['hass_skill']:
         if p['is_active'] == True:        
             access_url=p['url']
