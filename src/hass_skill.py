@@ -233,15 +233,12 @@ def on_off(data,action,device_type):
 
 
 def check_state(data,device_type):
-    for p in config_data['hass_skill']:
-        if p['is_active'] == True:        
-            access_url=p['url']
-            long_token=p['long_token']
     try:    
         result_device=get_device(data,device_type)
         entity_id = result_device[0]
-        friendlyName=result_device[1]
-        state=result_device[2]
+        domain=result_device[1]
+        friendlyName=result_device[2]
+        state=result_device[3]
         if state == 'off':
             state = 'tắt'
         elif state == 'on':
