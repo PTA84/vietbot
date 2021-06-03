@@ -724,6 +724,15 @@ data['speaker_skill'].append({
     'name':'speaker_skill',                
     'is_active': True
 })
+data['smart'] = []
+data['smart'].append({
+    'content': 'thông minh',
+    'is_active': True
+})
+data['smart'].append({
+    'content': 'smart',
+    'is_active': True
+})
 data['all'] = []
 data['all'].append({
     'content': 'tất cả',
