@@ -1065,6 +1065,16 @@ data['request_temperature'].append({
     'content': 'nhiệt độ',
     'is_active': True    
 })
+data['sensor'] = []
+data['sensor'].append({
+    'content': 'cảm biến',
+    'is_active': True    
+})
+data['binary_sensor'] = []
+data['binary_sensor'].append({
+    'content': 'cảm biến tắt mở',
+    'is_active': True    
+})
 data['request_humidity'] = []
 data['request_humidity'].append({
     'content': 'độ ẩm',
