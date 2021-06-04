@@ -1065,13 +1065,13 @@ data['request_temperature'].append({
     'content': 'nhiệt độ',
     'is_active': True    
 })
-data['sensor'] = []
-data['sensor'].append({
+data['request_sensor'] = []
+data['request_sensor'].append({
     'content': 'cảm biến',
     'is_active': True    
 })
-data['binary_sensor'] = []
-data['binary_sensor'].append({
+data['request_binary_sensor'] = []
+data['request_binary_sensor'].append({
     'content': 'cảm biến tắt mở',
     'is_active': True    
 })
