@@ -1067,12 +1067,12 @@ data['request_temperature'].append({
 })
 data['request_sensor'] = []
 data['request_sensor'].append({
-    'content': 'cảm biến',
+    'content': 'giá trị',
     'is_active': True    
 })
 data['request_binary_sensor'] = []
 data['request_binary_sensor'].append({
-    'content': 'cảm biến tắt mở',
+    'content': 'trạng thái',
     'is_active': True    
 })
 data['request_humidity'] = []
@@ -1174,10 +1174,6 @@ data['check'].append({
 })
 data['check'].append({
     'content': 'hiển thị',
-    'is_active': True
-})
-data['check'].append({
-    'content': 'trạng thái',
     'is_active': True
 })
 data['check'].append({
