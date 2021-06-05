@@ -52,7 +52,7 @@ use_hass: 1
   
 4.1.1. <action> Lệnh tắt, bật
 
-Một trong các từ được định nghĩa trong request_turn_on, request_off, request_check của file json, thêm vào bằng cách edit file craete_config, sau đó chạy python3 create_config.py 
+Một trong các từ được định nghĩa trong request_turn_on, request_off, check của file json, thêm vào bằng cách edit file craete_config, sau đó chạy python3 create_config.py 
 
 4.1.2. <friendly_name>
 
@@ -60,9 +60,9 @@ Là tên friendly name của entity tương ứng với thiết bị, đã khai 
 
 4.1.3. <smart > Loại đối tượng
 
-Với các thiết bị thông minh không cần kết nối vào mặt công tắc thông minh, cần có <type> là một trong các từ được định nghĩa trong smart của file json, thêm vào bằng cách edit file craete_config, sau đó chạy python3 create_config.py 
+Với các thiết bị thông minh không cần kết nối vào mặt công tắc thông minh, cần một trong các từ được định nghĩa trong smart của file json, thêm vào bằng cách edit file craete_config, sau đó chạy python3 create_config.py 
 
-Với các thiết bị thông thường phải kết nối vào mặt thông minh thì không cần cung cấp <type>
+Với các thiết bị điện thông thường phải kết nối vào mặt công tắc thông minh thì không cần cung cấp <type>
   
 4.2. Lệnh kiểm tra trạng thái: Trong lệnh cần có đủ các phần sau, không cần thứ tự:
 
