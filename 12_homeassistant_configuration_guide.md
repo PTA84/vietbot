@@ -45,6 +45,7 @@ use_hass: 1
 
 ```sh
 <action><friendly_name><smart><end_of_request>
+
 <Tắt> <quạt <thông minh>phòng khách>
 <Bật> <đèn trần phòng ngủ>  
 ```
