@@ -43,9 +43,8 @@ use_hass: 1
 
 4.1. Lệnh tắt bật: Trong lệnh cần có đủ các phần sau, không cần thứ tự:
 
-<action><friendly_name><smart><end_of_request>
-
 ```sh
+<action><friendly_name><smart><end_of_request>
 <Tắt> <quạt <thông minh>phòng khách>
 <Bật> <đèn trần phòng ngủ>  
 ```
@@ -67,13 +66,15 @@ Với các thiết bị điện thông thường phải kết nối vào mặt c
 4.2. Lệnh kiểm tra trạng thái: Trong lệnh cần có đủ các phần sau, không cần thứ tự:
 
 ```sh
+<action><friendly_name><smart><end_of_request>
+  
 <Kiểm tra> <quạt> <thông minh>phòng khách>
 <Kiểm tra> <đèn rọi hành lang>
 <Hiển thị> <giá trị><nhiệt độ phòng khách>
 <Thông báo> <trạng thái><cửa sân thượng>
 ```
   
-<action><friendly_name><smart><end_of_request>
+
 
 4.1.1. <action> Lệnh kiểm tra
 
