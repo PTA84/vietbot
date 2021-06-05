@@ -1048,6 +1048,7 @@ data['door'] = []
 data['door'].append({
     'content': 'cửa',
     'is_active': True
+})
 data['door'].append({
     'content': 'cổng',
     'is_active': True
@@ -1056,6 +1057,7 @@ data['occupancy'] = []
 data['occupancy'].append({
     'content': 'pir',
     'is_active': True
+})
 data['occupancy'].append({
     'content': 'chuyển động',
     'is_active': True
