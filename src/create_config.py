@@ -1044,7 +1044,7 @@ data['cover'].append({
     'content': 'cửa cuốn',
     'is_active': True    
 })
-ata['unit'] = []
+data['unit'] = []
 data['unit'].append({
     'code': 'clients',    
     'name': 'kết nối',
