@@ -1044,23 +1044,56 @@ data['cover'].append({
     'content': 'cửa cuốn',
     'is_active': True    
 })
-data['door'] = []
-data['door'].append({
-    'content': 'cửa',
-    'is_active': True
+ata['unit'] = []
+data['unit'].append({
+    'code': 'clients',    
+    'name': 'kết nối',
+    'is_active': True    
 })
-data['door'].append({
-    'content': 'cổng',
-    'is_active': True
+data['unit'].append({
+    'code': '%',    
+    'name': 'phần trăm',
+    'is_active': True    
 })
-data['occupancy'] = []
-data['occupancy'].append({
-    'content': 'pir',
-    'is_active': True
+data['unit'].append({
+    'code': 'MiB',    
+    'name': 'mê bai',
+    'is_active': True    
 })
-data['occupancy'].append({
-    'content': 'chuyển động',
-    'is_active': True
+data['unit'].append({
+    'code': '°C',    
+    'name': 'độ xê',
+    'is_active': True    
+})
+data['unit'].append({
+    'code': 'min',    
+    'name': 'phút',
+    'is_active': True    
+})
+data['unit'].append({
+    'code': 'km/h',    
+    'name': 'ki lô mét trên giờ',
+    'is_active': True    
+})
+data['unit'].append({
+    'code': 'Hz',    
+    'name': 'héc',
+    'is_active': True    
+})
+data['unit'].append({
+    'code': 'V',    
+    'name': 'vôn',
+    'is_active': True    
+})
+data['unit'].append({
+    'code': 'A',    
+    'name': 'am pe',
+    'is_active': True    
+})
+data['unit'].append({
+    'code': 'kW',    
+    'name': 'ki lô oát giờ',
+    'is_active': True    
 })
 data['television'] = []
 data['television'].append({
