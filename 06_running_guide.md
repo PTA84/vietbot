@@ -111,5 +111,30 @@ Bấm Ctrl + X, Y, Enter
 ```sh
 sudo reboot
 ```
-
 Bot sẽ tự động chạy (Chú ý thời gian chạy của bot có thể lâu sau khi khởi động)
+
+2.2.4. Xem log khi chạy
+
+```sh
+cat /home/pi/logs/cronlog
+```
+2.2.5. Gỡ tự động
+
+```sh
+crontab -e
+```
+Tại cửa sổ nano, di chuyển xuống dòng cuối cùng rồi xóa dòng sau
+
+```sh
+@reboot sh /home/pi/vietbot/start.sh >/home/pi/logs/cronlog 2>&1i
+```
+Bấm Ctrl + X, Y, Enter
+
+Khởi động lại Pi 
+
+```sh
+sudo reboot
+```
+Bot sẽ không tự động chạy nữa
+
+
