@@ -19,14 +19,17 @@ Sau khi có kết quả thành công, ra lệnh bằng từ khóa đã có trong
 
 ### STEP2.  Chạy tự động khi khởi động Pi
 
-1.1. Thiết lập tự động chạy bot khi bật nguồn, và tự chạy lại khi lỗi
-Sử dụng lần lượt các lệnh sau
+2.1. Chạy bằng Supervisor
+
+Thiết lập tự động chạy bot khi bật nguồn, và tự chạy lại khi lỗi
+
+2.1.1. Cài đặt Supervisor
 
 ```sh
 sudo apt-get install supervisor -y
 
 ```
-sau khi cài đặt xong supervisor, gõ lệnh sau:
+2.1.2. Edit file config 
 
 ```sh
 sudo nano /etc/supervisor/conf.d/vietbot.conf
@@ -45,25 +48,25 @@ user=pi
 ```
 Bấm Ctrl + X, Y, Enter
 
-Sau đó gõ tiếp các lệnh sau
+2.1.3. Update supervisor
 ```sh
 sudo supervisorctl update
 ```
-Chờ sau khi có thông báo update, khởi động lại Pi 
+2.1.4. Khởi động lại Pi 
 
 ```sh
 sudo reboot
 ```
 
-Bot sẽ tự động chạy (Chú ý thời gian chạy của bot khá lâu sau khi khởi động)
+Bot sẽ tự động chạy (Chú ý thời gian chạy của bot có thể lâu sau khi khởi động)
 
-1.2. Stop quá trình tự chạy lại bot này, sử dụng các lệnh sau
+2.1.5. Stop quá trình tự chạy lại bot này (Nếu cần)
 
 ```sh
 sudo supervisorctl stop vietbot
 ```
 
-1.3. Gỡ vietbot ra khỏi tự động chạy
+Gỡ vietbot ra khỏi tự động chạy
 
 ```sh
 sudo rm -rf /etc/supervisor/conf.d/vietbot.conf 
@@ -75,9 +78,38 @@ sudo supervisorctl update
 ```
 Chờ sau khi có thông báo update
 
-1.4. Khởi động lại
+Khởi động lại
 
 ```sh
 sudo reboot
 ```
 Bot sẽ không tự chạy lại nữa
+
+
+2.2. Tự động bằng crontab
+
+2.2.1. Tạo nơi lưu log
+
+```sh
+cd ~
+mkdir logs
+```
+2.2.2. Khai báo crontab
+
+```sh
+crontab -e
+```
+Tại cửa sổ nano, di chuyển xuống dòng cuối cùng rồi gõ
+
+```sh
+@reboot sh /home/pi/vietbot/start.sh >/home/pi/logs/cronlog 2>&1i
+```
+Bấm Ctrl + X, Y, Enter
+
+2.2.3. Khởi động lại Pi 
+
+```sh
+sudo reboot
+```
+
+Bot sẽ tự động chạy (Chú ý thời gian chạy của bot có thể lâu sau khi khởi động)
