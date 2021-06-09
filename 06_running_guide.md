@@ -10,7 +10,7 @@ cd vietbot/src
 1.2. Chạy boot bằng lệnh 
 
 ```sh
-python3 start.py
+python3 main.so
 ```
 1.3. Ra lệnh bằng từ khóa
 
