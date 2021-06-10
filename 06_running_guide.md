@@ -58,9 +58,9 @@ sudo supervisorctl update
 sudo reboot
 ```
 
-Bot sẽ tự động chạy (Chú ý thời gian chạy của bot có thể lâu sau khi khởi động)
+Bot sẽ tự động chạy khi khởi động Pi (Chú ý thời gian chạy của bot có thể lâu sau khi khởi động)
 
-2.1.5. Stop quá trình tự chạy lại bot này (Nếu cần)
+2.1.5. Stop quá trình chạy tự động khi khởi động Pi
 
 ```sh
 sudo supervisorctl stop vietbot
