@@ -962,7 +962,41 @@ data['play_music'].append({
     'content': 'hát bản nhạc',
     'is_active': True
 })
-
+data['music_source'] = []
+data['music_source'].append({
+    'content': 'tìm thấy nhạc',    
+    'is_active': True
+})
+data['music_source'].append({
+    'content': 'phát hiện nhạc',    
+    'is_active': True
+})
+data['no_music_source'] = []
+data['no_music_source'].append({
+    'content': 'không có nhạc',    
+    'is_active': True
+})
+data['no_music_source'].append({
+    'content': 'không phát hiện nhạc',    
+    'is_active': True
+})
+data['no_music_source'].append({
+    'content': 'không tìm thấy nhạc',    
+    'is_active': True
+})
+data['no_music_source'].append({
+    'content': 'không có nhạc',    
+    'is_active': True
+})
+data['music_online'] = []
+data['music_online'].append({
+    'content': 'sử dụng nhạc trực tuyến',    
+    'is_active': True
+})
+data['music_online'].append({
+    'content': 'dùng nhạc trực tuyến',    
+    'is_active': True
+})
 data['request_enable'] = []
 data['request_enable'].append({
     'content': 'kích hoạt',
@@ -1208,28 +1242,24 @@ data['humidity_decrase'].append({
     '1': 'ẩm xuống',
     '2': 'khô đi'
 })
-data['check'] = []
+data['request_check'] = []
 data['check'].append({
     'content': 'kiểm tra',
     'is_active': True
 })
-data['check'].append({
+data['request_check'].append({
     'content': 'hiển thị',
     'is_active': True
 })
-data['check'].append({
-    'content': 'thông tin',
-    'is_active': True
-})
-data['check'].append({
+data['request_check'].append({
     'content': 'tắt hay mở',
     'is_active': True
 })
-data['check'].append({
+data['request_check'].append({
     'content': 'đóng hay mở',
     'is_active': True
 })
-data['check'].append({
+data['request_check'].append({
     'content': 'bật hay tắt',
     'is_active': True
 })
