@@ -99,6 +99,7 @@ mkdir logs
 ```sh
 crontab -e
 ```
+Chọn 1 để edit bằng nano 
 Tại cửa sổ nano, di chuyển xuống dòng cuối cùng rồi gõ
 
 ```sh
@@ -123,6 +124,8 @@ cat /home/pi/logs/cronlog
 ```sh
 crontab -e
 ```
+Chọn 1 để edit bằng nano 
+
 Tại cửa sổ nano, di chuyển xuống dòng cuối cùng rồi xóa dòng sau
 
 ```sh
