@@ -40,7 +40,7 @@ Tại cửa sổ nano, gõ các dòng sau
 ```sh
 [program:vietbot]
 directory=/home/pi/vietbot/src
-command=/bin/bash -c 'cd /home/pi/vietbot/src && python3 start.py'
+command=/bin/bash -c 'cd /home/pi/vietbot/src && python3 main.so'
 numprocs=1
 autostart=true
 autorestart=true
