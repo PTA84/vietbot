@@ -23,7 +23,7 @@ Sau khi có kết quả thành công, ra lệnh bằng từ khóa đã có trong
 
 Thiết lập tự động chạy bot khi bật nguồn, và tự chạy lại khi lỗi
 
-2.1.1. Cài đặt Supervisor
+2.1.1. Cài đặt Supervisor (Hiện đang lỗi chưa cập nhật cách sửa)
 
 ```sh
 sudo apt-get install supervisor -y
