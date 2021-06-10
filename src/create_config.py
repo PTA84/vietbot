@@ -1006,6 +1006,15 @@ data['request_enable'].append({
     'content': 'thực hiện',
     'is_active': True
 })
+data['music_offline'] = []
+data['music_offline'].append({
+    'content': 'sử dụng thẻ nhớ',    
+    'is_active': True
+})
+data['music_offline'].append({
+    'content': 'dùng thẻ nhớ',    
+    'is_active': True
+})
 data['request_enable'].append({
     'content': 'thi hành',
     'is_active': False
