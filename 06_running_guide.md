@@ -60,7 +60,7 @@ sudo reboot
 
 Bot sẽ tự động chạy khi khởi động Pi (Chú ý thời gian chạy của bot có thể lâu sau khi khởi động)
 
-2.1.5. Stop quá trình chạy tự động khi khởi động Pi
+2.1.5. Stop quá trình chạy tự động khi khởi động Pi (Nếu cần)
 
 ```sh
 sudo supervisorctl stop vietbot
@@ -112,14 +112,14 @@ Bấm Ctrl + X, Y, Enter
 ```sh
 sudo reboot
 ```
-Bot sẽ tự động chạy (Chú ý thời gian chạy của bot có thể lâu sau khi khởi động)
+Bot sẽ tự động chạy khi khởi động Pi (Chú ý thời gian chạy của bot có thể lâu sau khi khởi động)
 
 2.2.4. Xem log khi chạy
 
 ```sh
 cat /home/pi/logs/cronlog
 ```
-2.2.5. Gỡ tự động
+2.2.5. Gỡ tự động chạy khi khởi động Pi (Nếu cần)
 
 ```sh
 crontab -e
@@ -138,6 +138,6 @@ Khởi động lại Pi
 ```sh
 sudo reboot
 ```
-Bot sẽ không tự động chạy nữa
+Bot sẽ không tự động chạy khi khởi động Pi nữa
 
 
