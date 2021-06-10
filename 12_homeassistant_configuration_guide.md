@@ -79,7 +79,7 @@ Với các thiết bị điện thông thường phải kết nối vào mặt c
 
 4.1.1. <action> Lệnh kiểm tra
 
-Một trong các từ được định nghĩa trong check của file json, thêm vào bằng cách edit file craete_config, sau đó chạy python3 create_config.py 
+Một trong các từ được định nghĩa trong request_check của file json, thêm vào bằng cách edit file craete_config, sau đó chạy python3 create_config.py 
 
 4.1.2. <friendly_name>
 
