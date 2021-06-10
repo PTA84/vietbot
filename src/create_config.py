@@ -1252,7 +1252,7 @@ data['humidity_decrase'].append({
     '2': 'khô đi'
 })
 data['request_check'] = []
-data['check'].append({
+data['request_check'].append({
     'content': 'kiểm tra',
     'is_active': True
 })
