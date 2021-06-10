@@ -4,7 +4,7 @@
 STRING="Automatic launching vietbot..."
 PYTHON="/usr/bin/python3.7"
 BOT_ROOT="/home/pi/vietbot/src"
-BOT="main.so"
+BOT="start.py"
 
 pushd . > /dev/null 2>&1
 cd $BOT_ROOT
