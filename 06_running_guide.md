@@ -103,7 +103,7 @@ Chọn 1 để edit bằng nano
 Tại cửa sổ nano, di chuyển xuống dòng cuối cùng rồi gõ
 
 ```sh
-@reboot sh /home/pi/vietbot/start.sh >/home/pi/logs/cronlog 2>&1i
+@reboot sh /home/pi/vietbot/src/start.sh >/home/pi/logs/cronlog 2>&1i
 ```
 Bấm Ctrl + X, Y, Enter
 
@@ -129,7 +129,7 @@ Chọn 1 để edit bằng nano
 Tại cửa sổ nano, di chuyển xuống dòng cuối cùng rồi xóa dòng sau
 
 ```sh
-@reboot sh /home/pi/vietbot/start.sh >/home/pi/logs/cronlog 2>&1i
+@reboot sh /home/pi/vietbot/src/start.sh >/home/pi/logs/cronlog 2>&1i
 ```
 Bấm Ctrl + X, Y, Enter
 
