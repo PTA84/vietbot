@@ -10,7 +10,7 @@ cd vietbot/src
 1.2. Chạy boot bằng lệnh 
 
 ```sh
-python3 main.so
+python3 start.py
 ```
 1.3. Ra lệnh bằng từ khóa
 
@@ -40,7 +40,7 @@ Tại cửa sổ nano, gõ các dòng sau
 ```sh
 [program:vietbot]
 directory=/home/pi/vietbot/src
-command=/bin/bash -c 'cd /home/pi/vietbot/src && python3 main.so'
+command=/bin/bash -c 'cd /home/pi/vietbot/src && python3 start.py'
 numprocs=1
 autostart=true
 autorestart=true
