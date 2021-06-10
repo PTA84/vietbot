@@ -8,7 +8,7 @@ data['mic'].append({
     'led_off_color': '',
     'led_think_mode': '',    
     'led_thing_color': '',            
-    'is_active': False            
+    'is_active': True            
 })
 data['mic'].append({
     'type': 'ReSpeaker 2-Mics Pi HAT',
@@ -32,7 +32,7 @@ data['mic'].append({
     'led_off_color': 0xFFFF99,
     'led_wakeup_mode': 2,
     'led_wakeup_color': 0x33FFFF,    
-    'is_active': True        
+    'is_active': False        
 })
 data['mic'].append({
     'type': 'ReSpeaker Core v2.0',
@@ -116,7 +116,7 @@ data['stt_engine'].append({
 })
 data['stt_engine'].append({
     'name': 'stt_viettel',
-    'token': 'SythBY7fdgdfgdfgXxzdWRNwYE8N',
+    'token': 'SythBY7N8AUnddbzfUk1XxzdWRNwYE8N',
     'token_file': '',    
     'time_out': 4000,
     'is_active': False    
@@ -139,7 +139,7 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': 'AIzaSyDX3fdsdfsdfsdfxhw6_k16b3c',
+    'token': 'AIzaSw6_k16b3c',
     'token_file': 'google.json',    
     'name': 'tts_gg_cloud',    
     'voice_name': 'vi-VN-Wavenet-A',
@@ -148,7 +148,7 @@ data['tts_engine'].append({
     'is_active': True    
 })
 data['tts_engine'].append({
-    'token': 'SythBY7N8AUsfsdfsdfsdfyXxzdWRNwYE8N',
+    'token': 'SythBY7N8AUXxzdWRNwYE8N',
     'token_file': '',    
     'name': 'tts_viettel',    
     'voice_name': 'hcm-diemmy2',
@@ -157,7 +157,7 @@ data['tts_engine'].append({
     'is_active': False    
 })
 data['tts_engine'].append({
-    'token': '8sJJ39osfsdfsdkmBXC2fRGU',
+    'token': '8sJJ39XC2fRGU',
     'token_file': '',    
     'name': 'tts_zalo',
     'voice_name': '1',    
@@ -166,7 +166,7 @@ data['tts_engine'].append({
     'is_active': False    
 })    
 data['tts_engine'].append({
-    'token': '7591A4mtsfsdfXNkyEqEC',
+    'token': '7591A4mt9NkyEqEC',
     'name': 'tts_fpt',
     'voice_name': 'linhsan',
     'speed': 1.0,
@@ -176,8 +176,8 @@ data['tts_engine'].append({
 data['hass_skill'] = []
 data['hass_skill'].append({
     'name':'hass_skill',
-    'url':'http://192.168.2.121:8123',
-    'long_token': 'eyJ0eXAiOiJKV1QiLCJhbxOTM3ODc3NTc2fQ.Qu0soxqfRfv4h3XAIplFRU3_sYYgLQdGWe9aJtyG3DU',
+    'url':'https://192.168.1.10',
+    'long_token': 'eyJ0eXAiZAnDzScXVnxlya4',
     'is_active': True        
 })
 data['google_ass_skill'] = []
@@ -724,15 +724,6 @@ data['speaker_skill'].append({
     'name':'speaker_skill',                
     'is_active': True
 })
-data['smart'] = []
-data['smart'].append({
-    'content': 'thông minh',
-    'is_active': True
-})
-data['smart'].append({
-    'content': 'smart',
-    'is_active': True
-})
 data['all'] = []
 data['all'].append({
     'content': 'tất cả',
@@ -777,6 +768,15 @@ data['single'].append({
 })
 data['single'].append({
     'content': 'duy nhất',
+    'is_active': True
+})
+data['smart'] = []
+data['smart'].append({
+    'content': 'thông minh',
+    'is_active': True
+})
+data['smart'].append({
+    'content': 'smart',
     'is_active': True
 })
 data['turn_on'] = []
@@ -962,41 +962,7 @@ data['play_music'].append({
     'content': 'hát bản nhạc',
     'is_active': True
 })
-data['music_source'] = []
-data['music_source'].append({
-    'content': 'tìm thấy nhạc',    
-    'is_active': True
-})
-data['music_source'].append({
-    'content': 'phát hiện nhạc',    
-    'is_active': True
-})
-data['no_music_source'] = []
-data['no_music_source'].append({
-    'content': 'không có nhạc',    
-    'is_active': True
-})
-data['no_music_source'].append({
-    'content': 'không phát hiện nhạc',    
-    'is_active': True
-})
-data['no_music_source'].append({
-    'content': 'không tìm thấy nhạc',    
-    'is_active': True
-})
-data['no_music_source'].append({
-    'content': 'không có nhạc',    
-    'is_active': True
-})
-data['music_online'] = []
-data['music_online'].append({
-    'content': 'sử dụng nhạc trực tuyến',    
-    'is_active': True
-})
-data['music_online'].append({
-    'content': 'dùng nhạc trực tuyến',    
-    'is_active': True
-})
+
 data['request_enable'] = []
 data['request_enable'].append({
     'content': 'kích hoạt',
@@ -1004,15 +970,6 @@ data['request_enable'].append({
 })
 data['request_enable'].append({
     'content': 'thực hiện',
-    'is_active': True
-})
-data['music_offline'] = []
-data['music_offline'].append({
-    'content': 'sử dụng thẻ nhớ',    
-    'is_active': True
-})
-data['music_offline'].append({
-    'content': 'dùng thẻ nhớ',    
     'is_active': True
 })
 data['request_enable'].append({
@@ -1069,6 +1026,24 @@ data['fan'].append({
     'content': 'quạt',
     'is_active': True
 })
+data['door'] = []
+data['door'].append({
+    'content': 'cửa',
+    'is_active': True
+})    
+data['door'].append({
+    'content': 'cổng',
+    'is_active': True
+})
+data['occupancy'] = []
+data['occupancy'].append({
+    'content': 'pir',
+    'is_active': True
+})
+data['occupancy'].append({
+    'content': 'chuyển động',
+    'is_active': True
+})
 data['curtain'] = []
 data['curtain'].append({
     'content': 'rèm',
@@ -1087,6 +1062,12 @@ data['cover'].append({
     'content': 'cửa cuốn',
     'is_active': True    
 })
+data['gate'] = []
+data['gate'].append({
+    'content': 'cổng',
+    'is_active': True    
+})
+
 data['unit'] = []
 data['unit'].append({
     'code': 'clients',    
@@ -1149,16 +1130,6 @@ data['request_temperature'].append({
     'content': 'nhiệt độ',
     'is_active': True    
 })
-data['request_sensor'] = []
-data['request_sensor'].append({
-    'content': 'giá trị',
-    'is_active': True    
-})
-data['request_binary_sensor'] = []
-data['request_binary_sensor'].append({
-    'content': 'trạng thái',
-    'is_active': True    
-})
 data['request_humidity'] = []
 data['request_humidity'].append({
     'content': 'độ ẩm',
@@ -1167,6 +1138,16 @@ data['request_humidity'].append({
 data['request_script'] = []
 data['request_script'].append({
     'content': 'kịch bản',
+    'is_active': True    
+})
+data['request_sensor'] = []
+data['request_sensor'].append({
+    'content': 'giá trị',
+    'is_active': True    
+})
+data['request_binary_sensor'] = []
+data['request_binary_sensor'].append({
+    'content': 'trạng thái',
     'is_active': True    
 })
 data['request_automation'] = []
@@ -1721,10 +1702,50 @@ data['no_answer'].append({
     '2': 'không có câu trả lời',
     '3': 'không trả lời nhé'
 })
+data['music_source'] = []
+data['music_source'].append({
+    'content': 'tìm thấy nhạc',    
+    'is_active': True
+})
+data['music_source'].append({
+    'content': 'phát hiện nhạc',    
+    'is_active': True
+})
 data['no_music_source'] = []
 data['no_music_source'].append({
-    '1': 'chọn nguồn phát nhạc',    
-    '2': 'chọn một trong các nguồn phát nhạc sau'
+    'content': 'không có nhạc',    
+    'is_active': True
+})
+data['no_music_source'].append({
+    'content': 'không phát hiện nhạc',    
+    'is_active': True
+})
+
+data['no_music_source'].append({
+    'content': 'không tìm thấy nhạc',    
+    'is_active': True
+})
+data['no_music_source'].append({
+    'content': 'không có nhạc',    
+    'is_active': True
+})
+data['music_online'] = []
+data['music_online'].append({
+    'content': 'sử dụng nhạc trực tuyến',    
+    'is_active': True
+})
+data['music_online'].append({
+    'content': 'dùng nhạc trực tuyến',    
+    'is_active': True
+})
+data['music_offline'] = []
+data['music_offline'].append({
+    'content': 'sử dụng thẻ nhớ',    
+    'is_active': True
+})
+data['music_offline'].append({
+    'content': 'dùng thẻ nhớ',    
+    'is_active': True
 })
 data['no_lottery_location'] = []
 data['no_lottery_location'].append({
