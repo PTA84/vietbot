@@ -92,6 +92,11 @@ data['hotword'].append({
     'sensitive': 0.3,        
     'is_active': True   
 })
+data['continuous_asking'] = []
+data['continuous_asking'].append({
+    'content': 'hỏi liên tục',
+    'is_active': True
+})
 data['stt_engine'] = []
 data['stt_engine'].append({
     'name': 'stt_gg_free',
