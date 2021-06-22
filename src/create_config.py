@@ -134,9 +134,7 @@ data['stt_engine'].append({
     'is_active': False    
 })
 data['tts_engine'] = []
-data['tts_engine'].append({
-    'token': '',
-    'token_file': '',        
+data['tts_engine'].append({    
     'name': 'tts_gg_free',
     'voice_name': '',    
     'speed': '',
@@ -148,6 +146,7 @@ data['tts_engine'].append({
     'token_file': 'google.json',    
     'name': 'tts_gg_cloud',    
     'voice_name': 'vi-VN-Wavenet-A',
+    'profile': 'Interactive Voice Response (IVR) system',    
     'speed': 1.0,
     'pitch': 0,
     'is_active': True    
