@@ -192,9 +192,9 @@ data['google_ass_skill'].append({
     'device_config':'',
     'is_active': True
 })
-data['google_ass_skill_1'] = []
-data['google_ass_skill_1'].append({
-    'name':'google_ass_skill_1',                
+data['google_ass_skill_2'] = []
+data['google_ass_skill_2'].append({
+    'name':'google_ass_skill_2',                
     'credential':'',
     'device_config':'',
     'is_active': False
