@@ -121,7 +121,7 @@ data['stt_engine'].append({
 })
 data['stt_engine'].append({
     'name': 'stt_viettel',
-    'token': 'SythBY7N8AUnddbzfUk1XxzdWRNwYE8N',
+    'token': 'SythBY7N8Afdsdfk1XxzdWRNwYE8N',
     'token_file': '',    
     'time_out': 4000,
     'is_active': False    
