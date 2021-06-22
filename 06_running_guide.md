@@ -7,14 +7,24 @@ Sử dụng lệnh sau
 ```sh
 cd vietbot/src
 ```
-1.2. Chạy boot bằng lệnh 
+1.2. Edit config bằng lệnh 
+
+```sh
+sudo nano create_config.json
+```
+1.3. Tạo file config sau khi Edit xong bằng lệnh 
+
+```sh
+python3 create_config.py
+```
+1.4. Chạy boot bằng lệnh 
 
 ```sh
 python3 start.py
 ```
-1.3. Ra lệnh bằng từ khóa
+1.4. Ra lệnh bằng từ khóa
 
-Sau khi có kết quả thành công, ra lệnh bằng từ khóa đã có trong file confg.yaml sẽ có tiếng Ting và bắt đầu chờ để ra lệnh
+Sau khi có kết quả thành công, ra lệnh bằng từ khóa đã có trong file confg.json sẽ có tiếng Ting và bắt đầu chờ để ra lệnh
 
 
 ### STEP2.  Chạy tự động khi khởi động Pi
