@@ -1,8 +1,19 @@
 Vietbot sử dụng STT (Speed to Text) Online để nhận diện câu lệnh và TTS (Text to Speech) Online để phát câu phản hồi, Vietbot hỗ trợ các
 STT và TTS sau:
 
-### STEP1. Tạo STT & TTS Google
-Vietbot hỗ trợ STT & TTS Google là Engine chính cho quá trình STT & TTS
+### STT & TTS Google (FREE)
+
+Không cần khai báo, chỉ cần kích hoạt sử dụng
+
+### STT GOOGLE ASSISTANT (FREE)
+
+Cần thực hiện các bước sau, sau đó kích hoạt sử dụng
+![TẠO GOOGLE PROJECT](https://github.com/phanmemkhoinghiep/vietbot/blob/main/09_google_project_configuration_guide.md) =>
+![ACTIVE GOOGLE ASSISTANT SKILL](https://github.com/phanmemkhoinghiep/vietbot/blob/main/10_google_active_guide.md) 
+
+### STT & TTS Google CLOUD (MẤT PHÍ)
+
+Cần thực hiện các bước sau, sau đó kích hoạt sử dụng
 1.1. Cấu hình STT
 
 STT Google cần tạo file .json, làm theo các bước sau
@@ -31,7 +42,7 @@ TTS Google cần sử dụng API, làm theo các bước sau
 
 Làm theo các bước hướng dẫn cho đến khi tạo ra API thì copy và lưu lại API
 
-### STEP2.  Tạo STT & TTS FPT, Viettel, ZALO
+### STT & TTS FPT, Viettel, ZALO (MIỄN PHÍ THEO SỐ LƯỢNG)
 
 Trong trường hợp muốn sử dụng các Engine khác để phản hồi bằng giọng địa phương, Vietbot cũng hỗ trợ FPT, Viettel và Zalo theo các bước sau:
 
@@ -44,18 +55,24 @@ Trong trường hợp muốn sử dụng các Engine khác để phản hồi b�
 
 Vietbot hỗ trợ File cấu hình các tham số của bot tại file config.yaml
 
-### STEP3. Cấu hình STT &TTS
+### Cấu hình STT &TTS
 
 Mở file create_config.py bằng WinSCP và ứng dụng Notepad ++
 
-3.1. Cấu hình STT
+3.1. Cấu hình STT Engine
 
 Tìm đến các giá trị tương ứng với các stt_engine và bổ sung thông tin phù hợp như token/api
 
 Kích hoạt STT Engine nào thì sẽ đặt tham số is_active là True và ngược lại
 
-3.2.1. TTS Engine
+3.2. TTS Engine
 
 Tìm đến các giá trị tương ứng với các tts_engine và bổ sung thông tin phù hợp như token/api
 
 Kích hoạt TTS Engine nào thì sẽ đặt tham số is_active là True và ngược lại
+
+3.3. Tạo file config sau khi Edit xong bằng lệnh 
+
+```sh
+python3 create_config.py
+```
