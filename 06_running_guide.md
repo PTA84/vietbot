@@ -45,8 +45,6 @@ Tại cửa sổ Nano, gõ dòng lệnh sau
 
 ```sh
 [program:vietbot]
-directory=/home/pi/vietbot
-command=/bin/bash -c 'cd /home/pi/vietbot && python3 start.py'
 directory=/home/pi/vietbot/src
 command=/bin/bash -c 'cd /home/pi/vietbot/src && python3 start.py'
 numprocs=1
