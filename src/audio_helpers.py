@@ -23,7 +23,7 @@ import wave
 
 import click
 import sounddevice as sd
-
+# sd.default.device=1
 
 DEFAULT_AUDIO_SAMPLE_RATE = 16000
 DEFAULT_AUDIO_SAMPLE_WIDTH = 2
@@ -185,6 +185,7 @@ class SoundDeviceStream(object):
             audio_format = 'int16'
         else:
             raise Exception('unsupported sample width:', sample_width)
+
 #        self._audio_stream = sd.RawStream(
 #            samplerate=sample_rate, dtype=audio_format, channels=1,
 #            blocksize=int(block_size/2),  # blocksize is in number of frames.
