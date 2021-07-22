@@ -50,6 +50,7 @@ command=/bin/bash -c 'cd /home/pi/vietbot/src && python3 start.py'
 numprocs=1
 autostart=true
 autorestart=true
+startretries=0 
 ```
 Bấm Ctrl + X, Y, Enter
 
@@ -57,6 +58,10 @@ Bấm Ctrl + X, Y, Enter
 
 ```sh
 sudo supervisorctl update
+```
+Hệ thống sẽ hiện ra
+```sh
+vietbot: added process group
 ```
 Hệ thống đã sẵn sàng tự động chạy vietbot
 
@@ -70,6 +75,11 @@ Sau đó gõ tiếp
 ```sh
 sudo supervisorctl update
 ```
+Hệ thống sẽ hiện ra
+```sh
+vietbot: removed process group
+```
+
 Hệ thống đã gỡ vietbot khỏi chạy tự động
 
 2.2. Tự động bằng crontab
