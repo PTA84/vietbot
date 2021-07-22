@@ -29,7 +29,50 @@ Sau khi có kết quả thành công, ra lệnh bằng từ khóa đã có trong
 
 ### STEP2.  Chạy tự động khi khởi động Pi
 
-2.1. Chạy bằng Supervisor (Hiện đang lỗi chưa cập nhật cách sửa)
+2.1. Chạy bằng Supervisor 
+
+2.1.1. Cài đặt supervisor (Nếu chưa cài)
+
+```sh
+sudo apt-get install supervisor -y
+```
+2.1.2. Tạo file vietbot.conf bằng lệnh
+
+```sh
+sudo nano /etc/supervisor/conf.d/vietbot.conf
+```
+Tại cửa sổ Nano, gõ dòng lệnh sau
+
+```sh
+[program:vietbot]
+directory=/home/pi/vietbot
+command=/bin/bash -c 'cd /home/pi/vietbot && python3 start.py'
+directory=/home/pi/vietbot/src
+command=/bin/bash -c 'cd /home/pi/vietbot/src && python3 start.py'
+numprocs=1
+autostart=true
+autorestart=true
+```
+Bấm Ctrl + X, Y, Enter
+
+2.1.3. Gõ lệnh sau
+
+```sh
+sudo supervisorctl update
+```
+Hệ thống đã sẵn sàng tự động chạy vietbot
+
+2.1.4. Gõ lệnh sau để remove chạy tự động
+
+```sh
+sudo rm -rf /etc/supervisor/conf.d/vietbot.conf
+```
+Sau đó gõ tiếp
+
+```sh
+sudo supervisorctl update
+```
+Hệ thống đã gỡ vietbot khỏi chạy tự động
 
 2.2. Tự động bằng crontab
 
