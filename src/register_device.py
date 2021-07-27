@@ -21,7 +21,6 @@ import os
 import os.path
 import pathlib2 as pathlib
 import sys
-import time
 import uuid
 
 import click
@@ -40,13 +39,11 @@ try:
     from . import (
         assistant_helpers,
         audio_helpers,
-        browser_helpers,
         device_helpers
     )
 except (SystemError, ImportError):
     import assistant_helpers
     import audio_helpers
-    import browser_helpers
     import device_helpers
 
 
@@ -54,7 +51,6 @@ ASSISTANT_API_ENDPOINT = 'embeddedassistant.googleapis.com'
 END_OF_UTTERANCE = embedded_assistant_pb2.AssistResponse.END_OF_UTTERANCE
 DIALOG_FOLLOW_ON = embedded_assistant_pb2.DialogStateOut.DIALOG_FOLLOW_ON
 CLOSE_MICROPHONE = embedded_assistant_pb2.DialogStateOut.CLOSE_MICROPHONE
-PLAYING = embedded_assistant_pb2.ScreenOutConfig.PLAYING
 DEFAULT_GRPC_DEADLINE = 60 * 3 + 5
 
 
@@ -73,13 +69,12 @@ class SampleAssistant(object):
     """
 
     def __init__(self, language_code, device_model_id, device_id,
-                 conversation_stream, display,
+                 conversation_stream,
                  channel, deadline_sec, device_handler):
         self.language_code = language_code
         self.device_model_id = device_model_id
         self.device_id = device_id
         self.conversation_stream = conversation_stream
-        self.display = display
 
         # Opaque blob provided in AssistResponse that,
         # when provided in a follow-up AssistRequest,
@@ -88,8 +83,6 @@ class SampleAssistant(object):
         # This value, along with MicrophoneMode, supports a more natural
         # "conversation" with the Assistant.
         self.conversation_state = None
-        # Force reset of first conversation.
-        self.is_new_conversation = True
 
         # Create Google Assistant API gRPC client.
         self.assistant = embedded_assistant_pb2_grpc.EmbeddedAssistantStub(
@@ -148,7 +141,6 @@ class SampleAssistant(object):
                                       for r in resp.speech_results))
             if len(resp.audio_out.audio_data) > 0:
                 if not self.conversation_stream.playing:
-                    self.conversation_stream.stop_recording()
                     self.conversation_stream.start_playback()
                     logging.info('Playing assistant response.')
                 self.conversation_stream.write(resp.audio_out.audio_data)
@@ -172,9 +164,6 @@ class SampleAssistant(object):
                 fs = self.device_handler(device_request)
                 if fs:
                     device_actions_futures.extend(fs)
-            if self.display and resp.screen_out.data:
-                system_browser = browser_helpers.system_browser
-                system_browser.display(resp.screen_out.data)
 
         if len(device_actions_futures):
             logging.info('Waiting for device executions to complete.')
@@ -187,6 +176,13 @@ class SampleAssistant(object):
     def gen_assist_requests(self):
         """Yields: AssistRequest messages to send to the API."""
 
+        dialog_state_in = embedded_assistant_pb2.DialogStateIn(
+                language_code=self.language_code,
+                conversation_state=b''
+            )
+        if self.conversation_state:
+            logging.debug('Sending conversation state.')
+            dialog_state_in.conversation_state = self.conversation_state
         config = embedded_assistant_pb2.AssistConfig(
             audio_in_config=embedded_assistant_pb2.AudioInConfig(
                 encoding='LINEAR16',
@@ -197,20 +193,12 @@ class SampleAssistant(object):
                 sample_rate_hertz=self.conversation_stream.sample_rate,
                 volume_percentage=self.conversation_stream.volume_percentage,
             ),
-            dialog_state_in=embedded_assistant_pb2.DialogStateIn(
-                language_code=self.language_code,
-                conversation_state=self.conversation_state,
-                is_new_conversation=self.is_new_conversation,
-            ),
+            dialog_state_in=dialog_state_in,
             device_config=embedded_assistant_pb2.DeviceConfig(
                 device_id=self.device_id,
                 device_model_id=self.device_model_id,
             )
         )
-        if self.display:
-            config.screen_out_config.screen_mode = PLAYING
-        # Continue current conversation with later requests.
-        self.is_new_conversation = False
         # The first AssistRequest must contain the AssistConfig
         # and no audio data.
         yield embedded_assistant_pb2.AssistRequest(config=config)
@@ -252,8 +240,6 @@ class SampleAssistant(object):
               metavar='<language code>',
               default='en-US',
               help='Language code of the Assistant')
-@click.option('--display', is_flag=True, default=False,
-              help='Enable visual display of Assistant responses in HTML.')
 @click.option('--verbose', '-v', is_flag=True, default=False,
               help='Verbose logging.')
 @click.option('--input-audio-file', '-i',
@@ -292,8 +278,7 @@ class SampleAssistant(object):
 @click.option('--once', default=False, is_flag=True,
               help='Force termination after a single conversation.')
 def main(api_endpoint, credentials, project_id,
-         device_model_id, device_id, device_config,
-         lang, display, verbose,
+         device_model_id, device_id, device_config, lang, verbose,
          input_audio_file, output_audio_file,
          audio_sample_rate, audio_sample_width,
          audio_iter_size, audio_block_size, audio_flush_size,
@@ -335,7 +320,6 @@ def main(api_endpoint, credentials, project_id,
     logging.info('Connecting to %s', api_endpoint)
 
     # Configure audio source and sink.
-    audio_device = None
     if input_audio_file:
         audio_source = audio_helpers.WaveSource(
             open(input_audio_file, 'rb'),
@@ -343,13 +327,12 @@ def main(api_endpoint, credentials, project_id,
             sample_width=audio_sample_width
         )
     else:
-        audio_source = audio_device = (
-            audio_device or audio_helpers.SoundDeviceStream(
+        audio_source = audio_helpers.SoundDeviceStream(
                 sample_rate=audio_sample_rate,
                 sample_width=audio_sample_width,
                 block_size=audio_block_size,
-                flush_size=audio_flush_size
-            )
+                flush_size=audio_flush_size,
+                direction=0
         )
     if output_audio_file:
         audio_sink = audio_helpers.WaveSink(
@@ -358,13 +341,12 @@ def main(api_endpoint, credentials, project_id,
             sample_width=audio_sample_width
         )
     else:
-        audio_sink = audio_device = (
-            audio_device or audio_helpers.SoundDeviceStream(
+        audio_sink = audio_helpers.SoundDeviceStream(
                 sample_rate=audio_sample_rate,
                 sample_width=audio_sample_width,
                 block_size=audio_block_size,
-                flush_size=audio_flush_size
-            )
+                flush_size=audio_flush_size,
+                direction=1
         )
     # Create conversation stream with the given audio source and sink.
     conversation_stream = audio_helpers.ConversationStream(
@@ -425,20 +407,8 @@ def main(api_endpoint, credentials, project_id,
         else:
             logging.info('Turning device off')
 
-    @device_handler.command('com.example.commands.BlinkLight')
-    def blink(speed, number):
-        logging.info('Blinking device %s times.' % number)
-        delay = 1
-        if speed == "SLOWLY":
-            delay = 2
-        elif speed == "QUICKLY":
-            delay = 0.5
-        for i in range(int(number)):
-            logging.info('Device is blinking.')
-            time.sleep(delay)
-
     with SampleAssistant(lang, device_model_id, device_id,
-                         conversation_stream, display,
+                         conversation_stream,
                          grpc_channel, grpc_deadline,
                          device_handler) as assistant:
         # If file arguments are supplied:
