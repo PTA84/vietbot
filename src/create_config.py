@@ -55,40 +55,61 @@ data['volume'].append({
     'value': 50,
     'type': 'playback'    
 })
+data['hotword_engine'] = []
+data['hotword_engine'].append({
+    'name': 'snowboy',
+    'is_active': True
+})
+data['hotword_engine'].append({
+    'name': 'porcupine',
+    'is_active': False
+})
 data['hotword'] = []
 data['hotword'].append({
-    'name': 'hey siri',
-    'keyword_path': 'hey siri_raspberry-pi.ppn',    
+    'type': 'snowboy',
+    'file_name': 'snowboy.umdl',    
+    'sensitive': 0.6,        
+    'is_active': True    
+})
+data['hotword'].append({
+    'type': 'snowboy',
+    'file_name': 'subex.umdl',    
+    'sensitive': 0.6,        
+    'is_active': True    
+})
+data['hotword'].append({
+    'type': 'porcupine',
+    'file_name': 'hey siri_raspberry-pi.ppn',    
     'sensitive': 0.3,        
     'is_active': True    
 })
 data['hotword'].append({
-    'name': 'americano',
-    'keyword_path': 'americano_raspberry-pi.ppn',    
+    'type': 'porcupine',
+    'file_name': 'americano_raspberry-pi.ppn',    
     'sensitive': 0.3,        
     'is_active': True    
 })
 data['hotword'].append({
-    'name': 'blueberry',
-    'keyword_path': 'blueberry_raspberry-pi.ppn',    
+    'type': 'porcupine',
+    'file_name': 'blueberry_raspberry-pi.ppn',    
     'sensitive': 0.3,        
     'is_active': True    
 })
 data['hotword'].append({
-    'name': 'terminator',
-    'keyword_path': 'terminator_raspberry-pi.ppn',    
+    'type': 'porcupine',
+    'file_name': 'terminator_raspberry-pi.ppn',    
     'sensitive': 0.3,        
     'is_active': False    
 })
 data['hotword'].append({
-    'name': 'ok google',
-    'keyword_path': 'ok google_raspberry-pi.ppn',    
+    'type': 'porcupine',
+    'file_name': 'ok google_raspberry-pi.ppn',    
     'sensitive': 0.3,        
     'is_active': True    
 })
 data['hotword'].append({
-    'name': 'hey google',
-    'keyword_path': 'hey google_raspberry-pi.ppn',    
+    'type': 'porcupine',
+    'file_name': 'hey google_raspberry-pi.ppn',    
     'sensitive': 0.3,        
     'is_active': True   
 })
