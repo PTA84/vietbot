@@ -24,7 +24,7 @@ import wave
 import click
 import sounddevice as sd
 # sd.default.device=1
-
+# sd.default.channels=1
 DEFAULT_AUDIO_SAMPLE_RATE = 16000
 DEFAULT_AUDIO_SAMPLE_WIDTH = 2
 DEFAULT_AUDIO_ITER_SIZE = 3200
@@ -191,7 +191,7 @@ class SoundDeviceStream(object):
 #            blocksize=int(block_size/2),  # blocksize is in number of frames.
 #        )
         if direction == 0:
-            self._audio_stream = sd.RawInputStream(
+            self._audio_stream = sd.RawInputStream(device=None,
                 samplerate=sample_rate, dtype=audio_format, channels=1,
                 blocksize=int(block_size/2) # blocksize is in number of frames.
             )
@@ -200,7 +200,7 @@ class SoundDeviceStream(object):
             self._sample_rate = sample_rate
             
         if direction == 1:
-            self._audio_stream = sd.RawOutputStream(
+            self._audio_stream = sd.RawOutputStream(device=None,
                 samplerate=sample_rate, dtype=audio_format, channels=1,
                 blocksize=int(block_size/2) # blocksize is in number of frames.
             )
@@ -343,7 +343,7 @@ class ConversationStream(object):
 
     def close(self):
         """Close source and sink."""
-        self._source.close()
+        # self._source.close()
         self._sink.close()
 
     def __iter__(self):
