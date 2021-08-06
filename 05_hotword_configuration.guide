@@ -29,38 +29,6 @@ Vietbot hỗ trợ các hotword của Porcupine cho Raspberry
 
 3.2. Mở file create_config.py bằng WinSCP và Notepad ++
 
-```sh
-
-data['hotword_engine'] = []
-data['hotword_engine'].append({
-    'name': 'snowboy',
-    'is_active': True
-})
-data['hotword_engine'].append({
-    'name': 'porcupine',
-    'is_active': False
-})
-data['hotword'] = []
-data['hotword'].append({
-    'type': 'snowboy',
-    'file_name': 'snowboy.umdl',    
-    'sensitive': 0.6,        
-    'is_active': True    
-})
-data['hotword'].append({
-    'type': 'snowboy',
-    'file_name': 'subex.umdl',    
-    'sensitive': 0.6,        
-    'is_active': True    
-})
-data['hotword'].append({
-    'type': 'porcupine',
-    'file_name': 'hey siri_raspberry-pi.ppn',    
-    'sensitive': 0.3,        
-    'is_active': True    
-})
-
-```
 
 3.3. Save lại file create_config.py
 
