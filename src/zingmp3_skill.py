@@ -19,6 +19,7 @@ from fuzzywuzzy import fuzz
 from termcolor import colored
 import numpy as np
 import json
+from itertools import combinations
 # data ='thôi đừng chiêm bao'
 
 def zingmp3_skill(data):
@@ -76,7 +77,7 @@ def zingmp3_skill(data):
         resultJson = json.dumps(resp.json())
         obj = json.loads(resultJson)
         # print(str(obj))
-        mp3Source = "https:"+obj["data"]["source"]["128"]
+        mp3Source = "https:"+obj['data']["source"]["128"]
         realURLdata = requests.get(mp3Source,allow_redirects=False)
         # print(realURLdata)
         realURL = realURLdata.headers['Location']
